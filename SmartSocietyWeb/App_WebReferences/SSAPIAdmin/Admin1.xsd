@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="CheckLogin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckLoginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckLoginResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ForgotPassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ForgotPasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ForgotPasswordResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResetPassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResetPasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ResetPasswordResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSocietyInformation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PostalCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LogoImage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ContactNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PresidentName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Builder" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RegistrationNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CampusArea" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SocietyType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LatLong" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSocietyInformationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetSocietyInformationResult" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditSocietyInformation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PostalCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LogoImage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ContactNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PresidentName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Builder" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RegistrationNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CampusArea" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SocietyType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LatLong" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditSocietyInformationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EditSocietyInformationResult" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSocietyInformation">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSocietyInformationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetSocietyInformationResult" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetFlatHolder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DOB" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="FlatNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Occupation" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Contact1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Contact2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Image" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PositionID" type="xs:int" />
+        <xs:element minOccurs="0" name="FlatHolderID" type="xs:int" />
+        <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetFlatHolderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetFlatHolderResult" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddAssetType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssetTypeName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddAssetTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddAssetTypeResult" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditAssetType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssetTypeID" type="xs:int" />
+        <xs:element minOccurs="0" name="AssetTypeName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditAssetTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EditAssetTypeResult" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddAsset">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssetName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AssetTypeID" type="xs:int" />
+        <xs:element minOccurs="0" name="Image" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="InvoiceDoc" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AssetValue" type="xs:int" />
+        <xs:element minOccurs="0" name="PurchasedOn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddAssetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddAssetResult" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditAsset">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssetID" type="xs:int" />
+        <xs:element minOccurs="0" name="AssetName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AssetTypeID" type="xs:int" />
+        <xs:element minOccurs="0" name="Image" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="InvoiceDoc" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AssetValue" type="xs:int" />
+        <xs:element minOccurs="0" name="PurchasedOn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditAssetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EditAssetResult" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddStaffMember">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MemberType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DOB" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Contact1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Contact2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Image" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DOJ" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DOL" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddStaffMemberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddStaffMemberResult" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditStaffMember">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MemberID" type="xs:int" />
+        <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MemberType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DOB" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Contact1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Contact2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Image" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DOJ" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DOL" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditStaffMemberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EditStaffMemberResult" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
