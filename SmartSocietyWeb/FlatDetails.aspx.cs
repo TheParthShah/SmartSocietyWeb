@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 public partial class FlatDetails : System.Web.UI.Page
 {
-    SSAPIGen.GeneralClient GenSObj = new SSAPIGen.GeneralClient();
+    //SSAPIGen.GeneralClient GenSObj = new SSAPIGen.GeneralClient();
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -19,9 +19,9 @@ public partial class FlatDetails : System.Web.UI.Page
 
     private void BindData()
     {
-        object FlatDetailsObj = GenSObj.GetAllFlatDetails(0);
-        JArray FlatDetailsObjArr = JArray.Parse(FlatDetailsObj.ToString());
-        rptFlatDetails.DataSource = FlatDetailsObjArr;
-        rptFlatDetails.DataBind();
+        //object FlatDetailsObj = GenSObj.GetAllFlatDetails(0);
+        //JArray FlatDetailsObjArr = JArray.Parse(FlatDetailsObj.ToString());
+        //rptFlatDetails.DataSource = FlatDetailsObjArr;
+        //rptFlatDetails.DataBind();
     }
 }

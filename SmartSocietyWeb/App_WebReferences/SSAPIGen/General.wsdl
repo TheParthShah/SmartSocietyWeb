@@ -18,6 +18,12 @@
   <wsdl:message name="IGeneral_GetAllFlatDetails_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllFlatDetailsResponse" />
   </wsdl:message>
+  <wsdl:message name="IGeneral_ViewGateKeeping_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewGateKeeping" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_ViewGateKeeping_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewGateKeepingResponse" />
+  </wsdl:message>
   <wsdl:portType name="IGeneral">
     <wsdl:operation name="GetAllResidentsDetails">
       <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/GetAllResidentsDetails" message="tns:IGeneral_GetAllResidentsDetails_InputMessage" />
@@ -26,6 +32,10 @@
     <wsdl:operation name="GetAllFlatDetails">
       <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/GetAllFlatDetails" message="tns:IGeneral_GetAllFlatDetails_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IGeneral/GetAllFlatDetailsResponse" message="tns:IGeneral_GetAllFlatDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewGateKeeping">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/ViewGateKeeping" message="tns:IGeneral_ViewGateKeeping_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneral/ViewGateKeepingResponse" message="tns:IGeneral_ViewGateKeeping_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="soap" type="tns:IGeneral">
@@ -41,6 +51,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetAllFlatDetails">
       <soap:operation soapAction="http://tempuri.org/IGeneral/GetAllFlatDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewGateKeeping">
+      <soap:operation soapAction="http://tempuri.org/IGeneral/ViewGateKeeping" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
