@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 public partial class SocietyProfile : System.Web.UI.Page
 {
-    SSAPIAdmin.AdminClient ServiceObject = new SSAPIAdmin.AdminClient();
+    //SSAPIAdmin.AdminClient ServiceObject = new SSAPIAdmin.AdminClient();
     protected void Page_Load(object sender, EventArgs e)
     {
         
@@ -18,8 +18,8 @@ public partial class SocietyProfile : System.Web.UI.Page
         SocietyProfileInfo.Visible = true;
         //var data = ServiceObject.JSONData();
 
-        JObject data = JObject.Parse(ServiceObject.GetSocietyInformation().ToString());
-        txtSocietyName.Text = (string)data["Name"];
+        //JObject data = JObject.Parse(ServiceObject.GetSocietyInformation().ToString());
+        //txtSocietyName.Text = (string)data["Name"];
     }
 
     protected void btnEditSocietyProfile_Click(object sender, EventArgs e)

@@ -13,14 +13,11 @@
 
 
     <section class="panel panel-default">
-        <header class="panel-heading font-bold">
+       <header class="panel-heading font-bold">
             <div class="row">
-                <div class="col-sm-1 text-center">
-                    <img class="img-responsive img-circle" style="border: 1px solid;" width="100" height="100" src="images/icon.png" style="margin-bottom: 5px;">
-                    <!-- <a href="">Edit Logo</a> -->
-                </div>
+                
                 <!-- <h1 class="col-sm-11" style="font-size: 38pt;">Edit Profile</h1> -->
-                <h1 class="col-sm-11" style="font-size: 34pt; margin-top: 5px;">Member Details</h1>
+                <h1 class="col-sm-12" style="font-size: 20pt; margin-top: 5px;">Member Details</h1>
             </div>
         </header>
 

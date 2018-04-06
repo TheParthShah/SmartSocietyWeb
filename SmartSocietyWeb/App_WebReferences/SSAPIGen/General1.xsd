@@ -28,4 +28,21 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ViewGateKeeping">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckedInOnly" type="xs:boolean" />
+        <xs:element minOccurs="0" name="FromDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ToDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="FlatNo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewGateKeepingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ViewGateKeepingResult" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
