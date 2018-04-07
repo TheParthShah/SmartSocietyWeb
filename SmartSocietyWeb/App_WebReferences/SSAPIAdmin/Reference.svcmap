@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8a71962f-529e-4e0c-a135-dd57156ef082" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="28060ff4-9c45-44d6-97eb-f92c1da78632" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,13 +19,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://smartsociety.riteshtailor.in/General.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://smartsociety.riteshtailor.in/Admin.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="General.xsd" MetadataType="Schema" ID="9b5e4a85-6430-43f7-914f-19053073cd26" SourceId="1" SourceUrl="http://smartsociety.riteshtailor.in/General.svc?xsd=xsd1" />
-    <MetadataFile FileName="General.wsdl" MetadataType="Wsdl" ID="6710646a-e7be-4f72-a681-63197da2039c" SourceId="1" SourceUrl="http://smartsociety.riteshtailor.in/General.svc?wsdl" />
-    <MetadataFile FileName="General.disco" MetadataType="Disco" ID="4cc5bea3-803b-4c39-aa69-ff4d3bf5941e" SourceId="1" SourceUrl="http://smartsociety.riteshtailor.in/General.svc?disco" />
-    <MetadataFile FileName="General1.xsd" MetadataType="Schema" ID="7aac2f3c-f12e-46c5-9f3c-8fec4f2e43c5" SourceId="1" SourceUrl="http://smartsociety.riteshtailor.in/General.svc?xsd=xsd0" />
+    <MetadataFile FileName="Admin.disco" MetadataType="Disco" ID="20f0a7e2-8ad1-4e15-805d-d53473da13d7" SourceId="1" SourceUrl="http://smartsociety.riteshtailor.in/Admin.svc?disco" />
+    <MetadataFile FileName="Admin.xsd" MetadataType="Schema" ID="2c5ee36d-cebe-42db-8953-3d55b2a6a488" SourceId="1" SourceUrl="http://smartsociety.riteshtailor.in/Admin.svc?xsd=xsd1" />
+    <MetadataFile FileName="Admin.wsdl" MetadataType="Wsdl" ID="908c17e0-a123-464c-9971-66acc8681c68" SourceId="1" SourceUrl="http://smartsociety.riteshtailor.in/Admin.svc?wsdl" />
+    <MetadataFile FileName="Admin1.xsd" MetadataType="Schema" ID="cf29212b-90fe-43d2-a52d-06a95e7e02f2" SourceId="1" SourceUrl="http://smartsociety.riteshtailor.in/Admin.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

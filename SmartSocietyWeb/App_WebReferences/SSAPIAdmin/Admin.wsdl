@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Admin" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://smartsociety.riteshtailor.in/Admin.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://smartsociety.riteshtailor.in/Admin.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAdmin_CheckLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckLogin" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_CheckLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_ForgotPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ForgotPassword" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_ForgotPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ForgotPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_ResetPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResetPassword" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_ResetPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_SetSocietyInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetSocietyInformation" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_SetSocietyInformation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetSocietyInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_EditSocietyInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditSocietyInformation" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_EditSocietyInformation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditSocietyInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_GetSocietyInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSocietyInformation" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_GetSocietyInformation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSocietyInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_SetFlatHolder_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetFlatHolder" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_SetFlatHolder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetFlatHolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_AddAssetType_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAssetType" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_AddAssetType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAssetTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_EditAssetType_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditAssetType" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_EditAssetType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditAssetTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_AddAsset_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAsset" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_AddAsset_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAssetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_EditAsset_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditAsset" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_EditAsset_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditAssetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_AddStaffMember_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddStaffMember" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_AddStaffMember_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddStaffMemberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_EditStaffMember_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditStaffMember" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_EditStaffMember_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditStaffMemberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_AddNotice_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNotice" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_AddNotice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNoticeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_EditNotice_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditNotice" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_EditNotice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditNoticeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_AddNewVendor_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewVendor" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_AddNewVendor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewVendorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_EditVendor_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditVendor" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_EditVendor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditVendorResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAdmin">
+    <wsdl:operation name="CheckLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/CheckLogin" message="tns:IAdmin_CheckLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdmin/CheckLoginResponse" message="tns:IAdmin_CheckLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ForgotPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/ForgotPassword" message="tns:IAdmin_ForgotPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdmin/ForgotPasswordResponse" message="tns:IAdmin_ForgotPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/ResetPassword" message="tns:IAdmin_ResetPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdmin/ResetPasswordResponse" message="tns:IAdmin_ResetPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSocietyInformation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/SetSocietyInformation" message="tns:IAdmin_SetSocietyInformation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdmin/SetSocietyInformationResponse" message="tns:IAdmin_SetSocietyInformation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditSocietyInformation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/EditSocietyInformation" message="tns:IAdmin_EditSocietyInformation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdmin/EditSocietyInformationResponse" message="tns:IAdmin_EditSocietyInformation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSocietyInformation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/GetSocietyInformation" message="tns:IAdmin_GetSocietyInformation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdmin/GetSocietyInformationResponse" message="tns:IAdmin_GetSocietyInformation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetFlatHolder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/SetFlatHolder" message="tns:IAdmin_SetFlatHolder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdmin/SetFlatHolderResponse" message="tns:IAdmin_SetFlatHolder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAssetType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/AddAssetType" message="tns:IAdmin_AddAssetType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdmin/AddAssetTypeResponse" message="tns:IAdmin_AddAssetType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditAssetType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/EditAssetType" message="tns:IAdmin_EditAssetType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdmin/EditAssetTypeResponse" message="tns:IAdmin_EditAssetType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAsset">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/AddAsset" message="tns:IAdmin_AddAsset_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdmin/AddAssetResponse" message="tns:IAdmin_AddAsset_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditAsset">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/EditAsset" message="tns:IAdmin_EditAsset_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdmin/EditAssetResponse" message="tns:IAdmin_EditAsset_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddStaffMember">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/AddStaffMember" message="tns:IAdmin_AddStaffMember_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdmin/AddStaffMemberResponse" message="tns:IAdmin_AddStaffMember_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditStaffMember">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/EditStaffMember" message="tns:IAdmin_EditStaffMember_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdmin/EditStaffMemberResponse" message="tns:IAdmin_EditStaffMember_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNotice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/AddNotice" message="tns:IAdmin_AddNotice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdmin/AddNoticeResponse" message="tns:IAdmin_AddNotice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditNotice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/EditNotice" message="tns:IAdmin_EditNotice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdmin/EditNoticeResponse" message="tns:IAdmin_EditNotice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewVendor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/AddNewVendor" message="tns:IAdmin_AddNewVendor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdmin/AddNewVendorResponse" message="tns:IAdmin_AddNewVendor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditVendor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/EditVendor" message="tns:IAdmin_EditVendor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdmin/EditVendorResponse" message="tns:IAdmin_EditVendor_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="soap" type="tns:IAdmin">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckLogin">
+      <soap:operation soapAction="http://tempuri.org/IAdmin/CheckLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForgotPassword">
+      <soap:operation soapAction="http://tempuri.org/IAdmin/ForgotPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <soap:operation soapAction="http://tempuri.org/IAdmin/ResetPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSocietyInformation">
+      <soap:operation soapAction="http://tempuri.org/IAdmin/SetSocietyInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditSocietyInformation">
+      <soap:operation soapAction="http://tempuri.org/IAdmin/EditSocietyInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSocietyInformation">
+      <soap:operation soapAction="http://tempuri.org/IAdmin/GetSocietyInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetFlatHolder">
+      <soap:operation soapAction="http://tempuri.org/IAdmin/SetFlatHolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAssetType">
+      <soap:operation soapAction="http://tempuri.org/IAdmin/AddAssetType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditAssetType">
+      <soap:operation soapAction="http://tempuri.org/IAdmin/EditAssetType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAsset">
+      <soap:operation soapAction="http://tempuri.org/IAdmin/AddAsset" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditAsset">
+      <soap:operation soapAction="http://tempuri.org/IAdmin/EditAsset" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddStaffMember">
+      <soap:operation soapAction="http://tempuri.org/IAdmin/AddStaffMember" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditStaffMember">
+      <soap:operation soapAction="http://tempuri.org/IAdmin/EditStaffMember" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNotice">
+      <soap:operation soapAction="http://tempuri.org/IAdmin/AddNotice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditNotice">
+      <soap:operation soapAction="http://tempuri.org/IAdmin/EditNotice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewVendor">
+      <soap:operation soapAction="http://tempuri.org/IAdmin/AddNewVendor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditVendor">
+      <soap:operation soapAction="http://tempuri.org/IAdmin/EditVendor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Admin">
+    <wsdl:port name="soap" binding="tns:soap">
+      <soap:address location="http://smartsociety.riteshtailor.in/Admin.svc/soap" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

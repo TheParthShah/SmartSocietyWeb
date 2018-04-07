@@ -24,7 +24,7 @@
                     <!-- <a href="">Edit Logo</a> -->
                 </div>
                 <!-- <h1 class="col-sm-11" style="font-size: 38pt;">Edit Profile</h1> -->
-                <h1 class="col-sm-11" style="font-size: 32pt; margin-top: 7px;">Avishkar Apartments</h1>
+                <h1 class="col-sm-11" style="font-size: 32pt; margin-top: 7px;"><asp:Literal runat="server" ID="litSocietyTitle" Text="Undefined"></asp:Literal></h1>
             </div>
         </header>
 
@@ -88,8 +88,9 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Society Type</label>
                         <div class="col-sm-10">
-                            <asp:DropDownList ID="txtSocietyType" runat="server" class="form-control">
+                            <asp:DropDownList ID="ddSocietyType" runat="server" class="form-control">
                                 <asp:ListItem Value="Government"></asp:ListItem>
+                                <asp:ListItem Value="Private"></asp:ListItem>
                             </asp:DropDownList>
                         </div>
                     </div>
@@ -97,7 +98,7 @@
                     <div class="form-group">
                         <div class="col-sm-4 col-sm-offset-2">
                             <button type="submit" class="btn btn-default">Cancel</button>
-                            <button type="submit" class="btn btn-primary">Save changes</button>
+                            <asp:Button runat="server" ID="btnSave" class="btn btn-primary" Text="Save Changes" OnClick="btnSave_Click"></asp:Button>
                         </div>
                     </div>
                 </form>
@@ -111,15 +112,14 @@
                         <div class="col-xs-6">
 
                             <p class="bold">
-                                1 Infinite Loop
+                                <asp:Literal runat="server" ID="litSocietyName" Text="Undefined"></asp:Literal>
                             <br>
-                                95014 Cuperino, CA<br>
-                                United States - 395017
+                                <asp:Literal runat="server" ID="litAddress" Text="Undefined"></asp:Literal>
                             </p>
                             <p>
-                                <span class="bold">Telephone :</span> 800-692-7753<br>
-                                <span class="bold">Fax :</span> 800-692-7753<br>
-                                <span class="bold">Email :</span> xyz@gmail.com
+                                <span class="bold">Telephone :</span> <asp:Literal runat="server" ID="litPhoneNo" Text="Undefined"></asp:Literal>, <asp:Literal runat="server" ID="litPhoneNo1" Text=""></asp:Literal><br>
+                                <%--<span class="bold">Fax :</span> 800-692-7753<br>--%>
+                                <span class="bold">Email :</span> <asp:Literal runat="server" ID="litEmail" Text="Undefined"></asp:Literal>
                             <br>
                             </p>
 
@@ -128,14 +128,14 @@
                         <div class="col-xs-6">
                             <p>
 
-                                <span class="bold">Registration No :</span> 12589631
+                                <span class="bold">Registration No :</span> <asp:Literal runat="server" ID="litRegistrationNo" Text="Undefined"></asp:Literal>
                             <br />
-                                <span class="bold">Campus Area :</span> 2000 sqKm<br />
-                                <span class="bold">Society Type :</span> Government
+                                <span class="bold">Campus Area :</span> <asp:Literal runat="server" ID="litCampusArea" Text="Undefined"></asp:Literal><br />
+                                <span class="bold">Society Type :</span> <asp:Literal runat="server" ID="litSocietyType" Text="Undefined"></asp:Literal>
                             <br />
-                                <span class="bold">Secretary :</span> Mr Xyz
+                                <span class="bold">Secretary :</span> <asp:Literal runat="server" ID="litSecretaryName" Text="Undefined"></asp:Literal>
                             <br>
-                                <span class="bold">Builder :</span> Mr abc
+                                <span class="bold">Builder :</span> <asp:Literal runat="server" ID="litBuilderName" Text="Undefined"></asp:Literal>
                             
                             </p>
                         </div>

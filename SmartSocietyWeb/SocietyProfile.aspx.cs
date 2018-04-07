@@ -1,25 +1,42 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 public partial class SocietyProfile : System.Web.UI.Page
 {
-    //SSAPIAdmin.AdminClient ServiceObject = new SSAPIAdmin.AdminClient();
+    SSAPIAdmin.AdminClient ServiceObjectAdmin = new SSAPIAdmin.AdminClient();
+    JObject SocietyData;
     protected void Page_Load(object sender, EventArgs e)
     {
-        
-
         EditSocietyProfile.Visible = false;
         SocietyProfileInfo.Visible = true;
-        //var data = ServiceObject.JSONData();
+        SocietyData = JObject.Parse(ServiceObjectAdmin.GetSocietyInformation().ToString());
+        if (!IsPostBack)
+        {
+            BindData();
+        }
+        
+    }
 
-        //JObject data = JObject.Parse(ServiceObject.GetSocietyInformation().ToString());
-        //txtSocietyName.Text = (string)data["Name"];
+    private void BindData()
+    {
+        try
+        {
+            
+            litSocietyTitle.Text = SocietyData["Name"].ToString();
+            litSocietyName.Text = SocietyData["Name"].ToString();
+            litSocietyType.Text = SocietyData["SocietyType"].ToString();
+            litPhoneNo.Text = SocietyData["ContactNo"].ToString();
+            litEmail.Text = SocietyData["Email"].ToString();
+            litSecretaryName.Text = SocietyData["PresidentName"].ToString();
+            litBuilderName.Text = SocietyData["Builder"].ToString();
+            litRegistrationNo.Text = SocietyData["RegistrationNo"].ToString();
+            litAddress.Text = SocietyData["Address"].ToString() + "<br>" + SocietyData["PostalCode"].ToString();
+            litCampusArea.Text = SocietyData["CampusArea"].ToString();
+        }
+        catch(Exception e)
+        {
+            Response.Write("<script>alert(\"Something went wrong! Try Again.\")</script>");
+        }
     }
 
     protected void btnEditSocietyProfile_Click(object sender, EventArgs e)
@@ -27,5 +44,20 @@ public partial class SocietyProfile : System.Web.UI.Page
         EditSocietyProfile.Visible = true;
         SocietyProfileInfo.Visible = false;
 
+        txtSocietyName.Text = SocietyData["Name"].ToString();
+        ddSocietyType.SelectedValue = SocietyData["SocietyType"].ToString();
+        txtContactNo.Text = SocietyData["ContactNo"].ToString();
+        txtEmail.Text = SocietyData["Email"].ToString();
+        txtSecretary.Text = SocietyData["PresidentName"].ToString();
+        txtBuilder.Text = SocietyData["Builder"].ToString();
+        txtRegistrationNo.Text = SocietyData["RegistrationNo"].ToString();
+        txtAddress.Text = SocietyData["Address"].ToString();
+        txtPincode.Text = SocietyData["PostalCode"].ToString();
+        txtCampusArea.Text = SocietyData["CampusArea"].ToString();
+    }
+
+    protected void btnSave_Click(object sender, EventArgs e)
+    {
+        ServiceObjectAdmin.EditSocietyInformation(txtSocietyName.Text, txtAddress.Text, txtPincode.Text, "", txtContactNo.Text, txtSecretary.Text, txtBuilder.Text, txtEmail.Text, "", txtRegistrationNo.Text, txtCampusArea.Text, ddSocietyType.SelectedValue, "");
     }
 }
