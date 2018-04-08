@@ -26,16 +26,16 @@
                 <header class="panel-heading">Resident Details </header>
                 <div class="row text-sm wrapper">
                     <div class="col-sm-5 m-b-xs">
-                        <select class="input-sm form-control input-s-sm inline">
+                        <%--<select class="input-sm form-control input-s-sm inline">
                             <option value="0">Bulk action</option>
                             <option value="1">Delete selected</option>
                             <option value="2">Bulk edit</option>
                             <option value="3">Export</option>
                         </select>
-                        <button class="btn btn-sm btn-default">Apply</button>
+                        <button class="btn btn-sm btn-default">Apply</button>--%>
                     </div>
                     <div class="col-sm-4 m-b-xs">
-                        <div class="btn-group" data-toggle="buttons">
+                        <%--<div class="btn-group" data-toggle="buttons">
                             <label class="btn btn-sm btn-default active">
                                 <input name="options" id="option1" type="radio">
                                 Day
@@ -48,15 +48,20 @@
                                 <input name="options" id="option2" type="radio">
                                 Month
                             </label>
-                        </div>
+                        </div>--%>
                     </div>
                     <div class="col-sm-3">
-                        <div class="input-group">
-                            <input class="input-sm form-control" placeholder="Search" type="text">
-                            <span class="input-group-btn">
-                                <button class="btn btn-sm btn-default" type="button">Go!</button>
-                            </span>
-                        </div>
+                         <div class="input-group">
+                        <input class="input-sm form-control" placeholder="Search" list="Flatno" type="text">
+                        <datalist id="Flatno">
+                            <option value="1"></option>
+                            <option value="2"></option>
+                            <option value="3"></option>
+                        </datalist>
+                        <span class="input-group-btn">
+                            <button class="btn btn-sm btn-default" type="button">Go!</button>
+                        </span>
+                    </div>
                     </div>
                 </div>
                 <div class="table-responsive">
@@ -67,7 +72,7 @@
                                 <th class="th-sortable" data-toggle="class">Name <span class="th-sort"><i class="fa fa-sort-down text"></i><i class="fa fa-sort-up text-active"></i><i class="fa fa-sort"></i></span></th>
                                 <th>Flat ID</th>
                                 <th>Email ID</th>
-                                <th width="80"></th>
+                                <th width="10%"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -76,10 +81,10 @@
                                 <td>MR XYZ</td>
                                 <td>4c</td>
                                 <td>Jul 25, 2013</td>
-                                <td><a href="#"><i class="fa fa-info-circle text-info"></i></a> &nbsp;&nbsp;
-                                    <a href="#" class="active" data-toggle="class">
-                                        <i class="fa fa-check text-success text-active"></i>
-                                        <i class="fa fa-times text-danger text"></i></a></td>
+                                <td>
+                                    <a href="#myModal" data-toggle="modal" class="btn btn-sm btn-icon btn-success control-icon"><i class="fa fa-info"></i></a>
+                                        <a href="#" class="btn btn-sm btn-icon btn-danger control-icon"><i class="fa fa-trash-o"></i></a>
+                                </td>
                             </tr>
 
                         </tbody>
@@ -113,5 +118,36 @@
             </section>
         </div>
     </section>
+
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Resident Name (Flat No)</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-6 text-center"> <img class="img-responsive" style="padding: 10px;" src="images/app.png" height="400" width="400" /></div>
+                        <div class="col-sm-6">
+                            <p>Name</p>
+                            <p>Date of Birth</p>
+                            <p>Occupation</p>
+                            <p>Contact No1, Contact No2</p>
+                            <p>Email</p>
+                            <p>Position</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </asp:Content>
 
