@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 public partial class ForgetPassword : System.Web.UI.Page
 {
-    SSAPI.GeneralClient ServiceObject = new SSAPI.GeneralClient();
+    SSAPIAdmin.AdminClient ServiceObject = new SSAPIAdmin.AdminClient();
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -30,15 +25,15 @@ public partial class ForgetPassword : System.Web.UI.Page
 
         if (result == "True")
         {
-            txtUserName.Text = "dsuf";
+            lblAlert.Text = "Password reset link sent to you by email.";
         }
         else if(result == "False")
         {
-            txtUserName.Text = "nO mAIL";
+            txtUserName.Text = "No Mail";
         }
         else
         {
-            txtUserName.Text = "Cannot MAil";
+            txtUserName.Text = "Cannot Mail";
         }
     }
 
@@ -47,7 +42,6 @@ public partial class ForgetPassword : System.Web.UI.Page
         if(txtNewPassword.Text == txtConfirmPassword.Text)
         {
             var result = ServiceObject.ResetPassword(Request.QueryString["Username"],txtConfirmPassword.Text);
-
             if (result == "True")
                 Response.Redirect("Login.aspx");
             else
