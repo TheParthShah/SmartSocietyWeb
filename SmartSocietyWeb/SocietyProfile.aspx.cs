@@ -11,7 +11,7 @@ public partial class SocietyProfile : System.Web.UI.Page
         SocietyProfileInfo.Visible = true;
         SocietyData = JObject.Parse(ServiceObjectAdmin.GetSocietyInformation().ToString());
         if (!IsPostBack)
-        {
+        {            
             BindData();
         }
         
@@ -59,5 +59,6 @@ public partial class SocietyProfile : System.Web.UI.Page
     protected void btnSave_Click(object sender, EventArgs e)
     {
         ServiceObjectAdmin.EditSocietyInformation(txtSocietyName.Text, txtAddress.Text, txtPincode.Text, "", txtContactNo.Text, txtSecretary.Text, txtBuilder.Text, txtEmail.Text, "", txtRegistrationNo.Text, txtCampusArea.Text, ddSocietyType.SelectedValue, "");
+        Response.Redirect("SocietyProfile.aspx");
     }
 }
