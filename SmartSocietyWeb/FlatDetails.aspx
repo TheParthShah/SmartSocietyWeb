@@ -7,7 +7,7 @@
             font-size: 14px;
             line-height: 1.1;
             font-weight: 500;
-            //border: 1px solid black;
+            /*border: 1px solid black;*/
         }
 
     
@@ -39,9 +39,9 @@
                                             <img src="images/avatar.jpg" class="img-circle border">
                                         </a>
                                         <div class="clear">
-                                            <div class=" m-t-xs m-b-xs">Rishbah Kochar <%# Eval("TenamentNo") %></div>
+                                            <div class=" m-t-xs m-b-xs">Rishbah Kochar <%# Eval("OwnerName") %></div>
                                             <div class=" m-t-xs m-b-xs font-small">Flat ID <%# Eval("FlatNo") %> </div>
-                                            <small class="text-muted">Email ID <%# Eval("OnRent") %></small>
+                                            <small class="text-muted">Email ID <%# Convert.ToBoolean(Eval("OnRent"))? "On Rent" : "Owner"%></small>
                                         </div>
                                     </div>
                                 </header>
