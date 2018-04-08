@@ -45,7 +45,7 @@
                                 <label class="control-label">Username</label>
                                 <asp:TextBox runat="server" ID="txtUserName"
                                     placeholder="Username"
-                                    class="form-control input-lg" ></asp:TextBox>
+                                    class="form-control input-lg"></asp:TextBox>
                             </div>
                             <%--<div class="checkbox">
                         <label>
@@ -55,7 +55,7 @@
                             <a href="Login.aspx" class="pull-right m-t-xs">
                                 <small>Login</small>
                             </a>
-                            <asp:Button runat="server"  ID="btnSubmit" class="btn btn-primary" Text="Submit" OnClick="btnSubmit_Click"></asp:Button>
+                            <asp:Button runat="server" ID="btnSubmit" class="btn btn-primary" Text="Submit" OnClick="btnSubmit_Click"></asp:Button>
                             <%--<div class="line line-dashed"></div>
                     <a href="#" class="btn btn-facebook btn-block m-b-sm"><i class="fa fa-facebook pull-left"></i>Sign in
                     with Facebook</a> <a href="#" class="btn btn-twitter btn-block"><i
@@ -66,6 +66,9 @@
                         <small>Do not have an account?</small>
                     </p>
                     <a href="signup.html" class="btn btn-default btn-block">Create an account</a>--%>
+                            <br />
+                            <br />
+                            <asp:Label runat="server" ID="lblAlert" CssClass="text-success text-center"></asp:Label>
                         </div>
 
 
@@ -94,7 +97,7 @@
                             Keep me logged in </label>
                     </div>--%>
                             <asp:Button ID="btnResetPassword" runat="server" Text="Submit" class="btn btn-primary" OnClick="btnResetPassword_Click" />
-                            
+
                             <%--<div class="line line-dashed"></div>
                     <a href="#" class="btn btn-facebook btn-block m-b-sm"><i class="fa fa-facebook pull-left"></i>Sign in
                     with Facebook</a> <a href="#" class="btn btn-twitter btn-block"><i

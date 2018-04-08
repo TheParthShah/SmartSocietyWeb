@@ -7,6 +7,7 @@
             font-size: 14px;
             line-height: 1.1;
             font-weight: 500;
+            min-height: 110px;
             /*border: 1px solid black;*/
         }
 
@@ -39,9 +40,9 @@
                                             <img src="images/avatar.jpg" class="img-circle border">
                                         </a>
                                         <div class="clear">
-                                            <div class=" m-t-xs m-b-xs">Rishbah Kochar <%# Eval("OwnerName") %></div>
-                                            <div class=" m-t-xs m-b-xs font-small">Flat ID <%# Eval("FlatNo") %> </div>
-                                            <small class="text-muted">Email ID <%# Convert.ToBoolean(Eval("OnRent"))? "On Rent" : "Owner"%></small>
+                                            <div class=" m-t-xs m-b-xs"><%# Eval("ResidentName") %></div>
+                                            <div class=" m-t-xs m-b-xs font-small">Flat ID: <%# Eval("FlatNo") %> </div>
+                                            <small class="text-muted">Resident Type: <%# Convert.ToBoolean(Eval("OnRent"))?"On Rent <br> Rentee Name: " + Eval("RenteeName").ToString() : "Owner"%></small>
                                         </div>
                                     </div>
                                 </header>
@@ -49,12 +50,7 @@
                         </div>
                     </ItemTemplate>
                 </asp:Repeater>
-
-
             </div>
-
-
-
         </div>
     </section>
 </asp:Content>
