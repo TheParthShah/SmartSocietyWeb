@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 public partial class Login : System.Web.UI.Page
 {
-    SSAPI.GeneralClient ServiceObject = new SSAPI.GeneralClient();
+    SSAPIAdmin.AdminClient ServiceObjectAdmin = new SSAPIAdmin.AdminClient();
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -18,16 +18,17 @@ public partial class Login : System.Web.UI.Page
     protected void btnSubmit_Click(object sender, EventArgs e)
     {
        
-        var result = ServiceObject.CheckLogin(txtUsername.Text, txtPassword.Text);
+        var result = ServiceObjectAdmin.CheckLogin(txtUsername.Text, txtPassword.Text);
 
         if(result == "False")
         {
-            txtUsername.Text = "False";
+            lblAlert.Text = "Opps! Wrong Credentials, Please Try again.";
         }
         else
         {
             JObject data = JObject.Parse(result);
-            txtUsername.Text = (string)data["MemberType"];
+            Session["ResidentID"] = (int)data["ResidentID"];
+            Response.Redirect("Default.aspx");
         }
         
     }

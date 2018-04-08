@@ -33,9 +33,9 @@
     </ul>
 
     <section class="panel panel-default">
-       <header class="panel-heading font-bold">
+        <header class="panel-heading font-bold">
             <div class="row">
-                
+
                 <!-- <h1 class="col-sm-11" style="font-size: 38pt;">Edit Profile</h1> -->
                 <h1 class="col-sm-12" style="font-size: 20pt; margin-top: 5px;">Visitor Details</h1>
             </div>
@@ -45,52 +45,54 @@
             <form runat="server">
                 <div class="col-sm-9 row m-b-xs">
                     <div class="col-sm-3">
-                        <asp:TextBox runat="server" CssClass="form-control" ID="StartDate" TextMode="Date"> </asp:TextBox> 
+                        <asp:TextBox runat="server" CssClass="form-control" ID="txtStartDate" TextMode="Date"> </asp:TextBox>
                     </div>
-                    <div class="col-sm-1 text-center" style="padding: 7px 0px;"> to </div>
+                    <div class="col-sm-1 text-center" style="padding: 7px 0px;">to </div>
                     <div class="col-sm-3">
-                        <asp:TextBox runat="server" CssClass="form-control col-sm-5" ID="EndDate" TextMode="Date"> </asp:TextBox>
+                        <asp:TextBox runat="server" CssClass="form-control col-sm-5" ID="txtEndDate" TextMode="Date"> </asp:TextBox>
                     </div>
                     <div class="col-sm-5">
-                        <button class="btn btn-sm col-sm-3 btn-default">Apply</button>
+                        <asp:Button runat="server" ID="btnApply" CssClass="btn btn-sm col-sm-3 btn-default" Text="Apply" OnClick="btnApply_Click"></asp:Button>
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="input-group">
-                        <input class="input-sm form-control" placeholder="Search" list="Flatno" type="text">
+                        <asp:TextBox runat="server" ID="txtSearch" CssClass="input-sm form-control" placeholder="Search" list="Flatno"></asp:TextBox>
                         <datalist id="Flatno">
                             <option value="1"></option>
                             <option value="2"></option>
                             <option value="3"></option>
                         </datalist>
                         <span class="input-group-btn">
-                            <button class="btn btn-sm btn-default" type="button">Go!</button>
+                            <asp:Button runat="server" ID="btnSearch" CssClass="btn btn-sm btn-default" Text="Go!" OnClick="btnSearch_Click"></asp:Button>
                         </span>
                     </div>
                 </div>
             </form>
         </div>
         <div class="panel-body">
-
-            <div class="row row-striped">
-                <div class="col-sm-2 col-xs-4 text-right">
-                    <h1 class="display-4"><span class="badge badge-secondary date-badge">23</span></h1>
-                    <h2 class="no-margin">OCT</h2>
-                </div>
-                <div class="col-sm-10 col-xs-8">
-                    <h3 class="text-uppercase"><strong>Name of Visitor</strong></h3>
-                    <ul class="list-inline">
-                        <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i>Monday</li>
-                        <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i>12:30 PM - 2:00 PM</li>
-                        <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i>Flat No</li>
-                        <li class="list-inline-item"><i class="fa fa-cab" aria-hidden="true"></i>vehicle No</li>
-                        <li class="list-inline-item"><i class="fa fa-mobile" aria-hidden="true"></i>Mobile No</li>
-                    </ul>
-                    <p>Work</p>
-                </div>
-            </div>
-
-            <div class="row row-striped">
+            <asp:Repeater runat="server" ID="rptVisitorsData">
+                <ItemTemplate>
+                    <div class="row row-striped">
+                        <div class="col-sm-2 col-xs-4 text-right">
+                            <h1 class="display-4"><span class="badge badge-secondary date-badge"><%# Convert.ToDateTime(Eval("InTime")).Day %></span></h1>
+                            <h2 class="no-margin"><%# MonthNumtoString(Convert.ToDateTime(Eval("InTime")).Month) %></h2>
+                        </div>
+                        <div class="col-sm-10 col-xs-8">
+                            <h3 class="text-uppercase"><strong><%# Eval("VisitorName") %></strong></h3>
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i><%# Convert.ToDateTime(Eval("InTime")).DayOfWeek %></li>
+                                <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i><%# Convert.ToDateTime(Eval("InTime")).TimeOfDay %> - <%# (Eval("OutTime").ToString()!="") ? Convert.ToDateTime(Eval("OutTime")).TimeOfDay.ToString() : "<span class=\"text-warning\">Not Checked out yet</span>" %></li>
+                                <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i><%# Eval("FlatNo") %></li>
+                                <li class="list-inline-item"><i class="fa fa-cab" aria-hidden="true"></i><%# Eval("VehicleNumber") %></li>
+                                <li class="list-inline-item"><i class="fa fa-mobile" aria-hidden="true"></i><%# Eval("MobileNo") %></li>
+                            </ul>
+                            <p><%# Eval("Purpose") %></p>
+                        </div>
+                    </div>
+                </ItemTemplate>
+            </asp:Repeater>
+            <%--<div class="row row-striped">
                 <div class="col-sm-2 col-xs-4 text-right">
                     <h1 class="display-4"><span class="badge badge-secondary date-badge">23</span></h1>
                     <h2 class="no-margin">OCT</h2>
@@ -104,7 +106,7 @@
                     </ul>
                     <p>Lorem ipsum dolsit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
-            </div>
+            </div>--%>
         </div>
 
     </section>

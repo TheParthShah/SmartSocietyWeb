@@ -45,25 +45,13 @@
                             placeholder="Password"
                             class="form-control input-lg" ></asp:TextBox>
                     </div>
-                    <%--<div class="checkbox">
-                        <label>
-                            <input type="checkbox">
-                            Keep me logged in </label>
-                    </div>--%>
                     <a href="ForgetPassword.aspx" class="pull-right m-t-xs">
                         <small>Forgot password?</small>
                     </a>
                     <asp:Button runat="server" ID="btnSubmit" cssclass="btn btn-primary" Text="Sign in" OnClick="btnSubmit_Click"></asp:Button>
-                    <%--<div class="line line-dashed"></div>
-                    <a href="#" class="btn btn-facebook btn-block m-b-sm"><i class="fa fa-facebook pull-left"></i>Sign in
-                    with Facebook</a> <a href="#" class="btn btn-twitter btn-block"><i
-                        class="fa fa-twitter pull-left"></i>Sign in with Twitter</a>
-
-                    <div class="line line-dashed"></div>
-                    <p class="text-muted text-center">
-                        <small>Do not have an account?</small>
-                    </p>
-                    <a href="signup.html" class="btn btn-default btn-block">Create an account</a>--%>
+                    
+                    <br /><br />
+                    <asp:Label runat="server" ID="lblAlert" CssClass="text-danger text-center"></asp:Label>
                 </form>
             </section>
         </div>
