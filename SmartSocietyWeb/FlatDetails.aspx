@@ -29,8 +29,8 @@
 
         <div class="panel-body">
             <div class="row">
-               <%-- <asp:Repeater runat="server" ID="rptFlatDetails">
-                    <ItemTemplate>--%>
+                <asp:Repeater runat="server" ID="rptFlatDetails">
+                    <ItemTemplate>
                         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                             <section class="panel panel-default">
                                 <header class="panel-body lt flatcard">
@@ -39,16 +39,16 @@
                                             <img src="images/avatar.jpg" class="img-circle border">
                                         </a>
                                         <div class="clear">
-                                            <div class=" m-t-xs m-b-xs">Rishbah Kochar</div>
+                                            <div class=" m-t-xs m-b-xs">Rishbah Kochar <%# Eval("TenamentNo") %></div>
                                             <div class=" m-t-xs m-b-xs font-small">Flat ID <%# Eval("FlatNo") %> </div>
-                                            <small class="text-muted">Email ID</small>
+                                            <small class="text-muted">Email ID <%# Eval("OnRent") %></small>
                                         </div>
                                     </div>
                                 </header>
                             </section>
                         </div>
-                   <%-- </ItemTemplate>
-                </asp:Repeater>--%>
+                    </ItemTemplate>
+                </asp:Repeater>
 
 
             </div>
