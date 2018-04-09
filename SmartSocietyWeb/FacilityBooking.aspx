@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Events.aspx.cs" Inherits="Events" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="FacilityBooking.aspx.cs" Inherits="AssetBooking" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <link rel="stylesheet" href="js/datatables/datatables.css" />
@@ -28,19 +28,17 @@
                 color: blue !important;
             }
 
-            .hign-priority{
-                    background-color: #65bd77;
-                    color: white;
-                    font-weight: 900;
+        .hign-priority {
+            background-color: #65bd77;
+            color: white;
+            font-weight: 900;
+        }
 
-            }
-
-            .low-priority{
-                
-                    background-color: #4cc0c1;
-                    color: white;
-                    font-weight: 900;
-            }
+        .low-priority {
+            background-color: #4cc0c1;
+            color: white;
+            font-weight: 900;
+        }
     </style>
     <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
         <li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
@@ -53,7 +51,7 @@
             <div class="row">
 
                 <!-- <h1 class="col-sm-11" style="font-size: 38pt;">Edit Profile</h1> -->
-                <h1 class="col-sm-12" style="font-size: 20pt; margin-top: 5px;">Events Details</h1>
+                <h1 class="col-sm-12" style="font-size: 20pt; margin-top: 5px;">Facility Booking Details</h1>
             </div>
         </header>
 
@@ -64,7 +62,11 @@
                     <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
                         <div class="row">
                             <div class="col-sm-4">
-                                <a class="button" href="AddEvent.aspx">Add New Event</a>
+                               <div class="dataTables_filter" id="DataTables_Table_0_filter">
+                                    <label>
+                                        Date:
+                                        <input type="text" aria-controls="DataTables_Table_0"></label>
+                                </div>
                             </div>
                             <div class="col-sm-4">
                                 <div id="DataTables_Table_0_length" class="dataTables_length">
@@ -91,19 +93,20 @@
                         <table class="table table-striped m-b-none dataTable" data-ride="datatables" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info">
                             <thead>
                                 <tr role="row">
-                                    <th width="20%" class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 192px;">Event Name</th>
-                                    <th width="20%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 248px;">Event Type</th>
-                                    <th width="25%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 247px;">Subject</th>
-                                    <th width="25%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 247px;">Description</th>
+                                    <th width="10%" class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" >Flat ID</th>
+                                    <th width="15%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" >Facility</th>
+                                    <th width="20%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" >Date</th>
+                                    <th width="20%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" >Description</th>
+                                    <th width="20%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" >Status</th>
 
-                                    <th width="10%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 137px;"></th>
+                                    <th width="15%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" ></th>
                                 </tr>
                             </thead>
                             <tbody role="alert" aria-live="polite" aria-relevant="all">
                                 <tr class="odd">
-                                    <td valign="top" colspan="1" class="dataTables_empty">XYZ</td>
-                                    <td valign="top" colspan="1" class="dataTables_empty">PQR</td>
-                                    <td valign="top" colspan="1" class="dataTables_empty">RTY</td>
+                                    <td valign="top" colspan="1" class="dataTables_empty">2</td>
+                                    <td valign="top" colspan="1" class="dataTables_empty">Club House</td>
+                                    <td valign="top" colspan="1" class="dataTables_empty">2nd-jan-2018</td>
                                     <td valign="top" colspan="1" class="dataTables_empty">vsvbjs..
                                         <button class="btn btn-sm btn-info pop-up" data-toggle="popover" data-html="true" data-placement="top"
                                             data-content="<div class='scrollable' style='height:40px'>Vivamus sagittis lacus vel augue laoreet rutrum faucibus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus.</div>"
@@ -111,11 +114,12 @@
                                             More
                                         </button>
                                     </td>
+                                    <td valign="top" colspan="1" class="dataTables_empty">Pending</td>
                                     <td valign="top" colspan="1" class="dataTables_empty">
                                         <a href="#myModal" data-toggle="modal" class="btn btn-sm btn-icon btn-success control-icon"><i class="fa fa-info"></i></a>
+                                        <a href="#" class="btn btn-sm btn-icon btn-info control-icon"><i class="fa fa-check"></i></a>
+                                        <a href="#" class="btn btn-sm btn-icon btn-danger control-icon"><i class="fa fa-times"></i></a>
 
-                                        <a href="#" class="btn btn-sm btn-icon btn-danger control-icon"><i class="fa fa-trash-o"></i></a>
-                                        <a href="#" class="btn btn-sm btn-icon btn-info control-icon"><i class="fa fa-pencil"></i></a>
                                     </td>
                                 </tr>
                             </tbody>
@@ -141,22 +145,29 @@
             <div class="modal-content">
                 <div id="EventHeader" class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Event Name</h4>
+                    <h4 class="modal-title">Facility Booking</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-sm-6">
-                            <p>Event Subject</p>
+                            <p>Flat ID</p>
                             <p>Description</p>
                         </div>
 
                         <div class="col-sm-6">
-                            <p>Venue</p>
+                            <p>Facility</p>
                             <p>Start Time</p>
                             <p>End Time</p>
-                            
-                            
+                            <p>Status</p>
+
+
                         </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <p>Reason to reject (If there)</p>
+                        </div>
+                        
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -166,17 +177,5 @@
 
         </div>
     </div>
-
-    <script>
-        function HighPriority() {
-            $("#EventHeader").removeClass("hign-priority");
-            $("#EventHeader").addClass("low-priority");
-        }
-
-        function LowPriority() {
-            $("#EventHeader").removeClass("low-priority");
-            $("#EventHeader").addClass("hign-priority");
-        }
-    </script>
 </asp:Content>
 

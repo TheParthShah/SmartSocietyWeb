@@ -12,10 +12,10 @@ public partial class MasterPage : System.Web.UI.MasterPage
 
         string pageUrl = System.IO.Path.GetFileName(Request.Url.AbsolutePath);
         //Response.Write(pageUrl);
-        if(Session["ResidentID"]==null || Session["ResidentID"].ToString() == "")
-        {
-            Response.Redirect("Login.aspx");
-        }
+        //if(Session["ResidentID"]==null || Session["ResidentID"].ToString() == "")
+        //{
+        //    Response.Redirect("Login.aspx");
+        //}
         
     }
 
