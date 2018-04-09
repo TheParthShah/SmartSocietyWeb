@@ -55,7 +55,7 @@ public partial class Visitors : System.Web.UI.Page
 
     protected void btnApply_Click(object sender, EventArgs e)
     {
-        var VisitorsDataObj = ServiceObjectGen.ViewGateKeeping(false, txtStartDate.ToString(), txtEndDate.ToString(), "-1");
+        var VisitorsDataObj = ServiceObjectGen.ViewGateKeeping(false, Convert.ToDateTime(txtStartDate.Text).ToLongDateString(), Convert.ToDateTime(txtEndDate.Text).ToLongDateString(), "-1");
         var VisitorsDataArr = JArray.Parse(VisitorsDataObj.ToString());
         rptVisitorsData.DataSource = VisitorsDataArr;
         rptVisitorsData.DataBind();
