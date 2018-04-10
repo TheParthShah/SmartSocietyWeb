@@ -262,6 +262,22 @@
                                                 <span>Facility Booking</span>
                                             </a>
                                         </li>
+                                        <li id="inventory">
+                                            <a href="Inventory.aspx">
+                                                <i class="fa fa-dashboard icon">
+                                                    <b class="bg-danger"></b>
+                                                </i>
+                                                <span>Inventory</span>
+                                            </a>
+                                        </li>
+                                        <li id="polls">
+                                            <a href="Polls.aspx">
+                                                <i class="fa fa-dashboard icon">
+                                                    <b class="bg-danger"></b>
+                                                </i>
+                                                <span>Polls</span>
+                                            </a>
+                                        </li>
                                         
                                     </ul>
                                 </nav>

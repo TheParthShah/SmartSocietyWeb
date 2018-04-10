@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="FacilityBooking.aspx.cs" Inherits="AssetBooking" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Inventory.aspx.cs" Inherits="Inventory" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <link rel="stylesheet" href="js/datatables/datatables.css" />
     <style>
         .button {
@@ -16,29 +16,18 @@
             margin-left: 20px;
         }
 
-        .pop-up {
+        .pop-up{
             background-color: white !important;
             font-size: 12px;
             padding: 0px;
             color: blue !important;
             border: none;
         }
-
-            .pop-up:hover {
-                color: blue !important;
-            }
-
-        .hign-priority {
-            background-color: #65bd77;
-            color: white;
-            font-weight: 900;
+        .pop-up:hover{
+            color: blue !important;
         }
 
-        .low-priority {
-            background-color: #4cc0c1;
-            color: white;
-            font-weight: 900;
-        }
+       
     </style>
     <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
         <li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
@@ -51,7 +40,7 @@
             <div class="row">
 
                 <!-- <h1 class="col-sm-11" style="font-size: 38pt;">Edit Profile</h1> -->
-                <h1 class="col-sm-12" style="font-size: 20pt; margin-top: 5px;">Facility Booking Details</h1>
+                <h1 class="col-sm-12" style="font-size: 20pt; margin-top: 5px;">Inventory Details</h1>
             </div>
         </header>
 
@@ -60,15 +49,9 @@
                 <header class="panel-heading">DataTables <i class="fa fa-info-sign text-muted" data-toggle="tooltip" data-placement="bottom" data-title="ajax to load the data." data-original-title="" title=""></i></header>
                 <div class="table-responsive">
                     <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
-                        <form runat="server">
                         <div class="row">
-                            <div class="col-sm-4 text-left">
-                               <div class="dataTables_filter" id="DataTables_Table_0_filter">
-                                    <label>
-                                        Date:
-                                        <asp:TextBox runat="server" CssClass="form-control" ID="txtDate" TextMode="Date"> </asp:TextBox>
-                                      </label>
-                                </div>
+                            <div class="col-sm-4">
+                                <a class="button" href="AddInventory.aspx">Add New Inventory</a>
                             </div>
                             <div class="col-sm-4">
                                 <div id="DataTables_Table_0_length" class="dataTables_length">
@@ -92,37 +75,28 @@
                             </div>
                             <%--<div id="DataTables_Table_0_processing" class="dataTables_processing" style="visibility: visible;">Processing...</div>--%>
                         </div>
-                            </form>
                         <table class="table table-striped m-b-none dataTable" data-ride="datatables" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info">
                             <thead>
                                 <tr role="row">
-                                    <th width="10%" class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" >Flat ID</th>
-                                    <th width="15%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" >Facility</th>
-                                    <th width="20%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" >Date</th>
-                                    <th width="20%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" >Description</th>
-                                    <th width="20%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" >Status</th>
+                                    <th width="25%" class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" >Asset Name</th>
+                                    
+                                    <th width="25%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" >Type</th>
+                                    <th width="25%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" >Price</th>
 
-                                    <th width="15%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" ></th>
+                                    <th width="25%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" ></th>
                                 </tr>
                             </thead>
                             <tbody role="alert" aria-live="polite" aria-relevant="all">
                                 <tr class="odd">
-                                    <td valign="top" colspan="1" class="dataTables_empty">2</td>
-                                    <td valign="top" colspan="1" class="dataTables_empty">Club House</td>
-                                    <td valign="top" colspan="1" class="dataTables_empty">2nd-jan-2018</td>
-                                    <td valign="top" colspan="1" class="dataTables_empty">vsvbjs..
-                                        <button class="btn btn-sm btn-info pop-up" data-toggle="popover" data-html="true" data-placement="top"
-                                            data-content="<div class='scrollable' style='height:40px'>Vivamus sagittis lacus vel augue laoreet rutrum faucibus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus.</div>"
-                                            title="" data-original-title="<button type=&quot;button&quot; class=&quot;close pull-right&quot; data-dismiss=&quot;popover&quot;>×</button>Popover on top">
-                                            More
-                                        </button>
-                                    </td>
-                                    <td valign="top" colspan="1" class="dataTables_empty">Pending</td>
+                                    <td valign="top" colspan="1" class="dataTables_empty">XYZ</td>
+                                    <td valign="top" colspan="1" class="dataTables_empty">PQR</td>
+                                    <td valign="top" colspan="1" class="dataTables_empty">1235</td>
+                                    
                                     <td valign="top" colspan="1" class="dataTables_empty">
-                                        <a href="#myModal" data-toggle="modal" class="btn btn-sm btn-icon btn-success control-icon"><i class="fa fa-info"></i></a>
-                                        <a href="#" class="btn btn-sm btn-icon btn-info control-icon"><i class="fa fa-check"></i></a>
-                                        <a href="#" class="btn btn-sm btn-icon btn-danger control-icon"><i class="fa fa-times"></i></a>
-
+                                         <a href="#myModal" data-toggle="modal" class="btn btn-sm btn-icon btn-success control-icon"><i class="fa fa-info"></i></a>
+                                        <a href="#" class="btn btn-sm btn-icon btn-danger control-icon"><i class="fa fa-trash-o"></i></a>
+                                        <a href="#" class="btn btn-sm btn-icon btn-info control-icon"><i class="fa fa-pencil"></i></a>
+                                        <a href="#" class="btn btn-sm btn-icon btn-warning control-icon"><i class="fa fa-file"></i></a>
                                     </td>
                                 </tr>
                             </tbody>
@@ -140,37 +114,28 @@
             </section>
         </div>
     </section>
-
     <div id="myModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
 
             <!-- Modal content-->
             <div class="modal-content">
-                <div id="EventHeader" class="modal-header">
+                <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Facility Booking</h4>
+                    <h4 class="modal-title">Inventory Name</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
+                        <div class="col-sm-6 text-center">
+                            <img class="img-responsive" style="padding: 10px;" src="images/app.png" height="400" width="400" /></div>
                         <div class="col-sm-6">
-                            <p>Flat ID</p>
-                            <p>Description</p>
-                        </div>
-
-                        <div class="col-sm-6">
-                            <p>Facility</p>
-                            <p>Start Time</p>
-                            <p>End Time</p>
+                            
+                            <p>Type</p>
+                            <p>Date of Purchase</p>
+                            <p>Price</p>
+                           
                             <p>Status</p>
-
-
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <p>Reason to reject (If there)</p>
-                        </div>
-                        
+
                     </div>
                 </div>
                 <div class="modal-footer">
