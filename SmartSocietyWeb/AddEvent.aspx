@@ -1,110 +1,87 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="AddEvent.aspx.cs" Inherits="AddEvent" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <style>
-        .notice-margin-bottom{
-            margin-bottom: 10px;
-            margin-top: 10px;
-        }
-    </style>
     <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
         <li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
-        <li class="active"><i class="fa fa-building"></i>Society Profile</li>
+        <li class="active"><i class="fa fa-building"></i>Flat Details</li>
     </ul>
+
 
     <section class="panel panel-default">
         <header class="panel-heading font-bold">
             <div class="row">
-                <div class="col-sm-1 text-center">
-                    <img class="img-responsive img-circle" style="border: 1px solid;" width="100" height="100" src="images/icon.png" style="margin-bottom: 5px;">
-                    <!-- <a href="">Edit Logo</a> -->
-                </div>
+
                 <!-- <h1 class="col-sm-11" style="font-size: 38pt;">Edit Profile</h1> -->
-                <h1 class="col-sm-11" style="font-size: 34pt; margin-top: 5px;">Avishkar Apartments</h1>
+                <h1 class="col-sm-12" style="font-size: 20pt; margin-top: 5px;">Event Details</h1>
             </div>
         </header>
 
-
         <div class="panel-body">
-            <div class="row">
-                <form class="form-horizontal" method="get" runat="server">
-                    <div class="col-sm-8">
-
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Receipient</label>
-                            <div class="col-sm-10">
-                                <asp:DropDownList ID="txtReceipeint" runat="server" class="form-control">
-                                    <asp:ListItem Value="All"></asp:ListItem>
-                                    <asp:ListItem Value="Rent"></asp:ListItem>
-                                    <asp:ListItem Value="Owner"></asp:ListItem>
-                                    <asp:ListItem Value="1"></asp:ListItem>
-                                    <asp:ListItem Value="2"></asp:ListItem>
-                                </asp:DropDownList>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Notice Title</label>
-                            <div class="col-sm-10">
-                                <asp:TextBox runat="server" ID="txtNotice" class="form-control" placeholder="Society Name"> </asp:TextBox>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Description</label>
-                            <div class="col-sm-10">
-                                <asp:TextBox runat="server" ID="txtDescription" TextMode="MultiLine" class="form-control" Rows="5" placeholder="Society Address"></asp:TextBox>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Priority</label>
-                            <div class="col-sm-10">
-                                <asp:DropDownList ID="txtPriority" runat="server" class="form-control">
-                                    <asp:ListItem Value="High"></asp:ListItem>
-                                    <asp:ListItem Value="Low"></asp:ListItem>
-                                </asp:DropDownList>
-                            </div>
-                        </div>
-                        
-                        
-                        <div class="line line-dashed line-lg pull-in"></div>
-                        <div class="form-group">
-                            <div class="col-sm-4 col-sm-offset-2">
-                                <button type="submit" class="btn btn-default">Cancel</button>
-                                <button type="submit" class="btn btn-primary">Send</button>
-                            </div>
+            <form class="form-horizontal" method="get" runat="server">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Event Name</label>
+                    <div class="col-sm-10">
+                        <asp:TextBox runat="server" ID="txtEventName" class="form-control" placeholder="Event Name"> </asp:TextBox>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Event Type</label>
+                    <div class="col-sm-10">
+                        <asp:DropDownList ID="ddEventType" runat="server" class="form-control">
+                            <asp:ListItem Value="1" Text="Festival"></asp:ListItem>
+                            <asp:ListItem Value="2" Text="Meeting"></asp:ListItem>
+                        </asp:DropDownList>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Event Venue</label>
+                    <div class="col-sm-10">
+                        <asp:TextBox runat="server" ID="TxtVenue" class="form-control" placeholder="Event Venue"> </asp:TextBox>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Start Time</label>
+                    <div class="col-sm-10">
+                        <asp:TextBox runat="server" TextMode="DateTime" ID="txtStartTime" class="form-control" placeholder="Event Start Time"> </asp:TextBox>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">End Time</label>
+                    <div class="col-sm-10">
+                        <asp:TextBox runat="server" TextMode="DateTime" ID="txtEndTime" class="form-control" placeholder="Event End Time"> </asp:TextBox>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Subject</label>
+                    <div class="col-sm-10">
+                        <asp:TextBox runat="server" ID="txtSubject" class="form-control" placeholder="Subject"> </asp:TextBox>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Description</label>
+                    <div class="col-sm-10">
+                        <asp:TextBox runat="server" ID="txtdescription" TextMode="MultiLine" class="form-control" Rows="4" placeholder="Description"></asp:TextBox>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Event Priority</label>
+                    <div class="col-sm-10">
+                        <asp:DropDownList ID="ddpriority" runat="server" class="form-control">
+                            <asp:ListItem Value="1" Text="High"></asp:ListItem>
+                            <asp:ListItem Value="2" Text="Low"></asp:ListItem>
+                        </asp:DropDownList>
+                    </div>
+                </div>
+              
+                <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group">
+                        <div class="col-sm-4 col-sm-offset-2">
+                            <button type="submit" class="btn btn-default">Cancel</button>
+                            <asp:Button runat="server" ID="btnSave" class="btn btn-primary" Text="Save Changes"></asp:Button>
                         </div>
                     </div>
-
-                    <div class="col-sm-4 text-center">
-
-                        <div class="row notice-margin-bottom">
-                            <h3>General Notices</h3>
-
-                        </div>
-                        <div class="row notice-margin-bottom">
-                            <a href="#" class="btn btn-s-md btn-primary btn-rounded">Water Supply Notice</a>
-                        </div>
-                        
-                        <div class="row notice-margin-bottom">
-                            <a href="#" class="btn btn-s-md btn-primary btn-rounded">Maintenence Notice</a>
-                        </div>
-
-                        <div class="row notice-margin-bottom">
-                            <a href="#" class="btn btn-s-md btn-primary btn-rounded">Meeting Notice</a>
-                        </div>
-
-                        <div class="row notice-margin-bottom">
-                            <a href="#" class="btn btn-s-md btn-primary btn-rounded">Electricity Notice</a>
-                        </div>
-                        
-                    </div>
-                    
-                </form>
-            </div>
-
-
-
+            </form>
         </div>
-
     </section>
 </asp:Content>
 
