@@ -278,6 +278,14 @@
                                                 <span>Polls</span>
                                             </a>
                                         </li>
+                                        <li id="complains">
+                                            <a href="Complains.aspx">
+                                                <i class="fa fa-dashboard icon">
+                                                    <b class="bg-danger"></b>
+                                                </i>
+                                                <span>Complains</span>
+                                            </a>
+                                        </li>
                                         
                                     </ul>
                                 </nav>
@@ -285,10 +293,10 @@
                             </div>
                         </section>
                         <footer class="footer lt hidden-xs b-t b-dark">
-                            <a href="#nav" data-toggle="class:nav-xs" class="pull-right btn btn-sm btn-dark btn-icon">
+                            <%--<a href="#nav" data-toggle="class:nav-xs" class="pull-right btn btn-sm btn-dark btn-icon">
                                 <i class="fa fa-angle-left text"></i>
                                 <i class="fa fa-angle-right text-active"></i>
-                            </a>
+                            </a>--%>
                         </footer>
                     </section>
                 </aside>

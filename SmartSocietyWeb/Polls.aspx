@@ -63,7 +63,7 @@
 
         <div class="panel-body">
 
-            <div class="col-sm-4" style="display: flex; justify-content: center; margin-top: 30px; min-height: 460px;">
+            <div class="col-sm-6" style="display: flex; justify-content: center; margin-top: 30px; min-height: 460px;">
                 <div class="user-poll-section" style="width: 80%">
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -126,6 +126,189 @@
                 <!-- POLL DIV END-->
             </div>
 
+             <div class="col-sm-6" style="display: flex; justify-content: center; margin-top: 30px; min-height: 500px;">
+                <div class="user-poll-section" style="width: 80%">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <strong>Question : </strong>Which is the best responsive framework to start web designing ...
+                           <button class="btn btn-sm btn-info pop-up" data-toggle="popover" data-html="true" data-placement="top"
+                               data-content="<div class='scrollable' style='height:40px'>Vivamus sagittis lacus vel augue laoreet rutrum faucibus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus.</div>"
+                               title="" data-original-title="<button type=&quot;button&quot; class=&quot;close pull-right&quot; data-dismiss=&quot;popover&quot;>×</button>Popover on top">
+                               More
+                           </button>
+
+                        </div>
+                        <div class="panel-body">
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <p>End Date</p>
+                                    <p>Poll Type</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <p>Created on</p>
+                                    <p>Total votes</p>
+
+                                </div>
+                            </div>
+
+
+                            <hr>
+                            Bootstrap (60%) :
+                               <div class="progress progress-striped active">
+                                   <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                       <span class="sr-only">60% Complete (success)</span>
+                                   </div>
+                               </div>
+                           
+                            Foundation (30%) :
+                               <div class="progress progress-striped active">
+                                   <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
+                                       <span class="sr-only">30% Complete (success)</span>
+                                   </div>
+                               </div>
+                            Kube (10%) :
+                               <div class="progress progress-striped active">
+                                   <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%">
+                                       <span class="sr-only">10% Complete (success)</span>
+                                   </div>
+                               </div>
+
+                        </div>
+                        <div class="panel-footer text-center">
+                            <a href="#" class="btn btn-success btn-sm"><i class="fa fa-pencil"></i> Update Poll</a>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- POLL DIV END-->
+            </div>
+
+             <div class="col-sm-6" style="display: flex; justify-content: center; margin-top: 30px; min-height: 500px;">
+                <div class="user-poll-section" style="width: 80%">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <strong>Question : </strong>Which is the best responsive framework to start web designing ...
+                           <button class="btn btn-sm btn-info pop-up" data-toggle="popover" data-html="true" data-placement="top"
+                               data-content="<div class='scrollable' style='height:40px'>Vivamus sagittis lacus vel augue laoreet rutrum faucibus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus.</div>"
+                               title="" data-original-title="<button type=&quot;button&quot; class=&quot;close pull-right&quot; data-dismiss=&quot;popover&quot;>×</button>Popover on top">
+                               More
+                           </button>
+
+                        </div>
+                        <div class="panel-body">
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <p>End Date</p>
+                                    <p>Poll Type</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <p>Created on</p>
+                                    <p>Total votes</p>
+
+                                </div>
+                            </div>
+
+
+                            <hr>
+                            Bootstrap (60%) :
+                               <div class="progress progress-striped active">
+                                   <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                       <span class="sr-only">60% Complete (success)</span>
+                                   </div>
+                               </div>
+                            Foundation (30%) :
+                               <div class="progress progress-striped active">
+                                   <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
+                                       <span class="sr-only">30% Complete (success)</span>
+                                   </div>
+                               </div>
+                            Foundation (30%) :
+                               <div class="progress progress-striped active">
+                                   <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
+                                       <span class="sr-only">30% Complete (success)</span>
+                                   </div>
+                               </div>
+                            Kube (10%) :
+                               <div class="progress progress-striped active">
+                                   <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%">
+                                       <span class="sr-only">10% Complete (success)</span>
+                                   </div>
+                               </div>
+
+                        </div>
+                        <div class="panel-footer text-center">
+                            <a href="#" class="btn btn-success btn-sm"><i class="fa fa-pencil"></i> Update Poll</a>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- POLL DIV END-->
+            </div>
+
+             <div class="col-sm-6" style="display: flex; justify-content: center; margin-top: 30px; min-height: 500px;">
+                <div class="user-poll-section" style="width: 80%">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <strong>Question : </strong>Which is the best responsive framework to start web designing ...
+                           <button class="btn btn-sm btn-info pop-up" data-toggle="popover" data-html="true" data-placement="top"
+                               data-content="<div class='scrollable' style='height:40px'>Vivamus sagittis lacus vel augue laoreet rutrum faucibus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus.</div>"
+                               title="" data-original-title="<button type=&quot;button&quot; class=&quot;close pull-right&quot; data-dismiss=&quot;popover&quot;>×</button>Popover on top">
+                               More
+                           </button>
+
+                        </div>
+                        <div class="panel-body">
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <p>End Date</p>
+                                    <p>Poll Type</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <p>Created on</p>
+                                    <p>Total votes</p>
+
+                                </div>
+                            </div>
+
+
+                            <hr>
+                            Bootstrap (60%) :
+                               <div class="progress progress-striped active">
+                                   <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                       <span class="sr-only">60% Complete (success)</span>
+                                   </div>
+                               </div>
+                            Foundation (30%) :
+                               <div class="progress progress-striped active">
+                                   <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
+                                       <span class="sr-only">30% Complete (success)</span>
+                                   </div>
+                               </div>
+                            Foundation (30%) :
+                               <div class="progress progress-striped active">
+                                   <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
+                                       <span class="sr-only">30% Complete (success)</span>
+                                   </div>
+                               </div>
+                            Kube (10%) :
+                               <div class="progress progress-striped active">
+                                   <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%">
+                                       <span class="sr-only">10% Complete (success)</span>
+                                   </div>
+                               </div>
+
+                        </div>
+                        <div class="panel-footer text-center">
+                            <a href="#" class="btn btn-success btn-sm"><i class="fa fa-pencil"></i> Update Poll</a>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- POLL DIV END-->
+            </div>
 
 
         </div>
