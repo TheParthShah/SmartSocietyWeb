@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Inventory.aspx.cs" Inherits="Inventory" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Complains.aspx.cs" Inherits="Complains" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <link rel="stylesheet" href="js/datatables/datatables.css" />
     <style>
         .button {
@@ -16,18 +16,17 @@
             margin-left: 20px;
         }
 
-        .pop-up{
+        .pop-up {
             background-color: white !important;
             font-size: 12px;
             padding: 0px;
             color: blue !important;
             border: none;
         }
-        .pop-up:hover{
-            color: blue !important;
-        }
 
-       
+            .pop-up:hover {
+                color: blue !important;
+            }
     </style>
     <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
         <li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
@@ -40,7 +39,7 @@
             <div class="row">
 
                 <!-- <h1 class="col-sm-11" style="font-size: 38pt;">Edit Profile</h1> -->
-                <h1 class="col-sm-12" style="font-size: 20pt; margin-top: 5px;">Inventory Details</h1>
+                <h1 class="col-sm-12" style="font-size: 20pt; margin-top: 5px;">Complains</h1>
             </div>
         </header>
 
@@ -51,7 +50,6 @@
                     <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
                         <div class="row">
                             <div class="col-sm-4">
-                                <a class="button" href="AddInventory.aspx">Add New Inventory</a>
                             </div>
                             <div class="col-sm-4">
                                 <div id="DataTables_Table_0_length" class="dataTables_length">
@@ -78,25 +76,26 @@
                         <table class="table table-striped m-b-none dataTable" data-ride="datatables" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info">
                             <thead>
                                 <tr role="row">
-                                    <th width="30%" class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" >Asset Name</th>
-                                    
-                                    <th width="25%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" >Type</th>
-                                    <th width="25%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" >Price</th>
+                                    <th width="15%" class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">Flat ID</th>
 
-                                    <th width="20%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" ></th>
+                                    <th width="15%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Type</th>
+                                    <th width="20%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Subject</th>
+                                    <th width="35%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Description</th>
+
+                                    <th width="15%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending"></th>
                                 </tr>
                             </thead>
                             <tbody role="alert" aria-live="polite" aria-relevant="all">
                                 <tr class="odd">
-                                    <td valign="top" colspan="1" class="dataTables_empty">XYZ</td>
+                                    <td valign="top" colspan="1" class="dataTables_empty">1</td>
                                     <td valign="top" colspan="1" class="dataTables_empty">PQR</td>
-                                    <td valign="top" colspan="1" class="dataTables_empty">1235</td>
-                                    
+                                    <td valign="top" colspan="1" class="dataTables_empty">vnjdsknvk ekrng </td>
+                                    <td valign="top" colspan="1" class="dataTables_empty">Deccription</td>
+
                                     <td valign="top" colspan="1" class="dataTables_empty">
-                                         <a href="#myModal" data-toggle="modal" class="btn btn-sm btn-icon btn-success control-icon"><i class="fa fa-info"></i></a>
-                                        <a href="#" class="btn btn-sm btn-icon btn-danger control-icon"><i class="fa fa-trash-o"></i></a>
-                                        <a href="#" class="btn btn-sm btn-icon btn-info control-icon"><i class="fa fa-pencil"></i></a>
-                                        <a href="#" class="btn btn-sm btn-icon btn-warning control-icon"><i class="fa fa-file"></i></a>
+                                        <a href="#myModal" data-toggle="modal" class="btn btn-sm btn-icon btn-success control-icon"><i class="fa fa-info"></i></a>
+
+                                        <a href="ComplainsReply.aspx" class="btn btn-sm btn-icon btn-warning control-icon"><i class="fa fa-reply"></i></a>
                                     </td>
                                 </tr>
                             </tbody>
@@ -121,24 +120,46 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Inventory Name</h4>
+                    <h4 class="modal-title">Complaint Redressal</h4>
                 </div>
                 <div class="modal-body">
-                    <div class="row">
-                        <div class="col-sm-6 text-center">
-                            <img class="img-responsive" style="padding: 10px;" src="images/app.png" height="400" width="400" /></div>
-                        <div class="col-sm-6">
-                            
+
+                    <div class="col-sm-12">
+                        <p>Subject</p>
+                    </div>
+                    <div class="col-sm-12">
+                        <p>Body</p>
+                    </div>
+                    <div class="row" style="margin-top: 5px;">
+                        <div class="col-sm-4">
                             <p>Type</p>
-                            <p>Date of Purchase</p>
-                            <p>Price</p>
-                           
-                            <p>Status</p>
+
+                        </div>
+                        <div class="col-sm-4">
+                            <p>Complaint ON</p>
+                        </div>
+                        <div class="col-sm-4">
+                            <p>Priority</p>
                         </div>
 
                     </div>
+                    <div class="col-sm-12">
+                        <p>(If handled warna blank)</p>
+                        <div class="col-sm-6">
+                            <p>Handled By</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p>HAndled On</p>
+                        </div>
+
+
+                    </div>
+                    <div class="col-sm-12">
+                        <p>Resonse</p>
+                    </div>
                 </div>
                 <div class="modal-footer">
+                    <a type="button" href="ComplainsReply.aspx" class="btn btn-default">Reply</a>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
