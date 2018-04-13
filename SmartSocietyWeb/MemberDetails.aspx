@@ -5,6 +5,18 @@
         .text-lg {
             font-size: 16px;
         }
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            margin-top: 15px;
+        }
+
     </style>
     <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
         <li><a href="Default.aspx"><i class="fa fa-home"></i>Home</a></li>
@@ -85,7 +97,8 @@
                                             <td><%# Eval("FlatNo") %></td>
                                             <td><%# Eval("Email") %></td>
                                             <td>
-                                                <a href="#myModal" data-toggle="modal" class="btn btn-sm btn-icon btn-success control-icon"><i class="fa fa-info"></i></a>
+                                                <asp:LinkButton runat="server" ID="lnkbtnInfo" class="btn btn-sm btn-icon btn-success control-icon" OnClick="lnkbtnInfo_Click" CommandArgument='<%# Eval("ResidentID") %>'><i class="fa fa-info"></i></asp:LinkButton>
+                                             
                                                 <asp:LinkButton runat="server" class="btn btn-sm btn-icon btn-danger control-icon" ID="InactiveResident" OnClick="InactiveResident_Click"><i class="fa fa-trash-o"></i></asp:LinkButton>
                                             </td>
                                         </tr>
@@ -125,17 +138,32 @@
                 </asp:PlaceHolder>
                 <asp:PlaceHolder ID="PlaceHolder2" runat="server">
                     <div class="row">
-                            <div class="col-sm-4 text-center">
-                                <img class="img-responsive" style="padding: 10px;" src="images/app.png" height="400" width="400" />
+                            <div class="col-sm-3 text-center">
+                                <asp:Image  runat="server" class="img-responsive" style="padding: 10px;" ImageUrl="~/images/app.png" height="200" width="200" />
                             </div>
-                            <div class="col-sm-8">
-                                <p>Name</p>
-                                <p>Date of Birth</p>
-                                <p>Occupation</p>
-                                <p>Contact No1, Contact No2</p>
-                                <p>Email</p>
-                                <p>Position</p>
-                                <p><asp:LinkButton ID="back" CssClass="" OnClick="back_Click"></asp:LinkButton></p>
+                            <div class="col-sm-9">
+                                <p>
+                                    <strong>Name: </strong> <asp:Literal ID="litName" runat="server"></asp:Literal></p>
+                                <p>
+                                    <strong>Date of Birth: </strong> <asp:Literal ID="litDOB" runat="server"></asp:Literal>
+                                </p>
+                                <p>
+                                    <strong>Occupation: </strong> <asp:Literal ID="litOccupation" runat="server"></asp:Literal>
+                                </p>
+                                <p>
+                                    <strong>Contact: </strong><asp:Literal ID="litContact1" runat="server"></asp:Literal>
+                                   
+                                </p>
+                                <p>
+                                    <strong>Email: </strong> <asp:Literal ID="litEmail" runat="server"></asp:Literal>
+                                </p>
+                                <p>
+                                    <strong>Flat No: </strong> <asp:Literal ID="litFlatno" runat="server"></asp:Literal>
+                                </p>
+                                <p>
+                                    <strong>Position: </strong><asp:Literal ID="litPosition" runat="server"></asp:Literal>
+                                </p>
+                                <p><asp:LinkButton  runat="server" ID="back" CssClass="button" OnClick="back_Click" Text="Back"></asp:LinkButton></p>
                             </div>
 
                         </div>

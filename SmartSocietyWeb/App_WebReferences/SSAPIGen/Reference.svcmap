@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3fdc4965-3fd5-4e61-a412-82300c8812bd" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="06b064df-8118-4eed-b7fd-75ef8bfd7e98" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,10 +22,10 @@
     <MetadataSource Address="http://smartsociety.riteshtailor.in/General.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="General.xsd" MetadataType="Schema" ID="8ae7d85a-0fb1-4ee6-bc5d-314075ddb28f" SourceId="1" SourceUrl="http://smartsociety.riteshtailor.in/General.svc?xsd=xsd1" />
-    <MetadataFile FileName="General.wsdl" MetadataType="Wsdl" ID="b4131304-2bf0-4588-8357-0857a68a4a88" SourceId="1" SourceUrl="http://smartsociety.riteshtailor.in/General.svc?wsdl" />
-    <MetadataFile FileName="General.disco" MetadataType="Disco" ID="1dfea8d4-4b58-4a6e-b749-215f500a0bc2" SourceId="1" SourceUrl="http://smartsociety.riteshtailor.in/General.svc?disco" />
-    <MetadataFile FileName="General1.xsd" MetadataType="Schema" ID="cfc01cad-2059-45a5-8c5d-c59be9385306" SourceId="1" SourceUrl="http://smartsociety.riteshtailor.in/General.svc?xsd=xsd0" />
+    <MetadataFile FileName="General.xsd" MetadataType="Schema" ID="36fe8373-87f7-47ea-8477-5de8dc450eb4" SourceId="1" SourceUrl="http://smartsociety.riteshtailor.in/General.svc?xsd=xsd1" />
+    <MetadataFile FileName="General.wsdl" MetadataType="Wsdl" ID="7fc67c5e-f45a-47c1-97b4-af15da1844e2" SourceId="1" SourceUrl="http://smartsociety.riteshtailor.in/General.svc?wsdl" />
+    <MetadataFile FileName="General.disco" MetadataType="Disco" ID="65c44c3e-c176-4560-accc-64a56f599b51" SourceId="1" SourceUrl="http://smartsociety.riteshtailor.in/General.svc?disco" />
+    <MetadataFile FileName="General1.xsd" MetadataType="Schema" ID="136e2b3a-c201-486f-9b30-168eedc5e35d" SourceId="1" SourceUrl="http://smartsociety.riteshtailor.in/General.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -106,7 +106,9 @@
                                 </tr>
                             </thead>
                             <tbody role="alert" aria-live="polite" aria-relevant="all">
-                                <tr class="odd">
+                                <asp:Repeater ID="rptBooking" runat="server">
+                                    <ItemTemplate>
+                                        <tr class="odd">
                                     <td valign="top" colspan="1" class="dataTables_empty">2</td>
                                     <td valign="top" colspan="1" class="dataTables_empty">Club House</td>
                                     <td valign="top" colspan="1" class="dataTables_empty">2nd-jan-2018</td>
@@ -125,6 +127,9 @@
 
                                     </td>
                                 </tr>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                                
                             </tbody>
                         </table>
                         <div class="row">

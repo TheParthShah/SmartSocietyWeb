@@ -10,9 +10,9 @@ public partial class MemberDetails : System.Web.UI.Page
 {
     SSAPIGen.GeneralClient ServiceObjectGeneral = new SSAPIGen.GeneralClient();
     SSAPIAdmin.AdminClient ServiceObjectAdmin = new SSAPIAdmin.AdminClient();
+    public static JArray FlatDetailsObjArr { get; set; }
     protected void Page_Load(object sender, EventArgs e)
-    {
-       
+    {       
         if (!IsPostBack)
         {
             BindData();
@@ -25,8 +25,7 @@ public partial class MemberDetails : System.Web.UI.Page
         try
         {
             PlaceHolder2.Visible = false;
-            object FlatDetailsObj = ServiceObjectGeneral.GetAllResidentsDetails(0,0);
-            JArray FlatDetailsObjArr = JArray.Parse(FlatDetailsObj.ToString());
+            FlatDetailsObjArr = JArray.Parse(ServiceObjectGeneral.GetAllResidentsDetails(0, 0).ToString());
             rptResident.DataSource = FlatDetailsObjArr;
             rptResident.DataBind();
         }
@@ -38,19 +37,34 @@ public partial class MemberDetails : System.Web.UI.Page
 
  
 
-    protected void InactiveResident_Click(object sender, EventArgs e)
-    {
-        
-    }
-
-    protected void Unnamed_Click(object sender, EventArgs e)
-    {
-
-    }
+  
 
     protected void back_Click(object sender, EventArgs e)
     {
         PlaceHolder2.Visible = false;
         PlaceHolder1.Visible = true;
+    }
+
+    protected void lnkbtnInfo_Click(object sender, EventArgs e)
+    {
+        LinkButton lnkbtnInfo = (LinkButton)sender;
+        int ID = Convert.ToInt32(lnkbtnInfo.CommandArgument);
+        var SingleObj = (from ob in FlatDetailsObjArr
+                         where Convert.ToInt32(ob["ResidentID"]) == ID
+                         select ob).Single();
+        litName.Text = SingleObj["ResidentName"].ToString();
+        litDOB.Text = Convert.ToDateTime( SingleObj["DOB"]).ToLongDateString();
+        litOccupation.Text = SingleObj["Occupation"].ToString();
+        litContact1.Text = SingleObj["ContactNo1"].ToString() + "," + SingleObj["ContactNo2"].ToString();
+        litEmail.Text = SingleObj["Email"].ToString();
+        litFlatno.Text = SingleObj["FlatNo"].ToString();
+        litPosition.Text =  SingleObj["PositionID"].ToString();
+        PlaceHolder1.Visible = false;
+        PlaceHolder2.Visible = true;
+    }
+
+    protected void InactiveResident_Click(object sender, EventArgs e)
+    {
+
     }
 }
