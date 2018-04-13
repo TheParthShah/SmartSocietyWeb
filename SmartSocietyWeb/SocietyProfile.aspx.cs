@@ -9,19 +9,19 @@ public partial class SocietyProfile : System.Web.UI.Page
     {
         EditSocietyProfile.Visible = false;
         SocietyProfileInfo.Visible = true;
-        SocietyData = JObject.Parse(ServiceObjectAdmin.GetSocietyInformation().ToString());
+        
         if (!IsPostBack)
-        {            
+        {
             BindData();
         }
-        
+
     }
 
     private void BindData()
     {
         try
         {
-            
+            SocietyData = JObject.Parse(ServiceObjectAdmin.GetSocietyInformation().ToString());
             litSocietyTitle.Text = SocietyData["Name"].ToString();
             litSocietyName.Text = SocietyData["Name"].ToString();
             litSocietyType.Text = SocietyData["SocietyType"].ToString();
@@ -35,7 +35,7 @@ public partial class SocietyProfile : System.Web.UI.Page
             imgLogo.ImageUrl += SocietyData["LogoImage"].ToString();
 
         }
-        catch(Exception e)
+        catch (Exception e)
         {
             Response.Write("<script>alert(\"Something went wrong! Try Again.\")</script>");
         }
@@ -45,6 +45,7 @@ public partial class SocietyProfile : System.Web.UI.Page
     {
         EditSocietyProfile.Visible = true;
         SocietyProfileInfo.Visible = false;
+        SocietyData = JObject.Parse(ServiceObjectAdmin.GetSocietyInformation().ToString());
 
         txtSocietyName.Text = SocietyData["Name"].ToString();
         ddSocietyType.SelectedValue = SocietyData["SocietyType"].ToString();
@@ -60,14 +61,44 @@ public partial class SocietyProfile : System.Web.UI.Page
 
     protected void btnSave_Click(object sender, EventArgs e)
     {
-        var Logo = ""; 
-        //if (fuImage.HasFile)
-        //{
-            Response.Write("<script>alert(\"Hello\");</script>");
-            Logo = fuImage.FileName;
-            fuImage.SaveAs("ServerImages/" + fuImage.FileName);
-        //}
-        
+        var Logo = "";
+        Boolean fileOK = false;
+        String path = Server.MapPath("~/ServerImages/");
+        if (fuImage.HasFiles)
+        {
+            String fileExtension =
+                System.IO.Path.GetExtension(fuImage.FileName).ToLower();
+            String[] allowedExtensions =
+                { ".png", ".jpeg", ".jpg"};
+            for (int i = 0; i < allowedExtensions.Length; i++)
+            {
+                if (fileExtension == allowedExtensions[i])
+                {
+                    fileOK = true;
+                }
+            }
+        }
+
+        if (fileOK)
+        {
+            try
+            {
+                fuImage.SaveAs(path
+                    + fuImage.FileName);
+                Logo = fuImage.FileName;
+                Label1.Text = "File uploaded!";
+            }
+            catch (Exception ex)
+            {
+                Label1.Text = "File could not be uploaded.";
+            }
+        }
+        else
+        {
+            Label1.Text = "Cannot accept files of this type.";
+        }
+
+
         ServiceObjectAdmin.EditSocietyInformation(txtSocietyName.Text, txtAddress.Text, txtPincode.Text, Logo, txtContactNo.Text, txtSecretary.Text, txtBuilder.Text, txtEmail.Text, "", txtRegistrationNo.Text, txtCampusArea.Text, ddSocietyType.SelectedValue, "");
         //Response.Redirect("SocietyProfile.aspx");
     }

@@ -30,89 +30,93 @@
                         <asp:Literal runat="server" ID="litSocietyTitle" Text="Undefined"></asp:Literal></h1>
                 </div>
             </header>
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <ContentTemplate>
+                    <asp:PlaceHolder runat="server" ID="EditSocietyProfile">
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Name</label>
+                                <div class="col-sm-10">
+                                    <asp:TextBox runat="server" ID="txtSocietyName" class="form-control" placeholder="Society Name"> </asp:TextBox>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Address</label>
+                                <div class="col-sm-10">
+                                    <asp:TextBox runat="server" ID="txtAddress" TextMode="MultiLine" class="form-control" Rows="5" placeholder="Society Address"></asp:TextBox>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Pincode</label>
+                                <div class="col-sm-10">
+                                    <asp:TextBox runat="server" ID="txtPincode" class="form-control" placeholder="Area Pincode"></asp:TextBox>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Contact No</label>
+                                <div class="col-sm-10">
+                                    <asp:TextBox runat="server" ID="txtContactNo" class="form-control" placeholder="Contact Number"></asp:TextBox>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Secretary</label>
+                                <div class="col-sm-10">
+                                    <asp:TextBox runat="server" ID="txtSecretary" class="form-control" placeholder="Secretary Name"></asp:TextBox>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Builder</label>
+                                <div class="col-sm-10">
+                                    <asp:TextBox runat="server" ID="txtBuilder" class="form-control" placeholder="Builder/Builder-Group name"></asp:TextBox>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Email</label>
+                                <div class="col-sm-10">
+                                    <asp:TextBox runat="server" ID="txtEmail" type="email" class="form-control" placeholder="Society Email"></asp:TextBox>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Registration No</label>
+                                <div class="col-sm-10">
+                                    <asp:TextBox runat="server" ID="txtRegistrationNo" class="form-control" placeholder="Registration Number of society"></asp:TextBox>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Campus Area</label>
+                                <div class="col-sm-10">
+                                    <asp:TextBox runat="server" ID="txtCampusArea" class="form-control" placeholder="Campus Area(In Sq.Ft)"></asp:TextBox>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Society Type</label>
+                                <div class="col-sm-10">
+                                    <asp:DropDownList ID="ddSocietyType" runat="server" class="form-control">
+                                        <asp:ListItem Value="Government"></asp:ListItem>
+                                        <asp:ListItem Value="Private"></asp:ListItem>
+                                    </asp:DropDownList>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Society Logo</label>
+                                <div class="col-sm-10">
+                                    <asp:FileUpload ID="fuImage" runat="server" />
+                                </div>
+                            </div>
+                            <div class="line line-dashed line-lg pull-in"></div>
+                            <div class="form-group">
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <button type="submit" class="btn btn-default">Cancel</button>
+                                    <asp:Button runat="server" ID="btnSave" class="btn btn-primary" Text="Save Changes" OnClick="btnSave_Click"></asp:Button>
+                                </div>
+                            </div>
+                            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
 
-            <asp:PlaceHolder runat="server" ID="EditSocietyProfile">
-                <div class="panel-body">
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">Name</label>
-                        <div class="col-sm-10">
-                            <asp:TextBox runat="server" ID="txtSocietyName" class="form-control" placeholder="Society Name"> </asp:TextBox>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">Address</label>
-                        <div class="col-sm-10">
-                            <asp:TextBox runat="server" ID="txtAddress" TextMode="MultiLine" class="form-control" Rows="5" placeholder="Society Address"></asp:TextBox>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">Pincode</label>
-                        <div class="col-sm-10">
-                            <asp:TextBox runat="server" ID="txtPincode" class="form-control" placeholder="Area Pincode"></asp:TextBox>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">Contact No</label>
-                        <div class="col-sm-10">
-                            <asp:TextBox runat="server" ID="txtContactNo" class="form-control" placeholder="Contact Number"></asp:TextBox>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">Secretary</label>
-                        <div class="col-sm-10">
-                            <asp:TextBox runat="server" ID="txtSecretary" class="form-control" placeholder="Secretary Name"></asp:TextBox>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">Builder</label>
-                        <div class="col-sm-10">
-                            <asp:TextBox runat="server" ID="txtBuilder" class="form-control" placeholder="Builder/Builder-Group name"></asp:TextBox>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">Email</label>
-                        <div class="col-sm-10">
-                            <asp:TextBox runat="server" ID="txtEmail" type="email" class="form-control" placeholder="Society Email"></asp:TextBox>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">Registration No</label>
-                        <div class="col-sm-10">
-                            <asp:TextBox runat="server" ID="txtRegistrationNo" class="form-control" placeholder="Registration Number of society"></asp:TextBox>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">Campus Area</label>
-                        <div class="col-sm-10">
-                            <asp:TextBox runat="server" ID="txtCampusArea" class="form-control" placeholder="Campus Area(In Sq.Ft)"></asp:TextBox>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">Society Type</label>
-                        <div class="col-sm-10">
-                            <asp:DropDownList ID="ddSocietyType" runat="server" class="form-control">
-                                <asp:ListItem Value="Government"></asp:ListItem>
-                                <asp:ListItem Value="Private"></asp:ListItem>
-                            </asp:DropDownList>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">Society Logo</label>
-                        <div class="col-sm-10">
-                            <asp:FileUpload ID="fuImage" runat="server" />
-                        </div>
-                    </div>
-                    <div class="line line-dashed line-lg pull-in"></div>
-                    <div class="form-group">
-                        <div class="col-sm-4 col-sm-offset-2">
-                            <button type="submit" class="btn btn-default">Cancel</button>
-                            <asp:Button runat="server" ID="btnSave" class="btn btn-primary" Text="Save Changes" OnClick="btnSave_Click"></asp:Button>
-                        </div>
-                    </div>
-
-                </div>
-            </asp:PlaceHolder>
-
+                    </asp:PlaceHolder>
+                </ContentTemplate>
+            </asp:UpdatePanel>
             <asp:PlaceHolder runat="server" ID="SocietyProfileInfo">
                 <div class="panel-body">
                     <div class="form-horizontal society-info">

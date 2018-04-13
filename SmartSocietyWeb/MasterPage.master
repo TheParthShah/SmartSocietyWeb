@@ -175,16 +175,16 @@
                                         <li id="SocietyProfile">
                                             <a href="SocietyProfile.aspx">
                                                 <i class="fa fa-building icon">
-                                                    <b class="bg-warning"></b>
+                                                    <b class="bg-success"></b>
                                                 </i>
                                                 <span class="pull-right"></span>
                                                 <span>Society Profile</span>
                                             </a>
                                         </li>
-                                        <li>
+                                        <li id="resident" >
                                             <a href="#">
-                                                <i class="fa fa-flask icon">
-                                                    <b class="bg-success"></b>
+                                                <i class="fa fa-users icon">
+                                                    <b class="bg-warning"></b>
                                                 </i>
                                                 <span class="pull-right">
                                                     <i class="fa fa-angle-down text"></i>
@@ -193,13 +193,13 @@
                                                 <span>Residents</span>
                                             </a>
                                             <ul class="nav lt">
-                                                <li>
+                                                <li id="flatdetails" >
                                                     <a href="FlatDetails.aspx">
                                                         <i class="fa fa-angle-right"></i>
                                                         <span>Flat Details</span>
                                                     </a>
                                                 </li>
-                                                <li>
+                                                <li id="memberdetails">
                                                     <a href="MemberDetails.aspx">
                                                         <i class="fa fa-angle-right"></i>
                                                         <span>Member Details</span>
@@ -403,6 +403,9 @@
         function removeActiveClass() {
             $("#SocietyProfile").removeClass("active");
             $("#DashBoard").removeClass("active");
+            $("#resident").removeClass("active");
+            $("#memberdetails").removeClass("active");
+            $("#flatdetails").removeClass("active");
         }
         $(document).ready(function () {
             removeActiveClass();
@@ -411,6 +414,13 @@
                 $("#SocietyProfile").addClass("active");
             if (url == "/Default.aspx")
                 $("#DashBoard").addClass("active");
+            if (url == "/MemberDetails.aspx") {
+                $("#resident").addClass("active");
+                $("#memberdetails").addClass("active");
+            } if (url == "/FlatDetails.aspx") {
+                $("#resident").addClass("active");
+                $("#flatdetails").addClass("active");
+            } 
 
         });
     </script>
