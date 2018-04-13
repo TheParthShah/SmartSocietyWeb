@@ -4,6 +4,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="FlagMemType" type="xs:int" />
+        <xs:element minOccurs="0" name="ResidentID" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -18,6 +19,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="FlagFlatType" type="xs:int" />
+        <xs:element minOccurs="0" name="FlatNo" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -25,6 +27,20 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="GetAllFlatDetailsResult" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewAllAssets">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssetID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewAllAssetsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ViewAllAssetsResult" nillable="true" type="xs:anyType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -51,6 +67,7 @@
         <xs:element minOccurs="0" name="FromDate" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="ToDate" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="Priority" type="xs:int" />
+        <xs:element minOccurs="0" name="NoticeID" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -63,13 +80,75 @@
   </xs:element>
   <xs:element name="ViewAllVendors">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VendorID" type="xs:int" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ViewAllVendorsResponse">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="ViewAllVendorsResult" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewAllEvents">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FromDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ToDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Priority" type="xs:int" />
+        <xs:element minOccurs="0" name="EventID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewAllEventsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ViewAllEventsResult" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllFacilities">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FacilityID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllFacilitiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAllFacilitiesResult" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllStaffMembers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MemberID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllStaffMembersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAllStaffMembersResult" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllPolls">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PollID" type="xs:int" />
+        <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllPollsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAllPollsResult" nillable="true" type="xs:anyType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
