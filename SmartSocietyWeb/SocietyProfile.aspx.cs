@@ -64,10 +64,10 @@ public partial class SocietyProfile : System.Web.UI.Page
         var Logo = "";
         Boolean fileOK = false;
         String path = Server.MapPath("~/ServerImages/");
-        if (fuImage.HasFiles)
+        if (flUpImage.PostedFile.FileName!="")
         {
             String fileExtension =
-                System.IO.Path.GetExtension(fuImage.FileName).ToLower();
+                System.IO.Path.GetExtension(flUpImage.PostedFile.FileName).ToLower();
             String[] allowedExtensions =
                 { ".png", ".jpeg", ".jpg"};
             for (int i = 0; i < allowedExtensions.Length; i++)
@@ -78,14 +78,13 @@ public partial class SocietyProfile : System.Web.UI.Page
                 }
             }
         }
-
         if (fileOK)
         {
             try
             {
-                fuImage.SaveAs(path
-                    + fuImage.FileName);
-                Logo = fuImage.FileName;
+                flUpImage.PostedFile.SaveAs(path
+                    + flUpImage.PostedFile.FileName);
+                Logo = flUpImage.PostedFile.FileName;
                 Label1.Text = "File uploaded!";
             }
             catch (Exception ex)

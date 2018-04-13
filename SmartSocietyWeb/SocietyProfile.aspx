@@ -16,17 +16,17 @@
         <li class="active"><i class="fa fa-building"></i>Society Profile</li>
     </ul>
 
-    <form class="form-horizontal" method="get" runat="server">
+    <form class="form-horizontal" runat="server">
         <section class="panel panel-default">
 
             <header class="panel-heading font-bold">
                 <div class="row">
-                    <div class="col-sm-1 text-center" style="display: flex; justify-content: center;">
-                        <asp:Image runat="server" ID="imgLogo" CssClass="img-responsive img-circle" Style="border: 1px solid; margin-bottom: 5px;" Width="100" Height="100" ImageUrl="ServerImages/" />
+                    <div class="col-sm-2 text-center" style="display: flex; justify-content: center; align-content:center;">
+                        <asp:Image runat="server" ID="imgLogo" CssClass="img-circle img-responsive " style="border: 1px solid; margin-bottom: 5px; height:100px; width:100px;" ImageUrl="ServerImages/" />
                         <!-- <a href="">Edit Logo</a> -->
                     </div>
                     <!-- <h1 class="col-sm-11" style="font-size: 38pt;">Edit Profile</h1> -->
-                    <h1 class="col-sm-11" style="font-size: 32pt; margin-top: 7px;">
+                    <h1 class="col-sm-10" style="font-size: 32pt; margin-top: 7px;">
                         <asp:Literal runat="server" ID="litSocietyTitle" Text="Undefined"></asp:Literal></h1>
                 </div>
             </header>
@@ -101,7 +101,7 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Society Logo</label>
                                 <div class="col-sm-10">
-                                    <asp:FileUpload ID="fuImage" runat="server" />
+                                    <input ID="flUpImage" type="file" runat="server"/>
                                 </div>
                             </div>
                             <div class="line line-dashed line-lg pull-in"></div>
@@ -116,6 +116,9 @@
                         </div>
                     </asp:PlaceHolder>
                 </ContentTemplate>
+                <Triggers>
+                <asp:PostBackTrigger ControlID="btnSave" />
+            </Triggers>
             </asp:UpdatePanel>
             <asp:PlaceHolder runat="server" ID="SocietyProfileInfo">
                 <div class="panel-body">
