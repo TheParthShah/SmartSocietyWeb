@@ -16,18 +16,17 @@
             margin-left: 20px;
         }
 
-        .pop-up{
+        .pop-up {
             background-color: white !important;
             font-size: 12px;
             padding: 0px;
             color: blue !important;
             border: none;
         }
-        .pop-up:hover{
-            color: blue !important;
-        }
 
-       
+            .pop-up:hover {
+                color: blue !important;
+            }
     </style>
     <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
         <li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
@@ -87,22 +86,27 @@
                                 </tr>
                             </thead>
                             <tbody role="alert" aria-live="polite" aria-relevant="all">
-                                <tr class="odd">
-                                    <td valign="top" colspan="1" class="dataTables_empty">XYZ</td>
-                                    <td valign="top" colspan="1" class="dataTables_empty">PQR</td>
-                                    <td valign="top" colspan="1" class="dataTables_empty">RTY</td>
-                                    <td valign="top" colspan="1" class="dataTables_empty">vsvbjs..
-                                        <button class="btn btn-sm btn-info pop-up" data-toggle="popover" data-html="true" data-placement="top" 
-                                            data-content="<div class='scrollable' style='height:40px'>Vivamus sagittis lacus vel augue laoreet rutrum faucibus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus.</div>" 
+                                <asp:Repeater ID="rptVendor" runat="server">
+                                    <ItemTemplate>
+                                        <tr class="odd">
+                                            <td valign="top" colspan="1" class="dataTables_empty"><%# Eval("VendorName") %></td>
+                                            <td valign="top" colspan="1" class="dataTables_empty"><%# Eval("VendorType") %></td>
+                                            <td valign="top" colspan="1" class="dataTables_empty"><%# Eval("Address") %></td>
+                                            <td valign="top" colspan="1" class="dataTables_empty"><%# (Eval("Description").ToString().Length<=25)? Eval("Description"): Eval("Description").ToString().Substring(0,20) %>
+                                        <button class="btn btn-sm btn-info pop-up" data-toggle="popover" data-html="true" data-placement="top"
+                                            data-content="<div class='scrollable' style='height:40px'><%# Eval("Description") %></div>"
                                             title="" data-original-title="<button type=&quot;button&quot; class=&quot;close pull-right&quot; data-dismiss=&quot;popover&quot;>×</button>Popover on top">
                                             More
                                         </button>
-                                    </td>
-                                    <td valign="top" colspan="1" class="dataTables_empty">
-                                         <a href="#" class="btn btn-sm btn-icon btn-danger control-icon"><i class="fa fa-trash-o"></i></a>
-                                        <a href="#" class="btn btn-sm btn-icon btn-info control-icon"><i class="fa fa-pencil"></i></a>
-                                    </td>
-                                </tr>
+                                            </td>
+                                            <td valign="top" colspan="1" class="dataTables_empty">
+                                                <a href="#" class="btn btn-sm btn-icon btn-danger control-icon"><i class="fa fa-trash-o"></i></a>
+                                                <a href="#" class="btn btn-sm btn-icon btn-info control-icon"><i class="fa fa-pencil"></i></a>
+                                            </td>
+                                        </tr>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+
                             </tbody>
                         </table>
                         <div class="row">

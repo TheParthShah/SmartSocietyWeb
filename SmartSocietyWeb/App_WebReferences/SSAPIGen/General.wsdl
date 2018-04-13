@@ -12,6 +12,18 @@
   <wsdl:message name="IGeneral_GetAllResidentsDetails_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllResidentsDetailsResponse" />
   </wsdl:message>
+  <wsdl:message name="IGeneral_ResidentSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResidentSearch" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_ResidentSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResidentSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_ResidentDelete_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResidentDelete" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_ResidentDelete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResidentDeleteResponse" />
+  </wsdl:message>
   <wsdl:message name="IGeneral_GetAllFlatDetails_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllFlatDetails" />
   </wsdl:message>
@@ -23,6 +35,18 @@
   </wsdl:message>
   <wsdl:message name="IGeneral_ViewAllAssets_OutputMessage">
     <wsdl:part name="parameters" element="tns:ViewAllAssetsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_AssetSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssetSearch" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_AssetSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssetSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_AssetDelete_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssetDelete" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_AssetDelete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssetDeleteResponse" />
   </wsdl:message>
   <wsdl:message name="IGeneral_ViewGateKeeping_InputMessage">
     <wsdl:part name="parameters" element="tns:ViewGateKeeping" />
@@ -42,11 +66,35 @@
   <wsdl:message name="IGeneral_ViewAllVendors_OutputMessage">
     <wsdl:part name="parameters" element="tns:ViewAllVendorsResponse" />
   </wsdl:message>
+  <wsdl:message name="IGeneral_VendorSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:VendorSearch" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_VendorSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VendorSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_VendorDelete_InputMessage">
+    <wsdl:part name="parameters" element="tns:VendorDelete" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_VendorDelete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VendorDeleteResponse" />
+  </wsdl:message>
   <wsdl:message name="IGeneral_ViewAllEvents_InputMessage">
     <wsdl:part name="parameters" element="tns:ViewAllEvents" />
   </wsdl:message>
   <wsdl:message name="IGeneral_ViewAllEvents_OutputMessage">
     <wsdl:part name="parameters" element="tns:ViewAllEventsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_EventSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:EventSearch" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_EventSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EventSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_EventDelete_InputMessage">
+    <wsdl:part name="parameters" element="tns:EventDelete" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_EventDelete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EventDeleteResponse" />
   </wsdl:message>
   <wsdl:message name="IGeneral_GetAllFacilities_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllFacilities" />
@@ -54,11 +102,29 @@
   <wsdl:message name="IGeneral_GetAllFacilities_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllFacilitiesResponse" />
   </wsdl:message>
+  <wsdl:message name="IGeneral_FacilitiesBookingSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:FacilitiesBookingSearch" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_FacilitiesBookingSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FacilitiesBookingSearchResponse" />
+  </wsdl:message>
   <wsdl:message name="IGeneral_GetAllStaffMembers_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllStaffMembers" />
   </wsdl:message>
   <wsdl:message name="IGeneral_GetAllStaffMembers_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllStaffMembersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_StaffSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:StaffSearch" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_StaffSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StaffSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_StaffDelete_InputMessage">
+    <wsdl:part name="parameters" element="tns:StaffDelete" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_StaffDelete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StaffDeleteResponse" />
   </wsdl:message>
   <wsdl:message name="IGeneral_GetAllPolls_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllPolls" />
@@ -71,6 +137,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/GetAllResidentsDetails" message="tns:IGeneral_GetAllResidentsDetails_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IGeneral/GetAllResidentsDetailsResponse" message="tns:IGeneral_GetAllResidentsDetails_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="ResidentSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/ResidentSearch" message="tns:IGeneral_ResidentSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneral/ResidentSearchResponse" message="tns:IGeneral_ResidentSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResidentDelete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/ResidentDelete" message="tns:IGeneral_ResidentDelete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneral/ResidentDeleteResponse" message="tns:IGeneral_ResidentDelete_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetAllFlatDetails">
       <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/GetAllFlatDetails" message="tns:IGeneral_GetAllFlatDetails_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IGeneral/GetAllFlatDetailsResponse" message="tns:IGeneral_GetAllFlatDetails_OutputMessage" />
@@ -78,6 +152,14 @@
     <wsdl:operation name="ViewAllAssets">
       <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/ViewAllAssets" message="tns:IGeneral_ViewAllAssets_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IGeneral/ViewAllAssetsResponse" message="tns:IGeneral_ViewAllAssets_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssetSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/AssetSearch" message="tns:IGeneral_AssetSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneral/AssetSearchResponse" message="tns:IGeneral_AssetSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssetDelete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/AssetDelete" message="tns:IGeneral_AssetDelete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneral/AssetDeleteResponse" message="tns:IGeneral_AssetDelete_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ViewGateKeeping">
       <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/ViewGateKeeping" message="tns:IGeneral_ViewGateKeeping_InputMessage" />
@@ -91,17 +173,45 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/ViewAllVendors" message="tns:IGeneral_ViewAllVendors_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IGeneral/ViewAllVendorsResponse" message="tns:IGeneral_ViewAllVendors_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="VendorSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/VendorSearch" message="tns:IGeneral_VendorSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneral/VendorSearchResponse" message="tns:IGeneral_VendorSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VendorDelete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/VendorDelete" message="tns:IGeneral_VendorDelete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneral/VendorDeleteResponse" message="tns:IGeneral_VendorDelete_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="ViewAllEvents">
       <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/ViewAllEvents" message="tns:IGeneral_ViewAllEvents_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IGeneral/ViewAllEventsResponse" message="tns:IGeneral_ViewAllEvents_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EventSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/EventSearch" message="tns:IGeneral_EventSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneral/EventSearchResponse" message="tns:IGeneral_EventSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EventDelete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/EventDelete" message="tns:IGeneral_EventDelete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneral/EventDeleteResponse" message="tns:IGeneral_EventDelete_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetAllFacilities">
       <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/GetAllFacilities" message="tns:IGeneral_GetAllFacilities_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IGeneral/GetAllFacilitiesResponse" message="tns:IGeneral_GetAllFacilities_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="FacilitiesBookingSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/FacilitiesBookingSearch" message="tns:IGeneral_FacilitiesBookingSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneral/FacilitiesBookingSearchResponse" message="tns:IGeneral_FacilitiesBookingSearch_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetAllStaffMembers">
       <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/GetAllStaffMembers" message="tns:IGeneral_GetAllStaffMembers_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IGeneral/GetAllStaffMembersResponse" message="tns:IGeneral_GetAllStaffMembers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StaffSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/StaffSearch" message="tns:IGeneral_StaffSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneral/StaffSearchResponse" message="tns:IGeneral_StaffSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StaffDelete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/StaffDelete" message="tns:IGeneral_StaffDelete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneral/StaffDeleteResponse" message="tns:IGeneral_StaffDelete_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetAllPolls">
       <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/GetAllPolls" message="tns:IGeneral_GetAllPolls_InputMessage" />
@@ -112,6 +222,24 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetAllResidentsDetails">
       <soap:operation soapAction="http://tempuri.org/IGeneral/GetAllResidentsDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResidentSearch">
+      <soap:operation soapAction="http://tempuri.org/IGeneral/ResidentSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResidentDelete">
+      <soap:operation soapAction="http://tempuri.org/IGeneral/ResidentDelete" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -130,6 +258,24 @@
     </wsdl:operation>
     <wsdl:operation name="ViewAllAssets">
       <soap:operation soapAction="http://tempuri.org/IGeneral/ViewAllAssets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssetSearch">
+      <soap:operation soapAction="http://tempuri.org/IGeneral/AssetSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssetDelete">
+      <soap:operation soapAction="http://tempuri.org/IGeneral/AssetDelete" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -164,8 +310,44 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="VendorSearch">
+      <soap:operation soapAction="http://tempuri.org/IGeneral/VendorSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VendorDelete">
+      <soap:operation soapAction="http://tempuri.org/IGeneral/VendorDelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ViewAllEvents">
       <soap:operation soapAction="http://tempuri.org/IGeneral/ViewAllEvents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EventSearch">
+      <soap:operation soapAction="http://tempuri.org/IGeneral/EventSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EventDelete">
+      <soap:operation soapAction="http://tempuri.org/IGeneral/EventDelete" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -182,8 +364,35 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="FacilitiesBookingSearch">
+      <soap:operation soapAction="http://tempuri.org/IGeneral/FacilitiesBookingSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetAllStaffMembers">
       <soap:operation soapAction="http://tempuri.org/IGeneral/GetAllStaffMembers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StaffSearch">
+      <soap:operation soapAction="http://tempuri.org/IGeneral/StaffSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StaffDelete">
+      <soap:operation soapAction="http://tempuri.org/IGeneral/StaffDelete" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

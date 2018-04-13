@@ -100,7 +100,7 @@
 
                                                             <td valign="top" colspan="1" class="dataTables_empty">
                                                                 <asp:LinkButton runat="server" ID="lnkbtnInfo" class="btn btn-sm btn-icon btn-success control-icon" OnClick="lnnkbtnInfo_Click" CommandArgument='<%# Eval("AssetID") %>'><i class="fa fa-info"></i></asp:LinkButton>
-                                                                <a id="btnmodal" style="display: none;" href="#myModal" data-toggle="modal" class="btn btn-sm btn-icon btn-success control-icon"><i class="fa fa-info"></i></a>
+                                                                
                                                                 <a href="#" class="btn btn-sm btn-icon btn-danger control-icon"><i class="fa fa-trash-o"></i></a>
                                                                 <a href="#" class="btn btn-sm btn-icon btn-info control-icon"><i class="fa fa-pencil"></i></a>
                                                                 <a href="#" class="btn btn-sm btn-icon btn-warning control-icon"><i class="fa fa-file"></i></a>
@@ -128,24 +128,25 @@
 
 
                         <div class="row">
-                            <div class="col-sm-4 text-center">
-                                <img class="img-responsive" style="padding: 10px; border: 2px solid;" src="images/app.png" height="400" width="400" />
+                            <div class="col-sm-3 text-center">
+                                <asp:Image runat="server" class="img-responsive" style="padding: 10px;" ImageUrl="images/app.png" height="200" width="200" />
                             </div>
-                            <div class="col-sm-8">
-                                <h4 class="modal-title">
-                                    <asp:Literal runat="server" ID="litInventoryName" Text="--"></asp:Literal></h4>
+                            <div class="col-sm-9">
+                                <p><h4 class="modal-title">
+                                 <strong>Name: </strong>   <asp:Literal runat="server" ID="litInventoryName" Text="--"></asp:Literal></h4>
+                                    </p>
                                 <p>
-                                    <asp:Literal runat="server" ID="litInventoryType" Text="--"></asp:Literal>
+                                    <strong>Type: </strong><asp:Literal runat="server" ID="litInventoryType" Text="--"></asp:Literal>
                                 </p>
                                 <p>
-                                    <asp:Literal runat="server" ID="litDOP" Text="--"></asp:Literal>
+                                    <strong>Date of Purchase: </strong><asp:Literal runat="server" ID="litDOP" Text="--"></asp:Literal>
                                 </p>
                                 <p>
-                                    <asp:Literal runat="server" ID="litInventoryValue" Text="--"></asp:Literal>
+                                    <strong>Value: </strong><asp:Literal runat="server" ID="litInventoryValue" Text="--"></asp:Literal>
                                 </p>
 
                                 <p>
-                                    <asp:Literal runat="server" ID="litStatus" Text="--"></asp:Literal>
+                                    <strong>Status: </strong><asp:Literal runat="server" ID="litStatus" Text="--"></asp:Literal>
                                 </p>
                                 <p>
                                     <asp:Button runat="server" ID="btnBack" CssClass="button" Text="Back" OnClick="btnBack_Click" />
@@ -155,35 +156,12 @@
                         </div>
                     </asp:PlaceHolder>
                 </section>
-                <%--<div id="myModal" class="modal fade" role="dialog">
-                    <div class="modal-dialog">
-
-                        <!-- Modal content-->
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">
-                                    <asp:Literal runat="server" ID="litInventoryName" Text="--"></asp:Literal></h4>
-                            </div>
-                            <div class="modal-body">
-                                
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>--%>
+               
             </ContentTemplate>
         </asp:UpdatePanel>
     </form>
 
-    <script src="js/jquery-2.1.4.js"></script>
-    <script type="text/javascript">
-        function ShowPopup() {
-            $("#btnmodal").click();
-        }
-    </script>
+    
+    
 </asp:Content>
 
