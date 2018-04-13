@@ -14,7 +14,7 @@ public partial class FlatDetails : System.Web.UI.Page
 
     private void BindData()
     {
-        object FlatDetailsObj = ServiceObjectGeneral.GetAllFlatDetails(0);
+        object FlatDetailsObj = ServiceObjectGeneral.GetAllFlatDetails(0,"0");
         JArray FlatDetailsObjArr = JArray.Parse(FlatDetailsObj.ToString());
         rptFlatDetails.DataSource = FlatDetailsObjArr;
         rptFlatDetails.DataBind();

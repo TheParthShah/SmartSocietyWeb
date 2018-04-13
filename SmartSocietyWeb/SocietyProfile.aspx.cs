@@ -32,6 +32,8 @@ public partial class SocietyProfile : System.Web.UI.Page
             litRegistrationNo.Text = SocietyData["RegistrationNo"].ToString();
             litAddress.Text = SocietyData["Address"].ToString() + "<br>" + SocietyData["PostalCode"].ToString();
             litCampusArea.Text = SocietyData["CampusArea"].ToString();
+            imgLogo.ImageUrl += SocietyData["LogoImage"].ToString();
+
         }
         catch(Exception e)
         {
@@ -58,7 +60,15 @@ public partial class SocietyProfile : System.Web.UI.Page
 
     protected void btnSave_Click(object sender, EventArgs e)
     {
-        ServiceObjectAdmin.EditSocietyInformation(txtSocietyName.Text, txtAddress.Text, txtPincode.Text, "", txtContactNo.Text, txtSecretary.Text, txtBuilder.Text, txtEmail.Text, "", txtRegistrationNo.Text, txtCampusArea.Text, ddSocietyType.SelectedValue, "");
-        Response.Redirect("SocietyProfile.aspx");
+        var Logo = ""; 
+        //if (fuImage.HasFile)
+        //{
+            Response.Write("<script>alert(\"Hello\");</script>");
+            Logo = fuImage.FileName;
+            fuImage.SaveAs("ServerImages/" + fuImage.FileName);
+        //}
+        
+        ServiceObjectAdmin.EditSocietyInformation(txtSocietyName.Text, txtAddress.Text, txtPincode.Text, Logo, txtContactNo.Text, txtSecretary.Text, txtBuilder.Text, txtEmail.Text, "", txtRegistrationNo.Text, txtCampusArea.Text, ddSocietyType.SelectedValue, "");
+        //Response.Redirect("SocietyProfile.aspx");
     }
 }

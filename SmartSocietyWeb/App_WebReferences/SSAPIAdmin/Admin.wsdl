@@ -108,6 +108,84 @@
   <wsdl:message name="IAdmin_EditVendor_OutputMessage">
     <wsdl:part name="parameters" element="tns:EditVendorResponse" />
   </wsdl:message>
+  <wsdl:message name="IAdmin_GetAllEventTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllEventTypes" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_GetAllEventTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllEventTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_AddEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddEvent" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_AddEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_EditEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditEvent" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_EditEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_AddFacility_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddFacility" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_AddFacility_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddFacilityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_EditFacility_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditFacility" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_EditFacility_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditFacilityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_ViewAllBookingProposals_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewAllBookingProposals" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_ViewAllBookingProposals_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewAllBookingProposalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_ApprovalOfBooking_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApprovalOfBooking" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_ApprovalOfBooking_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApprovalOfBookingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_AddPoll_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPoll" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_AddPoll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPollResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_EditPoll_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditPoll" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_EditPoll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditPollResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_AddPollOptions_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPollOptions" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_AddPollOptions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPollOptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_EditPollOptions_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditPollOptions" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_EditPollOptions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditPollOptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_GetAllComplaints_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllComplaints" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_GetAllComplaints_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllComplaintsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_SendComplaintResponse_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendComplaintResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_SendComplaintResponse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendComplaintResponseResponse" />
+  </wsdl:message>
   <wsdl:portType name="IAdmin">
     <wsdl:operation name="CheckLogin">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/CheckLogin" message="tns:IAdmin_CheckLogin_InputMessage" />
@@ -176,6 +254,58 @@
     <wsdl:operation name="EditVendor">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/EditVendor" message="tns:IAdmin_EditVendor_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAdmin/EditVendorResponse" message="tns:IAdmin_EditVendor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEventTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/GetAllEventTypes" message="tns:IAdmin_GetAllEventTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdmin/GetAllEventTypesResponse" message="tns:IAdmin_GetAllEventTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddEvent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/AddEvent" message="tns:IAdmin_AddEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdmin/AddEventResponse" message="tns:IAdmin_AddEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditEvent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/EditEvent" message="tns:IAdmin_EditEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdmin/EditEventResponse" message="tns:IAdmin_EditEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFacility">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/AddFacility" message="tns:IAdmin_AddFacility_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdmin/AddFacilityResponse" message="tns:IAdmin_AddFacility_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditFacility">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/EditFacility" message="tns:IAdmin_EditFacility_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdmin/EditFacilityResponse" message="tns:IAdmin_EditFacility_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewAllBookingProposals">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/ViewAllBookingProposals" message="tns:IAdmin_ViewAllBookingProposals_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdmin/ViewAllBookingProposalsResponse" message="tns:IAdmin_ViewAllBookingProposals_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ApprovalOfBooking">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/ApprovalOfBooking" message="tns:IAdmin_ApprovalOfBooking_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdmin/ApprovalOfBookingResponse" message="tns:IAdmin_ApprovalOfBooking_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPoll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/AddPoll" message="tns:IAdmin_AddPoll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdmin/AddPollResponse" message="tns:IAdmin_AddPoll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditPoll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/EditPoll" message="tns:IAdmin_EditPoll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdmin/EditPollResponse" message="tns:IAdmin_EditPoll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPollOptions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/AddPollOptions" message="tns:IAdmin_AddPollOptions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdmin/AddPollOptionsResponse" message="tns:IAdmin_AddPollOptions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditPollOptions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/EditPollOptions" message="tns:IAdmin_EditPollOptions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdmin/EditPollOptionsResponse" message="tns:IAdmin_EditPollOptions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllComplaints">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/GetAllComplaints" message="tns:IAdmin_GetAllComplaints_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdmin/GetAllComplaintsResponse" message="tns:IAdmin_GetAllComplaints_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendComplaintResponse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/SendComplaintResponse" message="tns:IAdmin_SendComplaintResponse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdmin/SendComplaintResponseResponse" message="tns:IAdmin_SendComplaintResponse_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="soap" type="tns:IAdmin">
@@ -326,6 +456,123 @@
     </wsdl:operation>
     <wsdl:operation name="EditVendor">
       <soap:operation soapAction="http://tempuri.org/IAdmin/EditVendor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEventTypes">
+      <soap:operation soapAction="http://tempuri.org/IAdmin/GetAllEventTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEvent">
+      <soap:operation soapAction="http://tempuri.org/IAdmin/AddEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditEvent">
+      <soap:operation soapAction="http://tempuri.org/IAdmin/EditEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFacility">
+      <soap:operation soapAction="http://tempuri.org/IAdmin/AddFacility" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditFacility">
+      <soap:operation soapAction="http://tempuri.org/IAdmin/EditFacility" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewAllBookingProposals">
+      <soap:operation soapAction="http://tempuri.org/IAdmin/ViewAllBookingProposals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApprovalOfBooking">
+      <soap:operation soapAction="http://tempuri.org/IAdmin/ApprovalOfBooking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPoll">
+      <soap:operation soapAction="http://tempuri.org/IAdmin/AddPoll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditPoll">
+      <soap:operation soapAction="http://tempuri.org/IAdmin/EditPoll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPollOptions">
+      <soap:operation soapAction="http://tempuri.org/IAdmin/AddPollOptions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditPollOptions">
+      <soap:operation soapAction="http://tempuri.org/IAdmin/EditPollOptions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllComplaints">
+      <soap:operation soapAction="http://tempuri.org/IAdmin/GetAllComplaints" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendComplaintResponse">
+      <soap:operation soapAction="http://tempuri.org/IAdmin/SendComplaintResponse" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
