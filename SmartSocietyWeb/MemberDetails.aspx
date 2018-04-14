@@ -29,7 +29,8 @@
                 <div class="row">
 
                     <!-- <h1 class="col-sm-11" style="font-size: 38pt;">Edit Profile</h1> -->
-                    <h1 class="col-sm-12" style="font-size: 20pt; margin-top: 5px;">Member Details</h1>
+                    <h1 class="col-sm-10" style="font-size: 20pt; margin-top: 5px;">Member Details</h1>
+                    <asp:LinkButton Visible="false" ID="lnkbtnViewAll" runat="server" CssClass="col-sm-1 btn btn-primary" OnClick="lnkbtnViewAll_Click">View All</asp:LinkButton>
                 </div>
             </header>
 
@@ -77,7 +78,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="table-responsive">
+                    <div class="table-responsive" id="Datatable">
                         <table class="table table-striped b-t b-light text-lg">
                             <thead>
                                 <tr>
