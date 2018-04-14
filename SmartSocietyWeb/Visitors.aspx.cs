@@ -59,6 +59,7 @@ public partial class Visitors : System.Web.UI.Page
         var VisitorsDataArr = JArray.Parse(VisitorsDataObj.ToString());
         rptVisitorsData.DataSource = VisitorsDataArr;
         rptVisitorsData.DataBind();
+        //Response.Write(Convert.ToDateTime(txtStartDate.Text).ToShortDateString());
     }
 
     protected void btnSearch_Click(object sender, EventArgs e)

@@ -5,6 +5,7 @@
         .text-lg {
             font-size: 16px;
         }
+
         .button {
             background-color: #4CAF50; /* Green */
             border: none;
@@ -16,14 +17,13 @@
             font-size: 12px;
             margin-top: 15px;
         }
-
     </style>
     <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
-        <li><a href="Default.aspx"><i class="fa fa-home"></i> Home</a></li>
-        <li class="active"><i class="fa fa-users"></i> Member Details</li>
+        <li><a href="Default.aspx"><i class="fa fa-home"></i>Home</a></li>
+        <li class="active"><i class="fa fa-users"></i>Member Details</li>
     </ul>
 
-    <form class="form-horizontal" method="get" runat="server">
+    <form class="form-horizontal" method="post" runat="server">
         <section class="panel panel-default">
             <header class="panel-heading font-bold">
                 <div class="row">
@@ -37,19 +37,19 @@
             <div class="panel-body">
                 <asp:PlaceHolder ID="PlaceHolder1" runat="server">
                     <section class="panel panel-default">
-                    <header class="panel-heading">Resident Details </header>
-                    <div class="row text-sm wrapper">
-                        <div class="col-sm-5 m-b-xs">
-                            <%--<select class="input-sm form-control input-s-sm inline">
+                        <header class="panel-heading">Resident Details </header>
+                        <div class="row text-sm wrapper">
+                            <div class="col-sm-5 m-b-xs">
+                                <%--<select class="input-sm form-control input-s-sm inline">
                             <option value="0">Bulk action</option>
                             <option value="1">Delete selected</option>
                             <option value="2">Bulk edit</option>
                             <option value="3">Export</option>
                         </select>
                         <button class="btn btn-sm btn-default">Apply</button>--%>
-                        </div>
-                        <div class="col-sm-4 m-b-xs">
-                            <%--<div class="btn-group" data-toggle="buttons">
+                            </div>
+                            <div class="col-sm-4 m-b-xs">
+                                <%--<div class="btn-group" data-toggle="buttons">
                             <label class="btn btn-sm btn-default active">
                                 <input name="options" id="option1" type="radio">
                                 Day
@@ -63,55 +63,77 @@
                                 Month
                             </label>
                         </div>--%>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="input-group">
-                                <input class="input-sm form-control" placeholder="Search" list="Flatno" type="text">
-                                <datalist id="Flatno">
-                                    <option value="1"></option>
-                                    <option value="2"></option>
-                                    <option value="3"></option>
-                                </datalist>
-                                <span class="input-group-btn">
-                                    <button class="btn btn-sm btn-default" type="button">Go!</button>
-                                </span>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="input-group">
+                                    <asp:TextBox runat="server" ID="txtSearchFlat" class="input-sm form-control" placeholder="Search" list="Flatno" type="text" required="required" />
+                                    <datalist id="Flatno">
+                                        <option value="1"></option>
+                                        <option value="2"></option>
+                                        <option value="3"></option>
+                                        <option value="4"></option>
+                                        <option value="5"></option>
+                                        <option value="6"></option>
+                                        <option value="7"></option>
+                                        <option value="8"></option>
+                                        <option value="9"></option>
+                                        <option value="10"></option>
+                                        <option value="12"></option>
+                                        <option value="13"></option>
+                                        <option value="14"></option>
+                                        <option value="15"></option>
+                                        <option value="16"></option>
+
+                                    </datalist>
+                                    <span class="input-group-btn">
+                                        <asp:Button ID="btnSearch" runat="server" class="btn btn-sm btn-default" Text="Go!" OnClick="btnSearch_Click"></asp:Button>
+                                    </span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="table-responsive" id="Datatable">
-                        <table class="table table-striped b-t b-light text-lg">
-                            <thead>
-                                <tr>
+                        <div class="table-responsive" id="Datatable">
+                            <table class="table table-striped b-t b-light text-lg">
+                                <thead>
+                                    <tr>
 
-                                    <th class="th-sortable" data-toggle="class">Name <span class="th-sort"><i class="fa fa-sort-down text"></i><i class="fa fa-sort-up text-active"></i><i class="fa fa-sort"></i></span></th>
-                                    <th>Flat ID</th>
-                                    <th>Email ID</th>
-                                    <th width="10%"></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <asp:Repeater ID="rptResident" runat="server">
-                                    <ItemTemplate>
-                                        <tr>
+                                        <th class="th-sortable" data-toggle="class">Name <span class="th-sort"><i class="fa fa-sort-down text"></i><i class="fa fa-sort-up text-active"></i><i class="fa fa-sort"></i></span></th>
+                                        <th>Flat ID</th>
+                                        <th>Email ID</th>
+                                        <th width="10%"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <asp:Repeater ID="rptResident" runat="server" OnItemDataBound="rptResident_ItemDataBound">
+                                        <ItemTemplate>
+                                            <tr>
 
-                                            <td><%# Eval("ResidentName") %></td>
-                                            <td><%# Eval("FlatNo") %></td>
-                                            <td><%# Eval("Email") %></td>
-                                            <td>
-                                                <asp:LinkButton runat="server" ID="lnkbtnInfo" class="btn btn-sm btn-icon btn-success control-icon" OnClick="lnkbtnInfo_Click" CommandArgument='<%# Eval("ResidentID") %>'><i class="fa fa-info"></i></asp:LinkButton>
-                                             
-                                                <asp:LinkButton runat="server" class="btn btn-sm btn-icon btn-danger control-icon" ID="InactiveResident" CommandArgument='<%# Eval("ResidentID") %>' OnClick="InactiveResident_Click"><i class="fa fa-trash-o"></i></asp:LinkButton>
-                                            </td>
-                                        </tr>
-                                    </ItemTemplate>
-                                </asp:Repeater>
+                                                <td><%# Eval("ResidentName") %></td>
+                                                <td><%# Eval("FlatNo") %></td>
+                                                <td><%# Eval("Email") %></td>
+                                                <td>
+                                                    <asp:LinkButton runat="server" ID="lnkbtnInfo" class="btn btn-sm btn-icon btn-success control-icon" OnClick="lnkbtnInfo_Click" CommandArgument='<%# Eval("ResidentID") %>'><i class="fa fa-info"></i></asp:LinkButton>
+
+                                                    <asp:LinkButton runat="server" class="btn btn-sm btn-icon btn-danger control-icon" ID="InactiveResident" CommandArgument='<%# Eval("ResidentID") %>' OnClick="InactiveResident_Click"><i class="fa fa-trash-o"></i></asp:LinkButton>
+                                                </td>
+                                            </tr>
+                                        </ItemTemplate>
+                                        <FooterTemplate>
+                                            <tr>
+                                                <td colspan="4">
+                                                    <asp:Label runat="server" Visible="false" ID="lblEmpty" Text="Records Not Found....">
+
+                                                    </asp:Label>
+                                                </td>
+                                            </tr>
+                                        </FooterTemplate>
+                                    </asp:Repeater>
 
 
-                            </tbody>
-                        </table>
-                    </div>
-                    <footer class="panel-footer">
-                        <div class="row">
+                                </tbody>
+                            </table>
+                        </div>
+                        <footer class="panel-footer">
+                            <%--<div class="row">
                             <div class="col-sm-4 hidden-xs">
                                 <%--<select class="input-sm form-control input-s-sm inline">
                                 <option value="0">Bulk action</option>
@@ -119,7 +141,7 @@
                                 <option value="2">Bulk edit</option>
                                 <option value="3">Export</option>
                             </select>
-                            <button class="btn btn-sm btn-default">Apply</button>--%>
+                            <button class="btn btn-sm btn-default">Apply</button>
                             </div>
                             <div class="col-sm-4 text-center"><small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 items</small> </div>
                             <div class="col-sm-4 text-right text-center-xs">
@@ -133,49 +155,61 @@
                                     <li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
                                 </ul>
                             </div>
-                        </div>
-                    </footer>
-                </section>
+                        </div>--%>
+                        </footer>
+                    </section>
                 </asp:PlaceHolder>
                 <asp:PlaceHolder ID="PlaceHolder2" runat="server">
                     <div class="row">
-                            <div class="col-sm-3 text-center">
-                                <asp:Image  ID="ResidentImage" runat="server" class="img-responsive" style="padding: 10px;" ImageUrl="~/ServerImages/TemplateImages/" height="200" width="200" />
-                            </div>
-                            <div class="col-sm-9">
-                                <p>
-                                    <strong>Name: </strong> <asp:Literal ID="litName" runat="server"></asp:Literal></p>
-                                <p>
-                                    <strong>Gender: </strong> <asp:Literal ID="LitGender" runat="server"></asp:Literal></p>
-
-                                <p>
-                                    <strong>Date of Birth: </strong> <asp:Literal ID="litDOB" runat="server"></asp:Literal>
-                                </p>
-                                <p>
-                                    <strong>Occupation: </strong> <asp:Literal ID="litOccupation" runat="server"></asp:Literal>
-                                </p>
-                                <p>
-                                    <strong>Contact: </strong><asp:Literal ID="litContact1" runat="server"></asp:Literal>
-                                   
-                                </p>
-                                <p>
-                                    <strong>Email: </strong> <asp:Literal ID="litEmail" runat="server"></asp:Literal>
-                                </p>
-                                <p>
-                                    <strong>Flat No: </strong> <asp:Literal ID="litFlatno" runat="server"></asp:Literal>
-                                </p>
-                                <p>
-                                    <strong>Position: </strong><asp:Literal ID="litPosition" runat="server"></asp:Literal>
-                                </p>
-                                <p><asp:LinkButton  runat="server" ID="back" CssClass="button" OnClick="back_Click" Text="Back"></asp:LinkButton></p>
-                            </div>
-
+                        <div class="col-sm-3 text-center">
+                            <asp:Image ID="ResidentImage" runat="server" class="img-responsive" Style="padding: 10px;" ImageUrl="~/ServerImages/TemplateImages/" Height="200" Width="200" />
                         </div>
+                        <div class="col-sm-9">
+                            <p>
+                                <strong>Name: </strong>
+                                <asp:Literal ID="litName" runat="server"></asp:Literal>
+                            </p>
+                            <p>
+                                <strong>Gender: </strong>
+                                <asp:Literal ID="LitGender" runat="server"></asp:Literal>
+                            </p>
+
+                            <p>
+                                <strong>Date of Birth: </strong>
+                                <asp:Literal ID="litDOB" runat="server"></asp:Literal>
+                            </p>
+                            <p>
+                                <strong>Occupation: </strong>
+                                <asp:Literal ID="litOccupation" runat="server"></asp:Literal>
+                            </p>
+                            <p>
+                                <strong>Contact: </strong>
+                                <asp:Literal ID="litContact1" runat="server"></asp:Literal>
+
+                            </p>
+                            <p>
+                                <strong>Email: </strong>
+                                <asp:Literal ID="litEmail" runat="server"></asp:Literal>
+                            </p>
+                            <p>
+                                <strong>Flat No: </strong>
+                                <asp:Literal ID="litFlatno" runat="server"></asp:Literal>
+                            </p>
+                            <p>
+                                <strong>Position: </strong>
+                                <asp:Literal ID="litPosition" runat="server"></asp:Literal>
+                            </p>
+                            <p>
+                                <asp:LinkButton runat="server" ID="back" CssClass="button" OnClick="back_Click" Text="Back"></asp:LinkButton>
+                            </p>
+                        </div>
+
+                    </div>
                 </asp:PlaceHolder>
             </div>
         </section>
 
-       
+
     </form>
 </asp:Content>
 

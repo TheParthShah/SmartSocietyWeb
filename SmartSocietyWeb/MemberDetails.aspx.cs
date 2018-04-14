@@ -93,4 +93,25 @@ public partial class MemberDetails : System.Web.UI.Page
     {
         Response.Redirect("MemberDetails.aspx");
     }
+
+
+
+    protected void btnSearch_Click(object sender, EventArgs e)
+    {
+        var id = txtSearchFlat.Text;
+
+        FlatDetailsObjArr = JArray.Parse(ServiceObjectGeneral.ResidentSearch(id, id).ToString());
+
+        rptResident.DataSource = FlatDetailsObjArr;
+        rptResident.DataBind();
+    }
+
+    protected void rptResident_ItemDataBound(object sender, RepeaterItemEventArgs e)
+    {
+        if (FlatDetailsObjArr.Count == 0)
+        {
+            Label lblEmpty = (Label)e.Item.FindControl("lblEmpty");
+            lblEmpty.Visible = true;
+        }
+    }
 }
