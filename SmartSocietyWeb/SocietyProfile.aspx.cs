@@ -5,15 +5,12 @@ public partial class SocietyProfile : System.Web.UI.Page
 {
     SSAPIAdmin.AdminClient ServiceObjectAdmin = new SSAPIAdmin.AdminClient();
     JObject SocietyData;
-    public static int flag=0;
+    public static int flag = 0;
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (flag == 0)
-        {
-            EditSocietyProfile.Visible = false;
-            SocietyProfileInfo.Visible = true;
-        }       
-        
+        EditSocietyProfile.Visible = false;
+        SocietyProfileInfo.Visible = true;
+
         if (!IsPostBack)
         {
             BindData();
@@ -69,7 +66,7 @@ public partial class SocietyProfile : System.Web.UI.Page
         var Logo = "";
         Boolean fileOK = false;
         String path = Server.MapPath("~/ServerImages/");
-        if (flUpImage.PostedFile.FileName!="")
+        if (flUpImage.PostedFile.FileName != "")
         {
             String fileExtension =
                 System.IO.Path.GetExtension(flUpImage.PostedFile.FileName).ToLower();
@@ -91,7 +88,7 @@ public partial class SocietyProfile : System.Web.UI.Page
                 flUpImage.PostedFile.SaveAs(path
                     + flUpImage.PostedFile.FileName);
                 Logo = flUpImage.PostedFile.FileName;
-                lblAlert.Text = "File uploaded!";                
+                lblAlert.Text = "File uploaded!";
             }
             catch (Exception ex)
             {
@@ -104,20 +101,20 @@ public partial class SocietyProfile : System.Web.UI.Page
             if (!(flUpImage.PostedFile.FileName == ""))
             {
                 Response.Write("<script>alert(\"Cannot accept files of this type\");</script>");
-            }            
+            }
             Logo = "0";
         }
         if (Logo == "0")
         {
-            flag=1;
+            flag = 1;
             ServiceObjectAdmin.EditSocietyInformation(txtSocietyName.Text, txtAddress.Text, txtPincode.Text, hdnFilename.Value, txtContactNo.Text, txtSecretary.Text, txtBuilder.Text, txtEmail.Text, "", txtRegistrationNo.Text, txtCampusArea.Text, ddSocietyType.SelectedValue, "");
-            //Response.Redirect("SocietyProfile.aspx");
+            Response.Redirect("SocietyProfile.aspx");
         }
         else
         {
             ServiceObjectAdmin.EditSocietyInformation(txtSocietyName.Text, txtAddress.Text, txtPincode.Text, Logo, txtContactNo.Text, txtSecretary.Text, txtBuilder.Text, txtEmail.Text, "", txtRegistrationNo.Text, txtCampusArea.Text, ddSocietyType.SelectedValue, "");
             Response.Redirect("SocietyProfile.aspx");
-        }          
+        }
     }
 
     protected void btnCancel_Click(object sender, EventArgs e)

@@ -26,7 +26,7 @@
                         <!-- <a href="">Edit Logo</a> -->
                     </div>
                     <!-- <h1 class="col-sm-11" style="font-size: 38pt;">Edit Profile</h1> -->
-                    <h1 class="col-sm-10" style="font-size: 32pt; margin-top: 7px;">
+                    <h1 class="col-sm-10" style="font-size: 46pt; margin-top: 7px;">
                         <asp:Literal runat="server" ID="litSocietyTitle" Text="Undefined"></asp:Literal></h1>
                 </div>
             </header>

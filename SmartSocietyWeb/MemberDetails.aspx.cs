@@ -59,9 +59,14 @@ public partial class MemberDetails : System.Web.UI.Page
         var SingleObj = (from ob in FlatDetailsObjArr
                          where Convert.ToInt32(ob["ResidentID"]) == ID
                          select ob).Single();
+        if (SingleObj["Gender"].ToString() == "Male")
+            ResidentImage.ImageUrl += "Male.png";
+        else
+            ResidentImage.ImageUrl += "Female.png";
         litName.Text = SingleObj["ResidentName"].ToString();
         litDOB.Text = Convert.ToDateTime(SingleObj["DOB"]).ToLongDateString();
         litOccupation.Text = SingleObj["Occupation"].ToString();
+        LitGender.Text = SingleObj["Gender"].ToString();
         litContact1.Text = SingleObj["ContactNo1"].ToString() + "," + SingleObj["ContactNo2"].ToString();
         litEmail.Text = SingleObj["Email"].ToString();
         litFlatno.Text = SingleObj["FlatNo"].ToString();
@@ -72,7 +77,16 @@ public partial class MemberDetails : System.Web.UI.Page
 
     protected void InactiveResident_Click(object sender, EventArgs e)
     {
+        LinkButton lnkbtnInfo = (LinkButton)sender;
+        int ID = Convert.ToInt32(lnkbtnInfo.CommandArgument);
+        if ((bool)ServiceObjectGeneral.ResidentDelete(ID))
+        {
 
+        }
+        else
+        {
+
+        }
     }
 
     protected void lnkbtnViewAll_Click(object sender, EventArgs e)

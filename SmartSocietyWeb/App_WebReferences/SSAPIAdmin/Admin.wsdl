@@ -186,6 +186,12 @@
   <wsdl:message name="IAdmin_SendComplaintResponse_OutputMessage">
     <wsdl:part name="parameters" element="tns:SendComplaintResponseResponse" />
   </wsdl:message>
+  <wsdl:message name="IAdmin_AddIncome_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddIncome" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_AddIncome_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddIncomeResponse" />
+  </wsdl:message>
   <wsdl:portType name="IAdmin">
     <wsdl:operation name="CheckLogin">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/CheckLogin" message="tns:IAdmin_CheckLogin_InputMessage" />
@@ -306,6 +312,10 @@
     <wsdl:operation name="SendComplaintResponse">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/SendComplaintResponse" message="tns:IAdmin_SendComplaintResponse_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAdmin/SendComplaintResponseResponse" message="tns:IAdmin_SendComplaintResponse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddIncome">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/AddIncome" message="tns:IAdmin_AddIncome_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdmin/AddIncomeResponse" message="tns:IAdmin_AddIncome_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="soap" type="tns:IAdmin">
@@ -573,6 +583,15 @@
     </wsdl:operation>
     <wsdl:operation name="SendComplaintResponse">
       <soap:operation soapAction="http://tempuri.org/IAdmin/SendComplaintResponse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddIncome">
+      <soap:operation soapAction="http://tempuri.org/IAdmin/AddIncome" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

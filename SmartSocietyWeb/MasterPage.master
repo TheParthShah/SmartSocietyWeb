@@ -19,9 +19,9 @@
     <script src="js/ie/respond.min.js" cache="false"></script>
     <script src="js/ie/excanvas.js" cache="false"></script> <![endif]-->
     <style>
-       .vbox > section.w-f{
-           bottom: 30px;
-       }
+        .vbox > section.w-f {
+            bottom: 30px;
+        }
         /*.aside-md{
             width: 350px;
         }
@@ -139,9 +139,9 @@
                     class="caret"></b></a>
                     <ul class="dropdown-menu animated fadeInRight">
                         <span class="arrow top"></span>
-                        
-                        <li><a href="ChangePassword.aspx"> Change password </a></li>
-                        
+
+                        <li><a href="ChangePassword.aspx">Change password </a></li>
+
                         <li class="divider"></li>
                         <%--<li><a href="modal.lockme.html" data-toggle="ajaxModal">Logout</a></li>--%>
 
@@ -181,7 +181,7 @@
                                                 <span>Society Profile</span>
                                             </a>
                                         </li>
-                                        <li id="resident" >
+                                        <li id="resident">
                                             <a href="#">
                                                 <i class="fa fa-users icon">
                                                     <b class="bg-warning"></b>
@@ -193,7 +193,7 @@
                                                 <span>Residents</span>
                                             </a>
                                             <ul class="nav lt">
-                                                <li id="flatdetails" >
+                                                <li id="flatdetails">
                                                     <a href="FlatDetails.aspx">
                                                         <i class="fa fa-angle-right"></i>
                                                         <span>Flat Details</span>
@@ -207,11 +207,11 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        
-                                        <li>
+
+                                        <li id="assets">
                                             <a href="#">
                                                 <i class="fa fa-flask icon">
-                                                    <b class="bg-success"></b>
+                                                    <b class="bg-info"></b>
                                                 </i>
                                                 <span class="pull-right">
                                                     <i class="fa fa-angle-down text"></i>
@@ -220,13 +220,13 @@
                                                 <span>Assets</span>
                                             </a>
                                             <ul class="nav lt">
-                                                <li>
+                                                <li id="bookings">
                                                     <a href="FacilityBooking.aspx">
                                                         <i class="fa fa-angle-right"></i>
                                                         <span>Facility Bookings</span>
                                                     </a>
                                                 </li>
-                                                <li>
+                                                <li id="inventory">
                                                     <a href="Inventory.aspx">
                                                         <i class="fa fa-angle-right"></i>
                                                         <span>Inventory</span>
@@ -235,7 +235,7 @@
                                             </ul>
                                         </li>
 
-                                        <li>
+                                        <li id="vendorStaff">
                                             <a href="#">
                                                 <i class="fa fa-flask icon">
                                                     <b class="bg-success"></b>
@@ -247,13 +247,13 @@
                                                 <span>Vendors and Staff</span>
                                             </a>
                                             <ul class="nav lt">
-                                                <li>
+                                                <li id="Vendor">
                                                     <a href="Vendor.aspx">
                                                         <i class="fa fa-angle-right"></i>
                                                         <span>Vendors</span>
                                                     </a>
                                                 </li>
-                                                <li>
+                                                <li id="Staff">
                                                     <a href="Staff.aspx">
                                                         <i class="fa fa-angle-right"></i>
                                                         <span>Staff</span>
@@ -288,7 +288,7 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        
+
                                         <li id="Visitors">
                                             <a href="Visitors.aspx">
                                                 <i class="fa fa-dashboard icon">
@@ -323,10 +323,10 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        
-                                       
-                                        
-                                       
+
+
+
+
                                         <li id="polls">
                                             <a href="Polls.aspx">
                                                 <i class="fa fa-dashboard icon">
@@ -343,7 +343,7 @@
                                                 <span>Complains</span>
                                             </a>
                                         </li>
-                                        
+
                                         <li id="payments">
                                             <a href="Payments.aspx">
                                                 <i class="fa fa-building icon">
@@ -353,7 +353,7 @@
                                                 <span>Payments</span>
                                             </a>
                                         </li>
-                                          <li id="documents">
+                                        <li id="documents">
                                             <a href="Documents.aspx">
                                                 <i class="fa fa-building icon">
                                                     <b class="bg-warning"></b>
@@ -399,34 +399,58 @@
     </section>
     <%--</form>--%>
     <script src="js/app.v2.js"></script>
-    <script>
+    <%--<script>
         function removeActiveClass() {
             $("#SocietyProfile").removeClass("active");
             $("#DashBoard").removeClass("active");
             $("#resident").removeClass("active");
             $("#memberdetails").removeClass("active");
             $("#flatdetails").removeClass("active");
+            $("#assets").removeClass("active");
+            $("#bookings").removeClass("active");
         }
         $(document).ready(function () {
             removeActiveClass();
             var url = window.location.pathname;
+            alert("eg");
             if (url == "/SocietyProfile.aspx")
                 $("#SocietyProfile").addClass("active");
+
             if (url == "/Default.aspx")
                 $("#DashBoard").addClass("active");
+
             if (url == "/MemberDetails.aspx") {
                 $("#resident").addClass("active");
                 $("#memberdetails").addClass("active");
-            } if (url == "/FlatDetails.aspx") {
+            }
+
+            if (url == "/FlatDetails.aspx") {
+                alert("csaf");
                 $("#resident").addClass("active");
                 $("#flatdetails").addClass("active");
-            } 
+            }
+
+            if (url == "/Inventory.aspx") {
+                alert("sv");
+                $("#assets").addClass("active");
+                $("#inventory").addClass("active");
+            }
+
+            if (url == "/FacilityBooking.aspx") {
+                alert("csaf");
+                $("#assets").addClass("active");
+                $("#bookings").addClass("active");
+            }
+
+            if (url == "/Vendor.aspx") {
+                alert("vsv00");
+            }
 
         });
-    </script>
+    </script>--%>
     <!-- Bootstrap -->
     <!-- App -->
-    <script src="js/charts/easypiechart/jquery.easy-pie-chart.js" cache="false"></script>
+    <%--<script src="js/charts/easypiechart/jquery.easy-pie-chart.js" cache="false"></script>
     <script src="js/charts/sparkline/jquery.sparkline.min.js" cache="false"></script>
     <script src="js/charts/flot/jquery.flot.min.js" cache="false"></script>
     <script src="js/charts/flot/jquery.flot.tooltip.min.js" cache="false"></script>
@@ -435,6 +459,7 @@
     <script src="js/charts/flot/demo.js" cache="false"></script>
     <script src="js/calendar/bootstrap_calendar.js" cache="false"></script>
     <script src="js/calendar/demo.js" cache="false"></script>
-    <script src="js/sortable/jquery.sortable.js" cache="false"></script>
+    <script src="js/sortable/jquery.sortable.js" cache="false"></script>--%>
+    <script src="js/jquery-2.1.4.js"></script>
 </body>
 </html>
