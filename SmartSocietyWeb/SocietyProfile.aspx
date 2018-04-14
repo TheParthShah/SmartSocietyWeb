@@ -12,8 +12,8 @@
             }
     </style>
     <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
-        <li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
-        <li class="active"><i class="fa fa-building"></i>Society Profile</li>
+        <li><a href="Default.aspx"><i class="fa fa-home"></i> Home</a></li>
+        <li class="active"><i class="fa fa-building"></i> Society Profile</li>
     </ul>
 
     <form class="form-horizontal" runat="server">
@@ -35,58 +35,59 @@
                 <ContentTemplate>
                     <asp:PlaceHolder runat="server" ID="EditSocietyProfile">
                         <div class="panel-body">
+                            <asp:HiddenField runat="server" ID="hdnFilename"/>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Name</label>
                                 <div class="col-sm-10">
-                                    <asp:TextBox runat="server" ID="txtSocietyName" class="form-control" placeholder="Society Name"> </asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txtSocietyName" class="form-control" placeholder="Society Name" required="required"> </asp:TextBox>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Address</label>
                                 <div class="col-sm-10">
-                                    <asp:TextBox runat="server" ID="txtAddress" TextMode="MultiLine" class="form-control" Rows="5" placeholder="Society Address"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txtAddress" TextMode="MultiLine" class="form-control" Rows="5" placeholder="Society Address" required="required"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Pincode</label>
                                 <div class="col-sm-10">
-                                    <asp:TextBox runat="server" ID="txtPincode" class="form-control" placeholder="Area Pincode"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txtPincode" class="form-control" placeholder="Area Pincode" MaxLength="6" required="required" pattern="^[0-9]+$"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Contact No</label>
                                 <div class="col-sm-10">
-                                    <asp:TextBox runat="server" ID="txtContactNo" class="form-control" placeholder="Contact Number"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txtContactNo" class="form-control" placeholder="Contact Number" MaxLength="10" required="required" pattern="^[0-9]+$"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Secretary</label>
                                 <div class="col-sm-10">
-                                    <asp:TextBox runat="server" ID="txtSecretary" class="form-control" placeholder="Secretary Name"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txtSecretary" class="form-control" placeholder="Secretary Name" required="required" pattern="^[a-zA-Z\s]+$" title="Secretary name must contain alphabets only"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Builder</label>
                                 <div class="col-sm-10">
-                                    <asp:TextBox runat="server" ID="txtBuilder" class="form-control" placeholder="Builder/Builder-Group name"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txtBuilder" class="form-control" placeholder="Builder/Builder-Group name" required="required"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Email</label>
                                 <div class="col-sm-10">
-                                    <asp:TextBox runat="server" ID="txtEmail" type="email" class="form-control" placeholder="Society Email"></asp:TextBox>
+                                    <asp:TextBox runat="server" type="email" ID="txtEmail" class="form-control" placeholder="Society Email" required="required"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Registration No</label>
                                 <div class="col-sm-10">
-                                    <asp:TextBox runat="server" ID="txtRegistrationNo" class="form-control" placeholder="Registration Number of society"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txtRegistrationNo" class="form-control" placeholder="Registration Number of society" required="required"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Campus Area</label>
                                 <div class="col-sm-10">
-                                    <asp:TextBox runat="server" ID="txtCampusArea" class="form-control" placeholder="Campus Area(In Sq.Ft)"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txtCampusArea" class="form-control" placeholder="Campus Area(In Sq.Ft)" required="required"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -107,11 +108,11 @@
                             <div class="line line-dashed line-lg pull-in"></div>
                             <div class="form-group">
                                 <div class="col-sm-4 col-sm-offset-2">
-                                    <button type="submit" class="btn btn-default">Cancel</button>
+                                    <asp:Button ID="btnCancel" runat="server" type="submit" CssClass="btn btn-default" Text="Cancel" OnClick="btnCancel_Click"></asp:Button>
                                     <asp:Button runat="server" ID="btnSave" class="btn btn-primary" Text="Save Changes" OnClick="btnSave_Click"></asp:Button>
                                 </div>
                             </div>
-                            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                            <asp:Label ID="lblAlert" runat="server" Text="--" Visible="false"></asp:Label>
 
                         </div>
                     </asp:PlaceHolder>

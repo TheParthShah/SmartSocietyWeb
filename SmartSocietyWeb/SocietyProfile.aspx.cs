@@ -5,10 +5,14 @@ public partial class SocietyProfile : System.Web.UI.Page
 {
     SSAPIAdmin.AdminClient ServiceObjectAdmin = new SSAPIAdmin.AdminClient();
     JObject SocietyData;
+    public static int flag=0;
     protected void Page_Load(object sender, EventArgs e)
     {
-        EditSocietyProfile.Visible = false;
-        SocietyProfileInfo.Visible = true;
+        if (flag == 0)
+        {
+            EditSocietyProfile.Visible = false;
+            SocietyProfileInfo.Visible = true;
+        }       
         
         if (!IsPostBack)
         {
@@ -57,6 +61,7 @@ public partial class SocietyProfile : System.Web.UI.Page
         txtAddress.Text = SocietyData["Address"].ToString();
         txtPincode.Text = SocietyData["PostalCode"].ToString();
         txtCampusArea.Text = SocietyData["CampusArea"].ToString();
+        hdnFilename.Value = SocietyData["LogoImage"].ToString();
     }
 
     protected void btnSave_Click(object sender, EventArgs e)
@@ -78,6 +83,7 @@ public partial class SocietyProfile : System.Web.UI.Page
                 }
             }
         }
+
         if (fileOK)
         {
             try
@@ -85,20 +91,37 @@ public partial class SocietyProfile : System.Web.UI.Page
                 flUpImage.PostedFile.SaveAs(path
                     + flUpImage.PostedFile.FileName);
                 Logo = flUpImage.PostedFile.FileName;
-                Label1.Text = "File uploaded!";
+                lblAlert.Text = "File uploaded!";                
             }
             catch (Exception ex)
             {
-                Label1.Text = "File could not be uploaded.";
+                Logo = "0";
+                Response.Write("<script>alert(\"File could not be uploaded\");</script>");
             }
         }
         else
         {
-            Label1.Text = "Cannot accept files of this type.";
+            if (!(flUpImage.PostedFile.FileName == ""))
+            {
+                Response.Write("<script>alert(\"Cannot accept files of this type\");</script>");
+            }            
+            Logo = "0";
         }
+        if (Logo == "0")
+        {
+            flag=1;
+            ServiceObjectAdmin.EditSocietyInformation(txtSocietyName.Text, txtAddress.Text, txtPincode.Text, hdnFilename.Value, txtContactNo.Text, txtSecretary.Text, txtBuilder.Text, txtEmail.Text, "", txtRegistrationNo.Text, txtCampusArea.Text, ddSocietyType.SelectedValue, "");
+            //Response.Redirect("SocietyProfile.aspx");
+        }
+        else
+        {
+            ServiceObjectAdmin.EditSocietyInformation(txtSocietyName.Text, txtAddress.Text, txtPincode.Text, Logo, txtContactNo.Text, txtSecretary.Text, txtBuilder.Text, txtEmail.Text, "", txtRegistrationNo.Text, txtCampusArea.Text, ddSocietyType.SelectedValue, "");
+            Response.Redirect("SocietyProfile.aspx");
+        }          
+    }
 
-
-        ServiceObjectAdmin.EditSocietyInformation(txtSocietyName.Text, txtAddress.Text, txtPincode.Text, Logo, txtContactNo.Text, txtSecretary.Text, txtBuilder.Text, txtEmail.Text, "", txtRegistrationNo.Text, txtCampusArea.Text, ddSocietyType.SelectedValue, "");
-        //Response.Redirect("SocietyProfile.aspx");
+    protected void btnCancel_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("SocietyProfile.aspx");
     }
 }
