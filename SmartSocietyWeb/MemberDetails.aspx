@@ -19,7 +19,7 @@
 
     </style>
     <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
-        <li><a href="Default.aspx"><i class="fa fa-home"></i>Home</a></li>
+        <li><a href="Default.aspx"><i class="fa fa-home"></i> Home</a></li>
         <li class="active"><i class="fa fa-users"></i> Member Details</li>
     </ul>
 
@@ -100,7 +100,7 @@
                                             <td>
                                                 <asp:LinkButton runat="server" ID="lnkbtnInfo" class="btn btn-sm btn-icon btn-success control-icon" OnClick="lnkbtnInfo_Click" CommandArgument='<%# Eval("ResidentID") %>'><i class="fa fa-info"></i></asp:LinkButton>
                                              
-                                                <asp:LinkButton runat="server" class="btn btn-sm btn-icon btn-danger control-icon" ID="InactiveResident" OnClick="InactiveResident_Click"><i class="fa fa-trash-o"></i></asp:LinkButton>
+                                                <asp:LinkButton runat="server" class="btn btn-sm btn-icon btn-danger control-icon" ID="InactiveResident" CommandArgument='<%# Eval("ResidentID") %>' OnClick="InactiveResident_Click"><i class="fa fa-trash-o"></i></asp:LinkButton>
                                             </td>
                                         </tr>
                                     </ItemTemplate>
@@ -140,11 +140,14 @@
                 <asp:PlaceHolder ID="PlaceHolder2" runat="server">
                     <div class="row">
                             <div class="col-sm-3 text-center">
-                                <asp:Image  runat="server" class="img-responsive" style="padding: 10px;" ImageUrl="~/images/app.png" height="200" width="200" />
+                                <asp:Image  ID="ResidentImage" runat="server" class="img-responsive" style="padding: 10px;" ImageUrl="~/ServerImages/TemplateImages/" height="200" width="200" />
                             </div>
                             <div class="col-sm-9">
                                 <p>
                                     <strong>Name: </strong> <asp:Literal ID="litName" runat="server"></asp:Literal></p>
+                                <p>
+                                    <strong>Gender: </strong> <asp:Literal ID="LitGender" runat="server"></asp:Literal></p>
+
                                 <p>
                                     <strong>Date of Birth: </strong> <asp:Literal ID="litDOB" runat="server"></asp:Literal>
                                 </p>

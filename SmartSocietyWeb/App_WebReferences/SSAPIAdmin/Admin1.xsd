@@ -436,6 +436,8 @@
         <xs:element minOccurs="0" name="BookingID" type="xs:int" />
         <xs:element minOccurs="0" name="Approval" type="xs:boolean" />
         <xs:element minOccurs="0" name="ApprovedBy" type="xs:int" />
+        <xs:element minOccurs="0" name="RatePerHour" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -540,6 +542,24 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="SendComplaintResponseResult" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddIncome">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IncomeName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+        <xs:element minOccurs="0" name="PaymentMode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddIncomeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddIncomeResult" nillable="true" type="xs:anyType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

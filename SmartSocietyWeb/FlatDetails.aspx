@@ -12,8 +12,8 @@
         }
     </style>
     <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
-        <li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
-        <li class="active"><i class="fa fa-building"></i>Flat Details</li>
+        <li><a href="Default.aspx"><i class="fa fa-home"></i> Home</a></li>
+        <li class="active"><i class="fa fa-building"></i> Flat Details</li>
     </ul>
 
 
@@ -32,11 +32,11 @@
                     <ItemTemplate>
                         <a href='MemberDetails.aspx?FlatNo=<%# Eval("FlatNo") %>'>
                             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                                <section class="panel panel-default">
+                                <section class="panel panel-default" style="min-height: 130px;">
                                     <header class="panel-body lt flatcard">
                                         <div class="clearfix">
                                             <span class="pull-left thumb avatar b-3x m-r">
-                                            <img src="images/avatar.jpg" class="img-circle border">
+                                            <img src="ServerImages/TemplateImages/Flat.png" class="img-circle border">
                                                 </span>
                                             <div class="clear">
                                                 <div class=" m-t-xs m-b-xs"><%# Eval("ResidentName") %></div>
