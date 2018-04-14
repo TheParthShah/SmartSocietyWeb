@@ -25,4 +25,24 @@ public partial class Vendor : System.Web.UI.Page
         rptVendor.DataBind();
        
     }
+
+    protected void rptVendor_ItemDataBound(object sender, RepeaterItemEventArgs e)
+    {
+        if (VendorData.Count == 0)
+        {
+            Label lblEmpty = (Label)e.Item.FindControl("lblEmpty");
+            lblEmpty.Visible = true;
+        }
+    }
+
+
+    protected void btnSearch_Click(object sender, EventArgs e)
+    {
+        var id = txtSearch.Text;
+
+        VendorData = JArray.Parse(ServiceObjectGen.VendorSearch(id,id).ToString());
+
+        rptVendor.DataSource = VendorData;
+        rptVendor.DataBind();
+    }
 }
