@@ -47,4 +47,19 @@ public partial class Inventory : System.Web.UI.Page
         PanelGridView.Visible = true;
         PanelSingleData.Visible = false;
     }
+
+    protected void btnSearch_Click(object sender, EventArgs e)
+    {
+        if (txtSearch.Text != "")
+        {
+            AssetData = JArray.Parse(ServiceObjectGen.AssetSearch(txtSearch.Text,txtSearch.Text).ToString());
+            rptInventory.DataSource = (AssetData);
+            rptInventory.DataBind();
+            PanelSingleData.Visible = false;
+        }
+        else
+        {
+            Response.Redirect("Inventory.aspx");
+        }
+    }
 }

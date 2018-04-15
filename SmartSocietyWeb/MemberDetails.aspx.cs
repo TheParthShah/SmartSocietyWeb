@@ -79,9 +79,9 @@ public partial class MemberDetails : System.Web.UI.Page
     {
         LinkButton lnkbtnInfo = (LinkButton)sender;
         int ID = Convert.ToInt32(lnkbtnInfo.CommandArgument);
-        if ((bool)ServiceObjectGeneral.ResidentDelete(ID))
+        if (ServiceObjectGeneral.ResidentDelete(ID).ToString()=="True")
         {
-
+            Response.Redirect("MemberDetails.aspx");
         }
         else
         {

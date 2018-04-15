@@ -41,16 +41,14 @@
         }
     </style>
     <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
-        <li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
-        <li class="active"><i class="fa fa-building"></i>Flat Details</li>
+        <li><a href="Default.aspx"><i class="fa fa-home"></i> Home</a></li>
+        <li class="active"><i class="fa fa-building"></i> Facility Booking Details</li>
     </ul>
 
     <form runat="server">
         <section class="panel panel-default">
             <header class="panel-heading font-bold">
                 <div class="row">
-
-                    <!-- <h1 class="col-sm-11" style="font-size: 38pt;">Edit Profile</h1> -->
                     <h1 class="col-sm-12" style="font-size: 20pt; margin-top: 5px;">Facility Booking Details</h1>
                 </div>
             </header>
@@ -58,42 +56,28 @@
             <div class="panel-body">
                 <asp:PlaceHolder ID="PanelGridView" runat="server">
                     <section class="panel panel-default">
-                        <header class="panel-heading">DataTables <i class="fa fa-info-sign text-muted" data-toggle="tooltip" data-placement="bottom" data-title="ajax to load the data." data-original-title="" title=""></i></header>
-                        <div class="table-responsive">
-                            <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
-
-                                <div class="row">
-                                    <div class="col-sm-4 text-left">
-                                        <div class="dataTables_filter" id="DataTables_Table_0_filter1">
-                                            <label>
-                                                Date:
-                                        <asp:TextBox runat="server" CssClass="form-control" ID="txtDate" TextMode="Date"> </asp:TextBox>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div id="DataTables_Table_0_length" class="dataTables_length">
-                                            <label>
-                                                Show
-                                        <select size="1" name="DataTables_Table_0_length" aria-controls="DataTables_Table_0">
-                                            <option value="10" selected="selected">10</option>
-                                            <option value="25">25</option>
-                                            <option value="50">50</option>
-                                            <option value="100">100</option>
-                                        </select>
-                                                entries</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="dataTables_filter" id="DataTables_Table_0_filter">
-                                            <label>
-                                                Search:
-                                        <input type="text" aria-controls="DataTables_Table_0"></label>
-                                        </div>
-                                    </div>
-                                    <%--<div id="DataTables_Table_0_processing" class="dataTables_processing" style="visibility: visible;">Processing...</div>--%>
+                        <header class="panel-heading">Facility Booking <i class="fa fa-info-sign text-muted" data-toggle="tooltip" data-placement="bottom" data-title="ajax to load the data." data-original-title="" title=""></i></header>
+                        <div class="row text-sm wrapper">
+                            <div class="col-sm-9 row m-b-xs">
+                                <div class="col-sm-3">
+                                    <asp:TextBox runat="server" CssClass="form-control" ID="txtStartDate" TextMode="Date"> </asp:TextBox>
                                 </div>
-
+                                <div class="col-sm-8">
+                                    <asp:Button runat="server" ID="btnApply" CssClass="btn btn-sm col-sm-3 btn-default" Text="Apply" OnClick="btnApply_Click"></asp:Button>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="input-group">
+                                    <asp:TextBox runat="server" ID="txtSearch" CssClass="input-sm form-control" placeholder="Search"></asp:TextBox>
+                                    
+                                    <span class="input-group-btn">
+                                        <asp:Button runat="server" ID="btnSearch" CssClass="btn btn-sm btn-default" Text="Go!" OnClick="btnSearch_Click"></asp:Button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">                                
                                 <table class="table table-striped m-b-none dataTable" data-ride="datatables" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info">
                                     <thead>
                                         <tr role="row">
@@ -112,18 +96,18 @@
                                                 <tr class="odd">
                                                     <td valign="top" colspan="1" class="dataTables_empty"><%# Eval("FlatNo") %></td>
                                                     <td valign="top" colspan="1" class="dataTables_empty"><%# Eval("FacilityName") %></td>
-                                                    <td valign="top" colspan="1" class="dataTables_empty"><%--<%# Convert.ToDateTime(Eval("StartTime")).ToLongDateString() %>--%></td>
-                                                    <td valign="top" colspan="1" class="dataTables_empty"><%--<%# (Eval("Description").ToString().Length<=25)? Eval("Description"): Eval("Description").ToString().Substring(0,20) %>--%>
-                                                        <button class="btn btn-sm btn-info pop-up" data-toggle="popover" data-html="true" data-placement="top"
-                                                            data-content="<div class='scrollable' style='height:40px'><%--<%# Eval("Description") %>--%></div>"
-                                                            title="" data-original-title="<button type=&quot;button&quot; class=&quot;close pull-right&quot; data-dismiss=&quot;popover&quot;>×</button>Popover on top">
+                                                    <td valign="top" colspan="1" class="dataTables_empty"><%# Convert.ToDateTime(Eval("StartTime")).ToLongDateString() %></td>
+                                                    <td valign="top" colspan="1" class="dataTables_empty"><%# (Eval("Description").ToString().Length<=25)? Eval("Description"): Eval("Description").ToString().Substring(0,20) %>
+                                                        <button type="reset" class="btn btn-sm btn-info pop-up" data-toggle="popover" data-html="true" data-placement="top"
+                                                            data-content="<div class='scrollable' style='height:40px'><%# Eval("Description") %></div>"
+                                                            title="" data-original-title="<button type=&quot;button&quot; class=&quot;close pull-right&quot; data-dismiss=&quot;popover&quot;>×</button>Description">
                                                             ... More
                                                         </button>
                                                     </td>
                                                     <td valign="top" colspan="1" class="dataTables_empty"><%# Eval("Status") %></td>
                                                     <td valign="top" colspan="1" class="dataTables_empty">
 
-                                                        <asp:LinkButton runat="server" ID="lnkbtnInfo" class="btn btn-sm btn-icon btn-success control-icon" OnClick="lnnkbtnInfo_Click" CommandArgument='<%--<%# Eval("BookingID") %>--%>'><i class="fa fa-info"></i></asp:LinkButton>
+                                                        <asp:LinkButton runat="server" ID="lnkbtnInfo" class="btn btn-sm btn-icon btn-success control-icon" OnClick="lnnkbtnInfo_Click" CommandArgument='<%# Eval("BookingID") %>'><i class="fa fa-info"></i></asp:LinkButton>
                                                         <a href="#" class="btn btn-sm btn-icon btn-info control-icon"><i class="fa fa-check"></i></a>
                                                         <a href="#" class="btn btn-sm btn-icon btn-danger control-icon"><i class="fa fa-times"></i></a>
 
@@ -148,7 +132,7 @@
                 </asp:PlaceHolder>
                 <asp:PlaceHolder ID="PanelSingleData" runat="server">
                     <div class="row">
-                        <div class="col-sm-6">
+                        <div class="col-sm-offset-1 col-sm-4">
                             <p>
                                 <strong>Flat ID : </strong>
                                 <asp:Literal ID="LitFlatID" runat="server"></asp:Literal>
@@ -157,13 +141,16 @@
                                 <strong>Description: </strong>
                                 <asp:Literal ID="LitDesc" runat="server"></asp:Literal>
                             </p>
-                        </div>
-
-                        <div class="col-sm-6">
                             <p>
                                 <strong>Facility</strong>
                                 <asp:Literal ID="LitFacilityName" runat="server"></asp:Literal>
                             </p>
+
+
+                        </div>
+
+                        <div class="col-sm-7">
+
                             <p>
                                 <strong>Start Time: </strong>
                                 <asp:Literal ID="LitStartTime" runat="server"></asp:Literal>
@@ -176,22 +163,21 @@
                                 <strong>Status: </strong>
                                 <asp:Literal ID="LitStatus" runat="server"></asp:Literal>
                             </p>
-                            <p>
-                                <asp:Button runat="server" ID="btnBack" CssClass="button" Text="Back" OnClick="btnBack_Click" />
-                            </p>
-
+                            <asp:PlaceHolder ID="panelReason" runat="server">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <p>
+                                            <strong>Reason to reject:</strong>
+                                            <asp:Literal ID="LitRason" runat="server"></asp:Literal>
+                                        </p>
+                                    </div>
+                                </div>
+                            </asp:PlaceHolder>
                         </div>
                     </div>
-                    <asp:PlaceHolder ID="panelReason" runat="server">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <p>
-                                    <strong>Reason to reject:</strong>
-                                    <asp:Literal ID="LitRason" runat="server"></asp:Literal>
-                                </p>
-                            </div>
-                        </div>
-                    </asp:PlaceHolder>
+                    <p class="col-sm-offset-1">
+                        <asp:Button runat="server" ID="btnBack" CssClass="button" Text="Back" OnClick="btnBack_Click" />
+                    </p>
 
                 </asp:PlaceHolder>
             </div>
