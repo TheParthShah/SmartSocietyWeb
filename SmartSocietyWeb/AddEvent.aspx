@@ -42,13 +42,13 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Start Time</label>
                     <div class="col-sm-10">
-                        <asp:TextBox runat="server" TextMode="DateTime" ID="txtStartTime" class="form-control" placeholder="Event Start Time"> </asp:TextBox>
+                        <asp:TextBox runat="server" TextMode="Date" ID="txtStartTime" class="form-control" placeholder="Event Start Time"> </asp:TextBox>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">End Time</label>
                     <div class="col-sm-10">
-                        <asp:TextBox runat="server" TextMode="DateTime" ID="txtEndTime" class="form-control" placeholder="Event End Time"> </asp:TextBox>
+                        <asp:TextBox runat="server" TextMode="Date" ID="txtEndTime" class="form-control" placeholder="Event End Time"> </asp:TextBox>
                     </div>
                 </div>
                 <div class="form-group">
@@ -76,8 +76,8 @@
                 <div class="line line-dashed line-lg pull-in"></div>
                     <div class="form-group">
                         <div class="col-sm-4 col-sm-offset-2">
-                            <button type="submit" class="btn btn-default">Cancel</button>
-                            <asp:Button runat="server" ID="btnSave" class="btn btn-primary" Text="Save Changes"></asp:Button>
+                            <asp:button runat="server" ID="btncancle" type="submit" OnClick="btncancle_Click" class="btn btn-default" Text="Cancle"></asp:button>
+                            <asp:Button runat="server" ID="btnSave" class="btn btn-primary" Text="Save Changes" OnClick="btnSave_Click"></asp:Button>
                         </div>
                     </div>
             </form>

@@ -68,8 +68,8 @@
                         <div class="line line-dashed line-lg pull-in"></div>
                         <div class="form-group">
                             <div class="col-sm-4 col-sm-offset-2">
-                                <button type="submit" class="btn btn-default">Cancel</button>
-                                <button type="submit" class="btn btn-primary">Send</button>
+                                 <asp:button runat="server" type="submit" ID="btncancle" class="btn btn-default" Text="Cancle" OnClick="btncancle_Click"></asp:button>
+                            <asp:Button runat="server" ID="btnSave"  class="btn btn-primary" Text="Save Changes" OnClick="btnSave_Click"></asp:Button>
                             </div>
                         </div>
                     </div>
@@ -81,19 +81,19 @@
 
                         </div>
                         <div class="row notice-margin-bottom">
-                            <a href="#" class="btn btn-s-md btn-primary btn-rounded">Water Supply Notice</a>
+                            <asp:Button runat="server" ID="btnWaterSupply" class="btn btn-s-md btn-primary btn-rounded" Text="Water Supply Notice" OnClick="btnWaterSupply_Click"></asp:Button>
                         </div>
                         
                         <div class="row notice-margin-bottom">
-                            <a href="#" class="btn btn-s-md btn-primary btn-rounded">Maintenence Notice</a>
+                         <asp:Button runat="server" ID="btnMaintenace" class="btn btn-s-md btn-primary btn-rounded" Text="Maintenance Supply Notice" OnClick="btnMaintenace_Click"></asp:Button>
                         </div>
 
                         <div class="row notice-margin-bottom">
-                            <a href="#" class="btn btn-s-md btn-primary btn-rounded">Meeting Notice</a>
+                          <asp:Button runat="server" ID="btnMeeting" class="btn btn-s-md btn-primary btn-rounded" Text="Meeting Notice" OnClick="btnMeeting_Click"></asp:Button>
                         </div>
 
                         <div class="row notice-margin-bottom">
-                            <a href="#" class="btn btn-s-md btn-primary btn-rounded">Electricity Notice</a>
+                           <asp:Button runat="server" ID="btnElectricity" class="btn btn-s-md btn-primary btn-rounded" Text="Electricity Notice" OnClick="btnElectricity_Click"></asp:Button>
                         </div>
                         
                     </div>

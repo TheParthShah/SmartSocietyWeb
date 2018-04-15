@@ -18,11 +18,11 @@
         </header>
 
         <div class="panel-body">
-            <form class="form-horizontal" method="get" runat="server">
+            <form class="form-horizontal" method="post" runat="server">
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Vendor Name</label>
                     <div class="col-sm-10">
-                        <asp:TextBox runat="server" ID="txtVendorName" class="form-control" placeholder="Society Name"> </asp:TextBox>
+                        <asp:TextBox runat="server" ID="txtVendorName" class="form-control" placeholder="Vendor Name" required> </asp:TextBox>
                     </div>
                 </div>
                 <div class="form-group">
@@ -37,26 +37,26 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Vendor Address</label>
                     <div class="col-sm-10">
-                        <asp:TextBox runat="server" ID="txtAddress" TextMode="MultiLine" class="form-control" Rows="5" placeholder="Society Address"></asp:TextBox>
+                        <asp:TextBox required runat="server" ID="txtAddress" TextMode="MultiLine" class="form-control" Rows="5" placeholder="Address"></asp:TextBox>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Vendor Description</label>
                     <div class="col-sm-10">
-                        <asp:TextBox runat="server" ID="tstdescription" TextMode="MultiLine" class="form-control" Rows="4" placeholder="Society Address"></asp:TextBox>
+                        <asp:TextBox required runat="server" ID="txtdescription" TextMode="MultiLine" class="form-control" Rows="4" placeholder="Vendor Description"></asp:TextBox>
                     </div>
                 </div>
-                <div class="form-group">
+                <%--<div class="form-group">
                     <label class="col-sm-2 control-label">Map</label>
                     <div class="col-sm-10">
                         Insert Map
                     </div>
-                </div>
+                </div>--%>
                 <div class="line line-dashed line-lg pull-in"></div>
                     <div class="form-group">
                         <div class="col-sm-4 col-sm-offset-2">
-                            <button type="submit" class="btn btn-default">Cancel</button>
-                            <asp:Button runat="server" ID="btnSave" class="btn btn-primary" Text="Save Changes"></asp:Button>
+                            <asp:button runat="server" type="submit" ID="btncancle" class="btn btn-default" Text="Cancle" OnClick="btncancle_Click"></asp:button>
+                            <asp:Button runat="server" ID="btnSave"  class="btn btn-primary" Text="Save Changes" OnClick="btnSave_Click"></asp:Button>
                         </div>
                     </div>
             </form>

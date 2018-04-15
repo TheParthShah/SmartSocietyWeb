@@ -225,6 +225,7 @@
         <xs:element minOccurs="0" name="Contact1" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="Contact2" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="Image" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Document" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="DOJ" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="DOL" nillable="true" type="xs:string" />
@@ -249,6 +250,7 @@
         <xs:element minOccurs="0" name="Contact1" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="Contact2" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="Image" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Document" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="DOJ" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="DOL" nillable="true" type="xs:string" />
