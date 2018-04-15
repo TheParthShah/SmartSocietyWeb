@@ -28,19 +28,17 @@
                 color: blue !important;
             }
 
-            .hign-priority{
-                    background-color: #65bd77;
-                    color: white;
-                    font-weight: 900;
+        .hign-priority {
+            background-color: #65bd77;
+            color: white;
+            font-weight: 900;
+        }
 
-            }
-
-            .low-priority{
-                
-                    background-color: #4cc0c1;
-                    color: white;
-                    font-weight: 900;
-            }
+        .low-priority {
+            background-color: #4cc0c1;
+            color: white;
+            font-weight: 900;
+        }
     </style>
     <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
         <li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
@@ -56,116 +54,130 @@
                 <h1 class="col-sm-12" style="font-size: 20pt; margin-top: 5px;">Events Details</h1>
             </div>
         </header>
+        <form runat="server">
 
-        <div class="panel-body">
-            <section class="panel panel-default">
-                <header class="panel-heading">DataTables <i class="fa fa-info-sign text-muted" data-toggle="tooltip" data-placement="bottom" data-title="ajax to load the data." data-original-title="" title=""></i></header>
-                <div class="table-responsive">
-                    <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <a class="button" href="AddEvent.aspx">Add New Event</a>
-                            </div>
-                            <div class="col-sm-4">
-                                <div id="DataTables_Table_0_length" class="dataTables_length">
-                                    <label>
-                                        Show
-                                        <select size="1" name="DataTables_Table_0_length" aria-controls="DataTables_Table_0">
-                                            <option value="10" selected="selected">10</option>
-                                            <option value="25">25</option>
-                                            <option value="50">50</option>
-                                            <option value="100">100</option>
-                                        </select>
-                                        entries</label>
+
+            <div class="panel-body">
+                <asp:PlaceHolder ID="panelGridView" runat="server">
+                    <section class="panel panel-default">
+                        <header class="panel-heading">DataTables <i class="fa fa-info-sign text-muted" data-toggle="tooltip" data-placement="bottom" data-title="ajax to load the data." data-original-title="" title=""></i></header>
+                        <div class="row text-sm wrapper">
+                                    <div class="col-sm-9 row m-b-xs">
+                                        <div class="col-sm-4">
+                                            <a class="btn btn-success" href="AddEvent.aspx">Add New Event</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="input-group">
+                                            <asp:TextBox runat="server" ID="txtSearch" CssClass="input-sm form-control" placeholder="Search" required="required"></asp:TextBox>
+                                            <span class="input-group-btn">
+                                                <asp:Button runat="server" ID="btnSearch" CssClass="btn btn-sm btn-default" Text="Go!" OnClick="btnSearch_Click"></asp:Button>
+                                            </span>
+                                        </div>
+                                    </div>
                                 </div>
+                        <div class="table-responsive">
+                            <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
+
+                                
+                                
+                                <table class="table table-striped m-b-none dataTable" data-ride="datatables" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info">
+                                    <thead>
+                                        <tr role="row">
+                                            <th width="20%" class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 192px;">Event Name</th>
+                                            <th width="20%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 248px;">Event Type</th>
+                                            <th width="25%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 247px;">Subject</th>
+                                            <th width="25%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 247px;">Description</th>
+
+                                            <th width="10%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 137px;"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody role="alert" aria-live="polite" aria-relevant="all">
+                                        <asp:Repeater ID="rptEvent" runat="server" OnItemDataBound="rptEvent_ItemDataBound">
+                                            <ItemTemplate>
+                                                <tr class="odd">
+                                                    <td valign="top" colspan="1" class="dataTables_empty"><%# Eval("EventName") %></td>
+                                                    <td valign="top" colspan="1" class="dataTables_empty"><%# Eval("EventTypeID") %></td>
+                                                    <td valign="top" colspan="1" class="dataTables_empty"><%# Eval("Subject") %></td>
+                                                    <td valign="top" colspan="1" class="dataTables_empty"><%# (Eval("Description").ToString().Length<=25)? Eval("Description"): Eval("Description").ToString().Substring(0,20) %>
+                                                        <button type="reset" class="btn btn-sm btn-info pop-up" data-toggle="popover" data-html="true" data-placement="top"
+                                                            data-content="<div class='scrollable' style='height:40px'><%# Eval("Description") %></div>"
+                                                            title="" data-original-title="<button type=&quot;button&quot; class=&quot;close pull-right&quot; data-dismiss=&quot;popover&quot;>×</button>Popover on top">
+                                                            More
+                                                        </button>
+                                                    </td>
+                                                    <td valign="top" colspan="1" class="dataTables_empty">
+                                                        <asp:LinkButton runat="server" ID="lnkbtnInfo" class="btn btn-sm btn-icon btn-success control-icon" OnClick="lnkbtnInfo_Click" CommandArgument='<%# Eval("EventID") %>'><i class="fa fa-info"></i></asp:LinkButton>
+
+
+                                                        <asp:LinkButton ID="btnDelete" runat="server" class="btn btn-sm btn-icon btn-danger control-icon" CommandArgument='<%# Eval("EventID") %>' OnClick="btnDelete_Click"><i class="fa fa-trash-o"></i></asp:LinkButton>
+                                                        <a href="AddEvent.aspx?EventID=<%# Eval("EventID") %>" class="btn btn-sm btn-icon btn-info control-icon"><i class="fa fa-pencil"></i></a>
+                                                    </td>
+                                                </tr>
+                                            </ItemTemplate>
+                                            <FooterTemplate>
+                                                <tr>
+                                                    <td colspan="5">
+                                                        <asp:Label runat="server" Visible="false" ID="lblEmpty" Text="Records Not Found....">
+
+                                                        </asp:Label>
+                                                    </td>
+                                                </tr>
+                                            </FooterTemplate>
+                                        </asp:Repeater>
+
+
+                                    </tbody>
+                                </table>
+                               
                             </div>
-                            <div class="col-sm-4">
-                                <div class="dataTables_filter" id="DataTables_Table_0_filter">
-                                    <label>
-                                        Search:
-                                        <input type="text" aria-controls="DataTables_Table_0"></label>
-                                </div>
-                            </div>
-                            <%--<div id="DataTables_Table_0_processing" class="dataTables_processing" style="visibility: visible;">Processing...</div>--%>
                         </div>
-                        <table class="table table-striped m-b-none dataTable" data-ride="datatables" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info">
-                            <thead>
-                                <tr role="row">
-                                    <th width="20%" class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 192px;">Event Name</th>
-                                    <th width="20%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 248px;">Event Type</th>
-                                    <th width="25%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 247px;">Subject</th>
-                                    <th width="25%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 247px;">Description</th>
-
-                                    <th width="10%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 137px;"></th>
-                                </tr>
-                            </thead>
-                            <tbody role="alert" aria-live="polite" aria-relevant="all">
-                                <tr class="odd">
-                                    <td valign="top" colspan="1" class="dataTables_empty">XYZ</td>
-                                    <td valign="top" colspan="1" class="dataTables_empty">PQR</td>
-                                    <td valign="top" colspan="1" class="dataTables_empty">RTY</td>
-                                    <td valign="top" colspan="1" class="dataTables_empty">vsvbjs..
-                                        <button class="btn btn-sm btn-info pop-up" data-toggle="popover" data-html="true" data-placement="top"
-                                            data-content="<div class='scrollable' style='height:40px'>Vivamus sagittis lacus vel augue laoreet rutrum faucibus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus.</div>"
-                                            title="" data-original-title="<button type=&quot;button&quot; class=&quot;close pull-right&quot; data-dismiss=&quot;popover&quot;>×</button>Popover on top">
-                                            More
-                                        </button>
-                                    </td>
-                                    <td valign="top" colspan="1" class="dataTables_empty">
-                                        <a href="#myModal" data-toggle="modal" class="btn btn-sm btn-icon btn-success control-icon"><i class="fa fa-info"></i></a>
-
-                                        <a href="#" class="btn btn-sm btn-icon btn-danger control-icon"><i class="fa fa-trash-o"></i></a>
-                                        <a href="#" class="btn btn-sm btn-icon btn-info control-icon"><i class="fa fa-pencil"></i></a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="dataTables_info" id="DataTables_Table_0_info">Showing 0 to 0 of 0 entries</div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="dataTables_paginate paging_full_numbers" id="DataTables_Table_0_paginate"><a tabindex="0" class="first paginate_button paginate_button_disabled" id="DataTables_Table_0_first">First</a><a tabindex="0" class="previous paginate_button paginate_button_disabled" id="DataTables_Table_0_previous">Previous</a><span></span><a tabindex="0" class="next paginate_button paginate_button_disabled" id="DataTables_Table_0_next">Next</a><a tabindex="0" class="last paginate_button paginate_button_disabled" id="DataTables_Table_0_last">Last</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </section>
-
-    <div id="myModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div id="EventHeader" class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Event Name</h4>
-                </div>
-                <div class="modal-body">
+                    </section>
+                </asp:PlaceHolder>
+                <asp:PlaceHolder ID="PanelSingleData" runat="server">
                     <div class="row">
                         <div class="col-sm-6">
-                            <p>Event Subject</p>
-                            <p>Description</p>
+                            <p>
+                                <strong>Event Name: </strong>
+                                <asp:Literal ID="LitEventName" runat="server"></asp:Literal>
+                            </p>
+                            <p>
+                                <strong>Event Subject: </strong>
+                                <asp:Literal ID="LitSubject" runat="server"></asp:Literal>
+                            </p>
+                            <p>
+                                <strong>Descrpition: </strong>
+                                <asp:Literal ID="LitDesc" runat="server"></asp:Literal>
+                            </p>
                         </div>
 
                         <div class="col-sm-6">
-                            <p>Venue</p>
-                            <p>Start Time</p>
-                            <p>End Time</p>
-                            
-                            
+                            <p>
+                                <strong>Venue: </strong>
+                                <asp:Literal ID="LitVenue" runat="server"></asp:Literal>
+                            </p>
+                            <p>
+                                <strong>Start Time: </strong>
+                                <asp:Literal ID="LitStartTime" runat="server"></asp:Literal>
+                            </p>
+                            <p>
+                                <strong>End Time: </strong>
+                                <asp:Literal ID="LitEndTime" runat="server"></asp:Literal>
+                            </p>
+                            <p>
+                                <asp:LinkButton runat="server" ID="back" CssClass="button" OnClick="back_Click" Text="Back"></asp:LinkButton>
+                            </p>
+
+
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
+                </asp:PlaceHolder>
 
-        </div>
-    </div>
+            </div>
+        </form>
+    </section>
+
+
 
     <script>
         function HighPriority() {
