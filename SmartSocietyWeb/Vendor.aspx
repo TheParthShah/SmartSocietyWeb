@@ -12,7 +12,6 @@
             text-decoration: none;
             display: inline-block;
             font-size: 16px;
-           
         }
 
         .pop-up {
@@ -44,8 +43,8 @@
 
             <div class="panel-body">
                 <section class="panel panel-default">
-                    
-                    
+
+
                     <header class="panel-heading">Resident Details </header>
                     <div class="row text-sm wrapper">
                         <div class="col-sm-5 m-b-xs">
@@ -76,8 +75,8 @@
                         </div>
                         <div class="col-sm-3">
                             <div class="input-group">
-                                <asp:TextBox runat="server" ID="txtSearch" class="input-sm form-control" placeholder="Search"  type="text" required="required" />
-                               
+                                <asp:TextBox runat="server" ID="txtSearch" class="input-sm form-control" placeholder="Search" type="text" />
+
                                 <span class="input-group-btn">
                                     <asp:Button ID="btnSearch" runat="server" class="btn btn-sm btn-default" Text="Go!" OnClick="btnSearch_Click"></asp:Button>
                                 </span>
@@ -110,8 +109,8 @@
                                             </button>
                                         </td>
                                         <td valign="top" colspan="1" class="dataTables_empty">
-                                            <a href="#" class="btn btn-sm btn-icon btn-danger control-icon"><i class="fa fa-trash-o"></i></a>
-                                            <a href="#" class="btn btn-sm btn-icon btn-info control-icon"><i class="fa fa-pencil"></i></a>
+                                            <asp:LinkButton runat="server" ID="btnDelete" CommandArgument='<%# Eval("VendorID") %>' OnClick="btnDelete_Click" class="btn btn-sm btn-icon btn-danger control-icon"><i class="fa fa-trash-o"></i></asp:LinkButton>
+                                            <a href="AddVendor.aspx?VendorID=<%# Eval("VendorID") %>" class="btn btn-sm btn-icon btn-info control-icon"><i class="fa fa-pencil"></i></a>
                                         </td>
                                     </tr>
                                 </ItemTemplate>
@@ -137,10 +136,9 @@
                             </div>
                         </div>--%>
             </div>
-            </div>
+
         </section>
-        </div>
-        </section>
+
     </form>
 </asp:Content>
 

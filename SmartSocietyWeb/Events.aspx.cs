@@ -21,7 +21,7 @@ public partial class Events : System.Web.UI.Page
 
     private void BindData()
     {
-        EventData = JArray.Parse(ServiceObjectGen.ViewAllEvents("0","0",0,0).ToString());
+        EventData = JArray.Parse(ServiceObjectGen.ViewAllEvents("0", "0", 0, 0).ToString());
         rptEvent.DataSource = (EventData);
         rptEvent.DataBind();
         PanelSingleData.Visible = false;
@@ -34,7 +34,7 @@ public partial class Events : System.Web.UI.Page
         var SingleObj = (from ob in EventData
                          where Convert.ToInt32(ob["EventID"]) == ID
                          select ob).Single();
-       
+
         LitEventName.Text = SingleObj["EventName"].ToString();
         LitEndTime.Text = Convert.ToDateTime(SingleObj["EndTime"]).ToLongDateString();
         LitStartTime.Text = Convert.ToDateTime(SingleObj["StartTime"]).ToLongDateString();
@@ -65,21 +65,28 @@ public partial class Events : System.Web.UI.Page
     {
         var id = txtSearch.Text;
 
-        EventData = JArray.Parse(ServiceObjectGen.EventSearch(id,id).ToString());
+        if (id != "")
+        {
+            EventData = JArray.Parse(ServiceObjectGen.EventSearch(id, id).ToString());
 
-        rptEvent.DataSource = EventData;
-        rptEvent.DataBind();
+            rptEvent.DataSource = EventData;
+            rptEvent.DataBind();
+
+        }
+        else
+        {
+            Response.Redirect("Events.aspx");
+        }
     }
 
-   
+
 
     protected void btnDelete_Click(object sender, EventArgs e)
     {
         LinkButton lnkbtnInfo = (LinkButton)sender;
         int ID = Convert.ToInt32(lnkbtnInfo.CommandArgument);
-        if ((bool)ServiceObjectGen.EventDelete(ID))
-        {
-
-        }
+        ServiceObjectGen.EventDelete(ID);
+        Response.Redirect("Events.aspx");
+        
     }
 }

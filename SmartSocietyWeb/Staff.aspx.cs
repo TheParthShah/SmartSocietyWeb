@@ -9,6 +9,7 @@ using System.Web.UI.WebControls;
 public partial class Staff : System.Web.UI.Page
 {
     SSAPIGen.GeneralClient ServiceObjectGen = new SSAPIGen.GeneralClient();
+    SSAPIAdmin.AdminClient ServiveObjAdmin = new SSAPIAdmin.AdminClient();
     public static JArray StaffData { get; set; }
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -50,5 +51,26 @@ public partial class Staff : System.Web.UI.Page
     {
         PlaceHolder1.Visible = true;
         PanelSingleData.Visible = false;
+    }
+
+    protected void btnSearch_Click(object sender, EventArgs e)
+    {
+        var id = txtSearch.Text;
+
+        if (id != "")
+        {
+            StaffData = JArray.Parse(ServiceObjectGen.StaffSearch(id, id).ToString());
+
+            rptStaff.DataSource = StaffData;
+            rptStaff.DataBind();
+        }
+    }
+
+    protected void lnkbtnDelete_Click(object sender, EventArgs e)
+    {
+        LinkButton lnkbtnInfo = (LinkButton)sender;
+        int ID = Convert.ToInt32(lnkbtnInfo.CommandArgument);
+        ServiceObjectGen.StaffDelete(ID);
+        Response.Redirect("Staff.aspx");
     }
 }

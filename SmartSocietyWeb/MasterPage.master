@@ -343,17 +343,7 @@
                                                 <span>Complains</span>
                                             </a>
                                         </li>
-
-                                        <li id="payments">
-                                            <a href="Payments.aspx">
-                                                <i class="fa fa-building icon">
-                                                    <b class="bg-warning"></b>
-                                                </i>
-                                                <span class="pull-right"></span>
-                                                <span>Payments</span>
-                                            </a>
-                                        </li>
-                                        <li id="documents">
+                                         <li id="documents">
                                             <a href="Documents.aspx">
                                                 <i class="fa fa-building icon">
                                                     <b class="bg-warning"></b>
@@ -362,6 +352,16 @@
                                                 <span>Documents</span>
                                             </a>
                                         </li>
+                                       <%-- <li id="payments">
+                                            <a href="Payments.aspx">
+                                                <i class="fa fa-building icon">
+                                                    <b class="bg-warning"></b>
+                                                </i>
+                                                <span class="pull-right"></span>
+                                                <span>Payments</span>
+                                            </a>
+                                        </li>
+                                       
                                         <li id="accounting">
                                             <a href="Accounting.aspx">
                                                 <i class="fa fa-building icon">
@@ -370,7 +370,7 @@
                                                 <span class="pull-right"></span>
                                                 <span>Accounting</span>
                                             </a>
-                                        </li>
+                                        </li>--%>
 
                                     </ul>
                                 </nav>

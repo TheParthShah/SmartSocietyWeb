@@ -84,7 +84,7 @@
                                     <div class="timeline-caption">
                                         <div class="panel panel-default">
                                             <div class="panel-body">
-                                                <span class="arrow left"></span><span class="timeline-icon"><i class="fa fa-bullhorn time-icon bg-primary"></i></span><span class="timeline-date"><%# Convert.ToDateTime( Eval("CreatedOn")).ToLongDateString() %></span>
+                                                <span class="arrow right"></span><span class="timeline-icon"><i class="fa fa-bullhorn time-icon bg-primary"></i></span><span class="timeline-date"><%# Convert.ToDateTime( Eval("CreatedOn")).ToLongDateString() %></span>
                                                 <h5><span><%# Eval("Title") %></span>  <%# Eval("") %>  </h5>
                                                 <p><%# Eval("Description") %></p>
                                             </div>

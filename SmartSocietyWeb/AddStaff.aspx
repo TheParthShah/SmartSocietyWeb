@@ -18,10 +18,12 @@
 
         <div class="panel-body">
             <form class="form-horizontal" method="get" runat="server">
+                <asp:HiddenField runat="server" ID="hdnImageFile" Value=""/>
+                <asp:HiddenField runat="server" ID="hdnDocFile" Value=""/>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Name</label>
                     <div class="col-sm-10">
-                        <asp:TextBox runat="server" ID="txtStaffName" class="form-control" placeholder="Society Name"> </asp:TextBox>
+                        <asp:TextBox runat="server" ID="txtStaffName" class="form-control" placeholder="Name" required="required"> </asp:TextBox>
                     </div>
                 </div>
                 <div class="form-group">
@@ -37,25 +39,25 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Date of Birth</label>
                     <div class="col-sm-10">
-                        <asp:TextBox runat="server" ID="txtDob" TextMode="Date" class="form-control" placeholder="Date of Birth"></asp:TextBox>
+                        <asp:TextBox runat="server" ID="txtDob" TextMode="Date" class="form-control" placeholder="Date of Birth" required="required"></asp:TextBox>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Address</label>
                     <div class="col-sm-10">
-                        <asp:TextBox runat="server" ID="txtaddress" TextMode="MultiLine" class="form-control" Rows="4" placeholder="Society Address"></asp:TextBox>
+                        <asp:TextBox runat="server" ID="txtaddress" TextMode="MultiLine" class="form-control" Rows="4" required="required" placeholder="Address"></asp:TextBox>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Contact No 1</label>
                     <div class="col-sm-10">
-                        <asp:TextBox runat="server" ID="txtContactNo1" class="form-control" placeholder="Contact Number (Primary)"> </asp:TextBox>
+                        <asp:TextBox runat="server" ID="txtContactNo1" class="form-control" placeholder="Contact Number (Primary)" required="required" TextMode="Number"> </asp:TextBox>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Contact No 2</label>
                     <div class="col-sm-10">
-                        <asp:TextBox runat="server" ID="txtContactNo2" class="form-control" placeholder="Contact Number (Secondary)"> </asp:TextBox>
+                        <asp:TextBox runat="server" ID="txtContactNo2" class="form-control" placeholder="Contact Number (Secondary)" required="required" TextMode="Number"> </asp:TextBox>
                     </div>
                 </div>
                 <div class="form-group">
@@ -73,15 +75,15 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Date of Joining</label>
                     <div class="col-sm-10">
-                        <asp:TextBox runat="server" ID="txtDoj" TextMode="Date" class="form-control" placeholder="Date of Birth"></asp:TextBox>
+                        <asp:TextBox runat="server" ID="txtDoj" TextMode="Date" class="form-control" placeholder="Date of Joining" required="required"></asp:TextBox>
                     </div>
                 </div>
                 
                 <div class="line line-dashed line-lg pull-in"></div>
                 <div class="form-group">
                     <div class="col-sm-4 col-sm-offset-2">
-                        <button type="submit" class="btn btn-default">Cancel</button>
-                        <asp:Button runat="server" ID="btnSave" class="btn btn-primary" Text="Save Changes"></asp:Button>
+                        <asp:Button runat="server" ID="btnCancle" OnClick="btnCancle_Click" type="submit" class="btn btn-default" Text="Cancel"></asp:Button>
+                        <asp:Button runat="server" ID="btnSave" class="btn btn-primary" Text="Save Changes" OnClick="btnSave_Click"></asp:Button>
                     </div>
                 </div>
             </form>

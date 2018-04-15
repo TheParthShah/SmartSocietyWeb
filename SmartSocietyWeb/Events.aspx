@@ -69,7 +69,7 @@
                                     </div>
                                     <div class="col-sm-3">
                                         <div class="input-group">
-                                            <asp:TextBox runat="server" ID="txtSearch" CssClass="input-sm form-control" placeholder="Search" required="required"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txtSearch" CssClass="input-sm form-control" placeholder="Search" ></asp:TextBox>
                                             <span class="input-group-btn">
                                                 <asp:Button runat="server" ID="btnSearch" CssClass="btn btn-sm btn-default" Text="Go!" OnClick="btnSearch_Click"></asp:Button>
                                             </span>
