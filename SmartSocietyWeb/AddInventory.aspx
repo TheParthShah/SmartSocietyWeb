@@ -21,7 +21,7 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Name</label>
                     <div class="col-sm-10">
-                        <asp:TextBox runat="server" ID="txtAssetName" class="form-control" placeholder="Inventory Name"> </asp:TextBox>
+                        <asp:TextBox runat="server" ID="txtAssetName" class="form-control" placeholder="Inventory Name" required="required"> </asp:TextBox>
                     </div>
                 </div>
                 <div class="form-group">
@@ -37,13 +37,13 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Purchased On</label>
                     <div class="col-sm-10">
-                        <asp:TextBox runat="server" ID="txtPurchaseOn" TextMode="Date" class="form-control" placeholder="Date of Birth"></asp:TextBox>
+                        <asp:TextBox runat="server" ID="txtPurchaseOn" TextMode="Date" class="form-control" placeholder="Date of Birth" required="required"></asp:TextBox>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Amount</label>
                     <div class="col-sm-10">
-                        <asp:TextBox runat="server" ID="txtValue" class="form-control" placeholder="Price"></asp:TextBox>
+                        <asp:TextBox runat="server" ID="txtValue" class="form-control" placeholder="Price" required="required"></asp:TextBox>
                     </div>
                 </div>
                 <div class="form-group">
@@ -71,7 +71,7 @@
                 <div class="form-group">
                     <div class="col-sm-4 col-sm-offset-2">
                         <button type="submit" class="btn btn-default">Cancel</button>
-                        <asp:Button runat="server" ID="btnSave" class="btn btn-primary" Text="Save Changes"></asp:Button>
+                        <asp:Button runat="server" ID="btnSave" class="btn btn-primary" Text="Save Changes" OnClick="btnSave_Click"></asp:Button>
                     </div>
                 </div>
             </form>

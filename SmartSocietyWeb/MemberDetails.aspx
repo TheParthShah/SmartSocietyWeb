@@ -40,29 +40,10 @@
                         <header class="panel-heading">Resident Details </header>
                         <div class="row text-sm wrapper">
                             <div class="col-sm-5 m-b-xs">
-                                <%--<select class="input-sm form-control input-s-sm inline">
-                            <option value="0">Bulk action</option>
-                            <option value="1">Delete selected</option>
-                            <option value="2">Bulk edit</option>
-                            <option value="3">Export</option>
-                        </select>
-                        <button class="btn btn-sm btn-default">Apply</button>--%>
+                                
                             </div>
                             <div class="col-sm-4 m-b-xs">
-                                <%--<div class="btn-group" data-toggle="buttons">
-                            <label class="btn btn-sm btn-default active">
-                                <input name="options" id="option1" type="radio">
-                                Day
-                            </label>
-                            <label class="btn btn-sm btn-default">
-                                <input name="options" id="option2" type="radio">
-                                Week
-                            </label>
-                            <label class="btn btn-sm btn-default">
-                                <input name="options" id="option2" type="radio">
-                                Month
-                            </label>
-                        </div>--%>
+                                
                             </div>
                             <div class="col-sm-3">
                                 <div class="input-group">

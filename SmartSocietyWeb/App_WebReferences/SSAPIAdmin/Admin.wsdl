@@ -48,6 +48,12 @@
   <wsdl:message name="IAdmin_SetFlatHolder_OutputMessage">
     <wsdl:part name="parameters" element="tns:SetFlatHolderResponse" />
   </wsdl:message>
+  <wsdl:message name="IAdmin_GetAllAssetTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllAssetTypes" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_GetAllAssetTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllAssetTypesResponse" />
+  </wsdl:message>
   <wsdl:message name="IAdmin_AddAssetType_InputMessage">
     <wsdl:part name="parameters" element="tns:AddAssetType" />
   </wsdl:message>
@@ -221,6 +227,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/SetFlatHolder" message="tns:IAdmin_SetFlatHolder_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAdmin/SetFlatHolderResponse" message="tns:IAdmin_SetFlatHolder_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetAllAssetTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/GetAllAssetTypes" message="tns:IAdmin_GetAllAssetTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdmin/GetAllAssetTypesResponse" message="tns:IAdmin_GetAllAssetTypes_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="AddAssetType">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/AddAssetType" message="tns:IAdmin_AddAssetType_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAdmin/AddAssetTypeResponse" message="tns:IAdmin_AddAssetType_OutputMessage" />
@@ -376,6 +386,15 @@
     </wsdl:operation>
     <wsdl:operation name="SetFlatHolder">
       <soap:operation soapAction="http://tempuri.org/IAdmin/SetFlatHolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAssetTypes">
+      <soap:operation soapAction="http://tempuri.org/IAdmin/GetAllAssetTypes" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

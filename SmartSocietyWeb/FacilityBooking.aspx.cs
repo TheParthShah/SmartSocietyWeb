@@ -35,15 +35,15 @@ public partial class AssetBooking : System.Web.UI.Page
         var SingleObj = (from ob in BookingData
                          where Convert.ToInt32(ob["BookingID"]) == ID
                          select ob).Single();
-        LitFlatID.Text = SingleObj["FlatID"].ToString();
+        LitFlatID.Text = SingleObj["FlatNo"].ToString();
         LitDesc.Text = SingleObj["Description"].ToString();
         LitFacilityName.Text = SingleObj["FacilityName"].ToString();
-        //LitStartTime.Text = Convert.ToDateTime( SingleObj["StartTime"]).ToLongDateString();
-        //LitEndTime.Text = Convert.ToDateTime(SingleObj["EndTime"]).ToLongDateString();
+        LitStartTime.Text = Convert.ToDateTime(SingleObj["StartTime"]).ToLongDateString()+" "+ Convert.ToDateTime(SingleObj["StartTime"]).ToLongTimeString();
+        LitEndTime.Text = Convert.ToDateTime(SingleObj["EndTime"]).ToLongDateString() + " " + Convert.ToDateTime(SingleObj["EndTime"]).ToLongTimeString();
 
         LitStatus.Text = SingleObj["Status"].ToString();
 
-        if (SingleObj["Reason"].ToString() == null)
+        if (SingleObj["Reason"].ToString() == null || SingleObj["Reason"].ToString() == "")
             panelReason.Visible = false;
         else
             LitRason.Text = SingleObj["Reason"].ToString();
@@ -55,5 +55,36 @@ public partial class AssetBooking : System.Web.UI.Page
     {
         PanelGridView.Visible = true;
         PanelSingleData.Visible = false;
+        Response.Redirect("FacilityBooking.aspx");
+    }
+
+    protected void btnApply_Click(object sender, EventArgs e)
+    {
+        if (txtStartDate.Text != "")
+        {
+            BookingData = JArray.Parse(ServiceObjectGen.FacilitiesBookingSearch("", Convert.ToDateTime(txtStartDate.Text).ToLongDateString()).ToString());
+            rptBooking.DataSource = BookingData;
+            rptBooking.DataBind();
+            PanelSingleData.Visible = false;
+        }
+        else
+        {
+            Response.Redirect("FacilityBooking.aspx");
+        }
+    }
+
+    protected void btnSearch_Click(object sender, EventArgs e)
+    {
+        if (txtSearch.Text != "")
+        {
+            BookingData = JArray.Parse(ServiceObjectGen.FacilitiesBookingSearch(txtSearch.Text,"").ToString());
+            rptBooking.DataSource = BookingData;
+            rptBooking.DataBind();
+            PanelSingleData.Visible = false;
+        }
+        else
+        {
+            Response.Redirect("FacilityBooking.aspx");
+        }
     }
 }

@@ -50,35 +50,26 @@
                         <asp:PlaceHolder runat="server" ID="PanelGridView">
 
                             <section class="panel panel-default">
-                                <header class="panel-heading">DataTables <i class="fa fa-info-sign text-muted" data-toggle="tooltip" data-placement="bottom" data-title="ajax to load the data." data-original-title="" title=""></i></header>
+                                <header class="panel-heading">Inventory <i class="fa fa-info-sign text-muted" data-toggle="tooltip" data-placement="bottom" data-title="ajax to load the data." data-original-title="" title=""></i></header>
+                                <div class="row text-sm wrapper">
+                                    <div class="col-sm-9 row m-b-xs">
+                                        <div class="col-sm-4">
+                                            <a class="btn btn-success" href="AddInventory.aspx">Add New Inventory</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="input-group">
+                                            <asp:TextBox runat="server" ID="txtSearch" CssClass="input-sm form-control" placeholder="Search" required="required"></asp:TextBox>
+                                            <span class="input-group-btn">
+                                                <asp:Button runat="server" ID="btnSearch" CssClass="btn btn-sm btn-default" Text="Go!" OnClick="btnSearch_Click"></asp:Button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="table-responsive">
                                     <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
-                                        <div class="row">
-                                            <div class="col-sm-4">
-                                                <a class="button" href="AddInventory.aspx">Add New Inventory</a>
-                                            </div>
-                                            <div class="col-sm-4">
-                                                <div id="DataTables_Table_0_length" class="dataTables_length">
-                                                    <label>
-                                                        Show
-                                        <select size="1" name="DataTables_Table_0_length" aria-controls="DataTables_Table_0">
-                                            <option value="10" selected="selected">10</option>
-                                            <option value="25">25</option>
-                                            <option value="50">50</option>
-                                            <option value="100">100</option>
-                                        </select>
-                                                        entries</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-4">
-                                                <div class="dataTables_filter" id="DataTables_Table_0_filter">
-                                                    <label>
-                                                        Search:
-                                        <input type="text" aria-controls="DataTables_Table_0"></label>
-                                                </div>
-                                            </div>
-                                            <%--<div id="DataTables_Table_0_processing" class="dataTables_processing" style="visibility: visible;">Processing...</div>--%>
-                                        </div>
+
+
                                         <table class="table table-striped m-b-none dataTable" data-ride="datatables" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info">
                                             <thead>
                                                 <tr role="row">
@@ -100,7 +91,7 @@
 
                                                             <td valign="top" colspan="1" class="dataTables_empty">
                                                                 <asp:LinkButton runat="server" ID="lnkbtnInfo" class="btn btn-sm btn-icon btn-success control-icon" OnClick="lnnkbtnInfo_Click" CommandArgument='<%# Eval("AssetID") %>'><i class="fa fa-info"></i></asp:LinkButton>
-                                                                
+
                                                                 <a href="#" class="btn btn-sm btn-icon btn-danger control-icon"><i class="fa fa-trash-o"></i></a>
                                                                 <a href="#" class="btn btn-sm btn-icon btn-info control-icon"><i class="fa fa-pencil"></i></a>
                                                                 <a href="#" class="btn btn-sm btn-icon btn-warning control-icon"><i class="fa fa-file"></i></a>
@@ -129,24 +120,30 @@
 
                         <div class="row">
                             <div class="col-sm-3 text-center">
-                                <asp:Image runat="server" class="img-responsive" style="padding: 10px;" ImageUrl="images/app.png" height="200" width="200" />
+                                <asp:Image runat="server" class="img-responsive" Style="padding: 10px;" ImageUrl="images/app.png" Height="200" Width="200" />
                             </div>
                             <div class="col-sm-9">
-                                <p><h4 class="modal-title">
-                                 <strong>Name: </strong>   <asp:Literal runat="server" ID="litInventoryName" Text="--"></asp:Literal></h4>
-                                    </p>
                                 <p>
-                                    <strong>Type: </strong><asp:Literal runat="server" ID="litInventoryType" Text="--"></asp:Literal>
+                                    <h4 class="modal-title">
+                                        <strong>Name: </strong>
+                                        <asp:Literal runat="server" ID="litInventoryName" Text="--"></asp:Literal></h4>
                                 </p>
                                 <p>
-                                    <strong>Date of Purchase: </strong><asp:Literal runat="server" ID="litDOP" Text="--"></asp:Literal>
+                                    <strong>Type: </strong>
+                                    <asp:Literal runat="server" ID="litInventoryType" Text="--"></asp:Literal>
                                 </p>
                                 <p>
-                                    <strong>Value: </strong><asp:Literal runat="server" ID="litInventoryValue" Text="--"></asp:Literal>
+                                    <strong>Date of Purchase: </strong>
+                                    <asp:Literal runat="server" ID="litDOP" Text="--"></asp:Literal>
+                                </p>
+                                <p>
+                                    <strong>Value: </strong>
+                                    <asp:Literal runat="server" ID="litInventoryValue" Text="--"></asp:Literal>
                                 </p>
 
                                 <p>
-                                    <strong>Status: </strong><asp:Literal runat="server" ID="litStatus" Text="--"></asp:Literal>
+                                    <strong>Status: </strong>
+                                    <asp:Literal runat="server" ID="litStatus" Text="--"></asp:Literal>
                                 </p>
                                 <p>
                                     <asp:Button runat="server" ID="btnBack" CssClass="button" Text="Back" OnClick="btnBack_Click" />
@@ -156,12 +153,15 @@
                         </div>
                     </asp:PlaceHolder>
                 </section>
-               
+
             </ContentTemplate>
+            <Triggers>
+                <asp:PostBackTrigger ControlID="btnSearch"/>
+            </Triggers>
         </asp:UpdatePanel>
     </form>
 
-    
-    
+
+
 </asp:Content>
 
