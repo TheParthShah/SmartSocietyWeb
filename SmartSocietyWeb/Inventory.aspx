@@ -30,8 +30,8 @@
             }
     </style>
     <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
-        <li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
-        <li class="active"><i class="fa fa-building"></i>Flat Details</li>
+        <li><a href="Default.aspx"><i class="fa fa-home"></i>Home</a></li>
+        <li class="active"><i class="fa fa-building"></i>Inventory</li>
     </ul>
 
     <form runat="server">
@@ -59,7 +59,7 @@
                                     </div>
                                     <div class="col-sm-3">
                                         <div class="input-group">
-                                            <asp:TextBox runat="server" ID="txtSearch" CssClass="input-sm form-control" placeholder="Search" required="required"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txtSearch" CssClass="input-sm form-control" placeholder="Search"></asp:TextBox>
                                             <span class="input-group-btn">
                                                 <asp:Button runat="server" ID="btnSearch" CssClass="btn btn-sm btn-default" Text="Go!" OnClick="btnSearch_Click"></asp:Button>
                                             </span>
@@ -92,9 +92,9 @@
                                                             <td valign="top" colspan="1" class="dataTables_empty">
                                                                 <asp:LinkButton runat="server" ID="lnkbtnInfo" class="btn btn-sm btn-icon btn-success control-icon" OnClick="lnnkbtnInfo_Click" CommandArgument='<%# Eval("AssetID") %>'><i class="fa fa-info"></i></asp:LinkButton>
 
-                                                                <a href="#" class="btn btn-sm btn-icon btn-danger control-icon"><i class="fa fa-trash-o"></i></a>
-                                                                <a href="#" class="btn btn-sm btn-icon btn-info control-icon"><i class="fa fa-pencil"></i></a>
-                                                                <a href="#" class="btn btn-sm btn-icon btn-warning control-icon"><i class="fa fa-file"></i></a>
+                                                                <asp:LinkButton runat="server" ID="lnkbtnDelete" CssClass="btn btn-sm btn-icon btn-danger control-icon" CommandArgument='<%# Eval("AssetID") %>' OnClick="lnkbtnDelete_Click"><i class="fa fa-trash-o"></i></asp:LinkButton>
+                                                                <a href='AddInventory.aspx?AssetID=<%# Eval("AssetID") %>' class="btn btn-sm btn-icon btn-info control-icon"><i class="fa fa-pencil"></i></a>
+                                                                <a href='ServerImages/Assets/<%# Eval("InvoiceDoc") %>' target="_blank" class="btn btn-sm btn-icon btn-warning control-icon"><i class="fa fa-file"></i></a>
                                                             </td>
                                                         </tr>
                                                     </ItemTemplate>
@@ -120,7 +120,7 @@
 
                         <div class="row">
                             <div class="col-sm-3 text-center">
-                                <asp:Image runat="server" class="img-responsive" Style="padding: 10px;" ImageUrl="images/app.png" Height="200" Width="200" />
+                                <asp:Image ID="imgAssetImage" runat="server" class="img-responsive" Style="padding: 10px;" ImageUrl="~/ServerImages/Assets/" Height="200" Width="200" />
                             </div>
                             <div class="col-sm-9">
                                 <p>

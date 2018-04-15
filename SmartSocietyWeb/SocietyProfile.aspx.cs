@@ -112,7 +112,7 @@ public partial class SocietyProfile : System.Web.UI.Page
         }
         else
         {
-            ServiceObjectAdmin.EditSocietyInformation(txtSocietyName.Text, txtAddress.Text, txtPincode.Text, Logo, txtContactNo.Text, txtSecretary.Text, txtBuilder.Text, txtEmail.Text, "", txtRegistrationNo.Text, txtCampusArea.Text, ddSocietyType.SelectedValue, "");
+            ServiceObjectAdmin.EditSocietyInformation(txtSocietyName.Text, txtAddress.Text, txtPincode.Text, Logo, txtContactNo.Text, txtSecretary.Text, txtBuilder.Text, txtEmail.Text, hdnFilename.Value, txtRegistrationNo.Text, txtCampusArea.Text, ddSocietyType.SelectedValue, "");
             Response.Redirect("SocietyProfile.aspx");
         }
     }

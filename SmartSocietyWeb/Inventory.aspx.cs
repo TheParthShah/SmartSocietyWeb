@@ -38,6 +38,7 @@ public partial class Inventory : System.Web.UI.Page
         litInventoryValue.Text = SingleObj["AssetValue"].ToString();
         litDOP.Text = SingleObj["PurchasedOn"].ToString();
         litStatus.Text = SingleObj["Status"].ToString();
+        imgAssetImage.ImageUrl += SingleObj["Image"].ToString();
         PanelGridView.Visible = false;
         PanelSingleData.Visible = true;
     }
@@ -61,5 +62,13 @@ public partial class Inventory : System.Web.UI.Page
         {
             Response.Redirect("Inventory.aspx");
         }
+    }
+
+    protected void lnkbtnDelete_Click(object sender, EventArgs e)
+    {
+        LinkButton lnkbtnDelete = (LinkButton)sender;
+        int ID =Convert.ToInt32(lnkbtnDelete.CommandArgument);
+        ServiceObjectGen.AssetDelete(ID);
+        Response.Redirect("Inventory.aspx");
     }
 }
