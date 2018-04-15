@@ -41,8 +41,8 @@
         }
     </style>
     <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
-        <li><a href="Default.aspx"><i class="fa fa-home"></i> Home</a></li>
-        <li class="active"><i class="fa fa-building"></i> Facility Booking Details</li>
+        <li><a href="Default.aspx"><i class="fa fa-home"></i>Home</a></li>
+        <li class="active"><i class="fa fa-building"></i>Facility Booking Details</li>
     </ul>
 
     <form runat="server">
@@ -69,7 +69,7 @@
                             <div class="col-sm-3">
                                 <div class="input-group">
                                     <asp:TextBox runat="server" ID="txtSearch" CssClass="input-sm form-control" placeholder="Search"></asp:TextBox>
-                                    
+
                                     <span class="input-group-btn">
                                         <asp:Button runat="server" ID="btnSearch" CssClass="btn btn-sm btn-default" Text="Go!" OnClick="btnSearch_Click"></asp:Button>
                                     </span>
@@ -77,7 +77,7 @@
                             </div>
                         </div>
                         <div class="table-responsive">
-                            <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">                                
+                            <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
                                 <table class="table table-striped m-b-none dataTable" data-ride="datatables" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info">
                                     <thead>
                                         <tr role="row">
@@ -107,11 +107,141 @@
                                                     <td valign="top" colspan="1" class="dataTables_empty"><%# Eval("Status") %></td>
                                                     <td valign="top" colspan="1" class="dataTables_empty">
 
-                                                        <asp:LinkButton runat="server" ID="lnkbtnInfo" class="btn btn-sm btn-icon btn-success control-icon" OnClick="lnnkbtnInfo_Click" CommandArgument='<%# Eval("BookingID") %>'><i class="fa fa-info"></i></asp:LinkButton>
-                                                        <a href="#" class="btn btn-sm btn-icon btn-info control-icon"><i class="fa fa-check"></i></a>
-                                                        <a href="#" class="btn btn-sm btn-icon btn-danger control-icon"><i class="fa fa-times"></i></a>
+                                                        <asp:LinkButton runat="server" ID="lnkbtnInfo" CssClass="btn btn-sm btn-icon btn-success control-icon" OnClick="lnnkbtnInfo_Click" CommandArgument='<%# Eval("BookingID")  %>'><i class="fa fa-info"></i></asp:LinkButton>
+                                                        <asp:LinkButton runat="server" ID="lnkbtnApprove" CssClass="btn btn-sm btn-icon btn-info control-icon" OnClick="lnkbtnApprove_Click" CommandArgument='<%# Eval("BookingID")+"-"+Eval("RatePerHour") %>'><i class="fa fa-check"></i></asp:LinkButton>
+                                                        <asp:LinkButton runat="server" ID="lnkbtnDisapprove" CssClass="btn btn-sm btn-icon btn-danger control-icon" OnClick="lnkbtnDisapprove_Click" CommandArgument='<%# Eval("BookingID")+"-"+Eval("RatePerHour") %>'><i class="fa fa-times"></i></asp:LinkButton>
 
                                                     </td>
+                                                </tr>
+                                            </ItemTemplate>
+                                        </asp:Repeater>
+
+                                    </tbody>
+                                </table>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="dataTables_info" id="DataTables_Table_0_info">Showing 0 to 0 of 0 entries</div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="dataTables_paginate paging_full_numbers" id="DataTables_Table_0_paginate"><a tabindex="0" class="first paginate_button paginate_button_disabled" id="DataTables_Table_0_first">First</a><a tabindex="0" class="previous paginate_button paginate_button_disabled" id="DataTables_Table_0_previous">Previous</a><span></span><a tabindex="0" class="next paginate_button paginate_button_disabled" id="DataTables_Table_0_next">Next</a><a tabindex="0" class="last paginate_button paginate_button_disabled" id="DataTables_Table_0_last">Last</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="panel panel-default">
+                        <header class="panel-heading">Facility Booking(Approved) <i class="fa fa-info-sign text-muted" data-toggle="tooltip" data-placement="bottom" data-title="ajax to load the data." data-original-title="" title=""></i></header>
+                        <div class="row text-sm wrapper">
+                            <div class="col-sm-9 row m-b-xs">
+                                <div class="col-sm-3">
+                                    <asp:TextBox runat="server" CssClass="form-control" ID="TextBox1" TextMode="Date"> </asp:TextBox>
+                                </div>
+                                <div class="col-sm-8">
+                                    <asp:Button runat="server" ID="Button1" CssClass="btn btn-sm col-sm-3 btn-default" Text="Apply" OnClick="btnApply_Click"></asp:Button>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="input-group">
+                                    <asp:TextBox runat="server" ID="TextBox2" CssClass="input-sm form-control" placeholder="Search"></asp:TextBox>
+
+                                    <span class="input-group-btn">
+                                        <asp:Button runat="server" ID="Button2" CssClass="btn btn-sm btn-default" Text="Go!" OnClick="btnSearch_Click"></asp:Button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
+                                <table class="table table-striped m-b-none dataTable" data-ride="datatables" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info">
+                                    <thead>
+                                        <tr role="row">
+                                            <th width="10%" class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">Flat ID</th>
+                                            <th width="15%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Facility</th>
+                                            <th width="20%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Date</th>
+                                            <th width="20%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Description</th>
+                                            <th width="20%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody role="alert" aria-live="polite" aria-relevant="all">
+                                        <asp:Repeater ID="rptFBA" runat="server">
+                                            <ItemTemplate>
+                                                <tr class="odd">
+                                                    <td valign="top" colspan="1" class="dataTables_empty"><%# Eval("FlatNo") %></td>
+                                                    <td valign="top" colspan="1" class="dataTables_empty"><%# Eval("FacilityName") %></td>
+                                                    <td valign="top" colspan="1" class="dataTables_empty"><%# Convert.ToDateTime(Eval("StartTime")).ToLongDateString() %></td>
+                                                    <td valign="top" colspan="1" class="dataTables_empty"><%# (Eval("Description").ToString().Length<=25)? Eval("Description"): Eval("Description").ToString().Substring(0,20) %>
+                                                        <button type="reset" class="btn btn-sm btn-info pop-up" data-toggle="popover" data-html="true" data-placement="top"
+                                                            data-content="<div class='scrollable' style='height:40px'><%# Eval("Description") %></div>"
+                                                            title="" data-original-title="<button type=&quot;button&quot; class=&quot;close pull-right&quot; data-dismiss=&quot;popover&quot;>×</button>Description">
+                                                            ... More
+                                                        </button>
+                                                    </td>
+                                                    <td valign="top" colspan="1" class="dataTables_empty"><%# Eval("Status") %></td>
+                                                </tr>
+                                            </ItemTemplate>
+                                        </asp:Repeater>
+
+                                    </tbody>
+                                </table>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="dataTables_info" id="DataTables_Table_0_info">Showing 0 to 0 of 0 entries</div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="dataTables_paginate paging_full_numbers" id="DataTables_Table_0_paginate"><a tabindex="0" class="first paginate_button paginate_button_disabled" id="DataTables_Table_0_first">First</a><a tabindex="0" class="previous paginate_button paginate_button_disabled" id="DataTables_Table_0_previous">Previous</a><span></span><a tabindex="0" class="next paginate_button paginate_button_disabled" id="DataTables_Table_0_next">Next</a><a tabindex="0" class="last paginate_button paginate_button_disabled" id="DataTables_Table_0_last">Last</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="panel panel-default">
+                        <header class="panel-heading">Facility Booking(Disapproved) <i class="fa fa-info-sign text-muted" data-toggle="tooltip" data-placement="bottom" data-title="ajax to load the data." data-original-title="" title=""></i></header>
+                        <div class="row text-sm wrapper">
+                            <div class="col-sm-9 row m-b-xs">
+                                <div class="col-sm-3">
+                                    <asp:TextBox runat="server" CssClass="form-control" ID="TextBox3" TextMode="Date"> </asp:TextBox>
+                                </div>
+                                <div class="col-sm-8">
+                                    <asp:Button runat="server" ID="Button3" CssClass="btn btn-sm col-sm-3 btn-default" Text="Apply" OnClick="btnApply_Click"></asp:Button>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="input-group">
+                                    <asp:TextBox runat="server" ID="TextBox4" CssClass="input-sm form-control" placeholder="Search"></asp:TextBox>
+
+                                    <span class="input-group-btn">
+                                        <asp:Button runat="server" ID="Button4" CssClass="btn btn-sm btn-default" Text="Go!" OnClick="btnSearch_Click"></asp:Button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
+                                <table class="table table-striped m-b-none dataTable" data-ride="datatables" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info">
+                                    <thead>
+                                        <tr role="row">
+                                            <th width="10%" class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">Flat ID</th>
+                                            <th width="15%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Facility</th>
+                                            <th width="20%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Date</th>
+                                            <th width="20%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Description</th>
+                                            <th width="20%" class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody role="alert" aria-live="polite" aria-relevant="all">
+                                        <asp:Repeater ID="rptFBD" runat="server">
+                                            <ItemTemplate>
+                                                <tr class="odd">
+                                                    <td valign="top" colspan="1" class="dataTables_empty"><%# Eval("FlatNo") %></td>
+                                                    <td valign="top" colspan="1" class="dataTables_empty"><%# Eval("FacilityName") %></td>
+                                                    <td valign="top" colspan="1" class="dataTables_empty"><%# Convert.ToDateTime(Eval("StartTime")).ToLongDateString() %></td>
+                                                    <td valign="top" colspan="1" class="dataTables_empty"><%# (Eval("Description").ToString().Length<=25)? Eval("Description"): Eval("Description").ToString().Substring(0,20) %>
+                                                        <button type="reset" class="btn btn-sm btn-info pop-up" data-toggle="popover" data-html="true" data-placement="top"
+                                                            data-content="<div class='scrollable' style='height:40px'><%# Eval("Description") %></div>"
+                                                            title="" data-original-title="<button type=&quot;button&quot; class=&quot;close pull-right&quot; data-dismiss=&quot;popover&quot;>×</button>Description">
+                                                            ... More
+                                                        </button>
+                                                    </td>
+                                                    <td valign="top" colspan="1" class="dataTables_empty"><%# Eval("Status") %></td>
                                                 </tr>
                                             </ItemTemplate>
                                         </asp:Repeater>
