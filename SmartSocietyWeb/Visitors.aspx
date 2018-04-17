@@ -82,7 +82,7 @@
                             <h3 class="text-uppercase"><strong><%# Eval("VisitorName") %></strong></h3>
                             <ul class="list-inline">
                                 <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i><%# Convert.ToDateTime(Eval("InTime")).DayOfWeek %></li>
-                                <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i><%# Convert.ToDateTime(Eval("InTime")).TimeOfDay %> - <%# (Eval("OutTime").ToString()!="") ? Convert.ToDateTime(Eval("OutTime")).TimeOfDay.ToString() : "<span class=\"text-warning\">Not Checked out yet</span>" %></li>
+                                <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i><%# Convert.ToDateTime(Eval("InTime")).ToShortDateString() + " " +  Convert.ToDateTime(Eval("InTime")).ToShortTimeString() %> - <%# (Eval("OutTime").ToString()!="") ? Convert.ToDateTime(Eval("OutTime")).ToShortDateString() +" "+ Convert.ToDateTime(Eval("OutTime")).ToShortTimeString() : "<span class=\"text-warning\">Not Checked out yet</span>" %></li>
                                 <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i><%# Eval("FlatNo") %></li>
                                 <li class="list-inline-item"><i class="fa fa-cab" aria-hidden="true"></i><%# Eval("VehicleNumber") %></li>
                                 <li class="list-inline-item"><i class="fa fa-mobile" aria-hidden="true"></i><%# Eval("MobileNo") %></li>
