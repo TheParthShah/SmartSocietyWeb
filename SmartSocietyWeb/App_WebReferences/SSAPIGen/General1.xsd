@@ -312,4 +312,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="AutomaticLights">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Data" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AutomaticLightsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AutomaticLightsResult" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

@@ -40,9 +40,24 @@ public partial class Vendor : System.Web.UI.Page
     {
         var id = txtSearch.Text;
 
-        VendorData = JArray.Parse(ServiceObjectGen.VendorSearch(id,id).ToString());
+        if(id != "")
+        {
+            VendorData = JArray.Parse(ServiceObjectGen.VendorSearch(id, id).ToString());
 
-        rptVendor.DataSource = VendorData;
-        rptVendor.DataBind();
+            rptVendor.DataSource = VendorData;
+            rptVendor.DataBind();
+        }
+        
+    }
+
+
+   
+
+    protected void btnDelete_Click(object sender, EventArgs e)
+    {
+        LinkButton lnkbtnDelete = (LinkButton)sender;
+        int ID = Convert.ToInt32(lnkbtnDelete.CommandArgument);
+        ServiceObjectGen.VendorDelete(ID);
+        Response.Redirect("Vendor.aspx");
     }
 }

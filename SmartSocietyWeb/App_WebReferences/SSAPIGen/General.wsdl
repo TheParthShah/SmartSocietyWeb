@@ -132,6 +132,12 @@
   <wsdl:message name="IGeneral_GetAllPolls_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllPollsResponse" />
   </wsdl:message>
+  <wsdl:message name="IGeneral_AutomaticLights_InputMessage">
+    <wsdl:part name="parameters" element="tns:AutomaticLights" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_AutomaticLights_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AutomaticLightsResponse" />
+  </wsdl:message>
   <wsdl:portType name="IGeneral">
     <wsdl:operation name="GetAllResidentsDetails">
       <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/GetAllResidentsDetails" message="tns:IGeneral_GetAllResidentsDetails_InputMessage" />
@@ -216,6 +222,10 @@
     <wsdl:operation name="GetAllPolls">
       <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/GetAllPolls" message="tns:IGeneral_GetAllPolls_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IGeneral/GetAllPollsResponse" message="tns:IGeneral_GetAllPolls_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AutomaticLights">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/AutomaticLights" message="tns:IGeneral_AutomaticLights_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneral/AutomaticLightsResponse" message="tns:IGeneral_AutomaticLights_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="soap" type="tns:IGeneral">
@@ -402,6 +412,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetAllPolls">
       <soap:operation soapAction="http://tempuri.org/IGeneral/GetAllPolls" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutomaticLights">
+      <soap:operation soapAction="http://tempuri.org/IGeneral/AutomaticLights" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
