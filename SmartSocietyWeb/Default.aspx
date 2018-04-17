@@ -94,11 +94,11 @@
                 </section>
 
                 <div class="row">
-                    <div class="col-sm-10">
+                    <div class="col-sm-8" >
                         <h3>Floor Lights</h3>
 
                         <div class="col-sm-3">
-                            <div style="margin-left: 40px;">
+                            <div style="margin-left: 20px;">
                                 <label class="switch">
                                     <asp:checkbox runat="server"></asp:checkbox>
                                     <span class="slider"></span>
@@ -108,7 +108,7 @@
                             </div>
                         </div>
                         <div class="col-sm-3">
-                            <div style="margin-left: 40px;">
+                            <div style="margin-left: 20px;">
                                 <label class="switch">
                                     <asp:checkbox runat="server"></asp:checkbox>
                                     <span class="slider"></span>
@@ -118,7 +118,7 @@
                             </div>
                         </div>
                         <div class="col-sm-3">
-                            <div style="margin-left: 40px;">
+                            <div style="margin-left: 20px;">
                                 <label class="switch">
                                     <asp:checkbox runat="server"></asp:checkbox>
                                     <span class="slider"></span>
@@ -128,7 +128,7 @@
                             </div>
                         </div>
                         <div class="col-sm-3">
-                            <div style="margin-left: 40px;">
+                            <div style="margin-left: 20px;">
                                 <label class="switch">
                                     <asp:checkbox runat="server"></asp:checkbox>
                                     <span class="slider"></span>
@@ -138,10 +138,22 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-2">
-                        <h3>Campus Light</h3>
-                        <div class="col-sm-3">
-                            <div style="margin-left: 40px;">
+                    <div class="col-sm-4" >
+
+                        <div class="col-sm-6">
+                            <h3>Auto Sensing</h3>
+                            <div style="margin-left: 20px;">
+                                <label class="switch">
+                                    <asp:checkbox runat="server"></asp:checkbox>
+                                    <span class="slider"></span>
+                                </label>
+
+
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <h3>Campus Light</h3>
+                            <div style="margin-left: 20px;">
                                 <label class="switch">
                                     <asp:checkbox runat="server"></asp:checkbox>
                                     <span class="slider"></span>
@@ -157,7 +169,7 @@
 
                     <div class="panel col-sm-10">
                         <h3>Live Polls</h3>
-                        <div class="col-sm-12">
+                        <div class="col-sm-12" style="border: 2px black solid;">
                             <div class="panel-heading">
                                 <h4>sjdhjwe vgebjer jrkngr krgenh krlng??</h4>
                             </div>
