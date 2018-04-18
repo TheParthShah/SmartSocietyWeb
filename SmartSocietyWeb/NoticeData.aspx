@@ -23,8 +23,8 @@
         }
     </style>
     <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
-        <li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
-        <li class="active"><i class="fa fa-building"></i>Society Profile</li>
+        <li><a href="Default.aspx"><i class="fa fa-home"></i> Home</a></li>
+        <li class="active"><i class="fa fa-building"></i> Notices</li>
     </ul>
     <form runat="server">
         <div class="row text-sm wrapper">
@@ -84,7 +84,7 @@
                                     <div class="timeline-caption">
                                         <div class="panel panel-default">
                                             <div class="panel-body">
-                                                <span class="arrow left"></span><span class="timeline-icon"><i class="fa fa-bullhorn time-icon bg-primary"></i></span><span class="timeline-date"><%# Convert.ToDateTime( Eval("CreatedOn")).ToLongDateString() %></span>
+                                                <span class="arrow right"></span><span class="timeline-icon"><i class="fa fa-bullhorn time-icon bg-primary"></i></span><span class="timeline-date"><%# Convert.ToDateTime( Eval("CreatedOn")).ToLongDateString() %></span>
                                                 <h5><span><%# Eval("Title") %></span></h5>
                                                 <p><%# Eval("Description") %></p>
                                             </div>

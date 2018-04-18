@@ -273,6 +273,7 @@
         <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="Priority" type="xs:int" />
         <xs:element minOccurs="0" name="CreatedBy" type="xs:int" />
+        <xs:element minOccurs="0" name="Receipient" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -291,6 +292,7 @@
         <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="Priority" type="xs:int" />
         <xs:element minOccurs="0" name="CreatedBy" type="xs:int" />
+        <xs:element minOccurs="0" name="Receipient" type="xs:int" />
         <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>

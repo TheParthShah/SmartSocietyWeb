@@ -8,8 +8,9 @@
         }
     </style>
     <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
-        <li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
-        <li class="active"><i class="fa fa-building"></i>Society Profile</li>
+        <li><a href="Default.aspx"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="NoticeData.aspx"><i class="fa fa-home"></i> Notices</a></li>
+        <li class="active"><i class="fa fa-building"></i> Add Notice</li>
     </ul>
 
     <section class="panel panel-default">
@@ -27,18 +28,30 @@
 
         <div class="panel-body">
             <div class="row">
-                <form class="form-horizontal" method="get" runat="server">
+                <form class="form-horizontal" runat="server">
                     <div class="col-sm-8">
 
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Receipient</label>
                             <div class="col-sm-10">
-                                <asp:DropDownList ID="txtReceipeint" runat="server" class="form-control">
-                                    <asp:ListItem Value="All"></asp:ListItem>
-                                    <asp:ListItem Value="Rent"></asp:ListItem>
-                                    <asp:ListItem Value="Owner"></asp:ListItem>
+                                <asp:DropDownList ID="ddReceipient" runat="server" class="form-control">
+                                    <asp:ListItem Value="0">All</asp:ListItem>
                                     <asp:ListItem Value="1"></asp:ListItem>
                                     <asp:ListItem Value="2"></asp:ListItem>
+                                    <asp:ListItem Value="3"></asp:ListItem>
+                                    <asp:ListItem Value="4"></asp:ListItem>
+                                    <asp:ListItem Value="5"></asp:ListItem>
+                                    <asp:ListItem Value="6"></asp:ListItem>
+                                    <asp:ListItem Value="7"></asp:ListItem>
+                                    <asp:ListItem Value="8"></asp:ListItem>
+                                    <asp:ListItem Value="9"></asp:ListItem>
+                                    <asp:ListItem Value="10"></asp:ListItem>
+                                    <asp:ListItem Value="11"></asp:ListItem>
+                                    <asp:ListItem Value="12"></asp:ListItem>
+                                    <asp:ListItem Value="13"></asp:ListItem>
+                                    <asp:ListItem Value="14"></asp:ListItem>
+                                    <asp:ListItem Value="15"></asp:ListItem>
+                                    <asp:ListItem Value="16"></asp:ListItem>
                                 </asp:DropDownList>
                             </div>
                         </div>
@@ -57,9 +70,9 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Priority</label>
                             <div class="col-sm-10">
-                                <asp:DropDownList ID="txtPriority" runat="server" class="form-control">
-                                    <asp:ListItem Value="High"></asp:ListItem>
-                                    <asp:ListItem Value="Low"></asp:ListItem>
+                                <asp:DropDownList ID="ddPriority" runat="server" class="form-control">
+                                    <asp:ListItem Value="1">High</asp:ListItem>
+                                    <asp:ListItem Value="2">Low</asp:ListItem>
                                 </asp:DropDownList>
                             </div>
                         </div>

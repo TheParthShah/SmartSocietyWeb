@@ -52,8 +52,7 @@
         }
     </style>
     <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
-        <li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
-        <li class="active"><i class="fa fa-building"></i>Flat Details</li>
+        <li><a class="active"><i class="fa fa-home"></i> Home</a></li>
     </ul>
 
 

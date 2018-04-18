@@ -28,15 +28,13 @@
     </style>
     <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
         <li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
-        <li class="active"><i class="fa fa-building"></i>Flat Details</li>
+        <li class="active"><i class="fa fa-building"></i> Vendor Details</li>
     </ul>
 
     <form runat="server">
         <section class="panel panel-default">
             <header class="panel-heading font-bold">
                 <div class="row">
-
-                    <!-- <h1 class="col-sm-11" style="font-size: 38pt;">Edit Profile</h1> -->
                     <h1 class="col-sm-12" style="font-size: 20pt; margin-top: 5px;">Vendor Details</h1>
                 </div>
             </header>
