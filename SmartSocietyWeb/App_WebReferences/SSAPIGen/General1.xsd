@@ -312,17 +312,103 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="AutomaticLights">
+  <xs:element name="SetIP">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="Data" type="xs:boolean" />
+        <xs:element minOccurs="0" name="IP" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="AutomaticLightsResponse">
+  <xs:element name="SetIPResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="AutomaticLightsResult" nillable="true" type="xs:anyType" />
+        <xs:element minOccurs="0" name="SetIPResult" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetFloorLights">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Floor1" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Floor2" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Floor3" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Floor4" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetFloorLightsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetFloorLightsResult" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSLStatus">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSLStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetSLStatusResult" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSensor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Stat" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSensorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetSensorResult" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetStreetLight">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Stat" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetStreetLightResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetStreetLightResult" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTankLevel">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTankLevelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetTankLevelResult" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetNotification">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="FlatNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PageLink" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetNotificationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetNotificationResult" nillable="true" type="xs:anyType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -30,8 +30,8 @@
             }
     </style>
     <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
-        <li><a href="Default.aspx"><i class="fa fa-home"></i>Home</a></li>
-        <li class="active"><i class="fa fa-building"></i>Inventory</li>
+        <li><a href="Default.aspx"><i class="fa fa-home"></i> Home</a></li>
+        <li class="active"><i class="fa fa-building"></i> Inventory</li>
     </ul>
 
     <form runat="server">
@@ -48,7 +48,6 @@
                     </header>
                     <div class="panel-body">
                         <asp:PlaceHolder runat="server" ID="PanelGridView">
-
                             <section class="panel panel-default">
                                 <header class="panel-heading">Inventory <i class="fa fa-info-sign text-muted" data-toggle="tooltip" data-placement="bottom" data-title="ajax to load the data." data-original-title="" title=""></i></header>
                                 <div class="row text-sm wrapper">
@@ -101,14 +100,6 @@
                                                 </asp:Repeater>
                                             </tbody>
                                         </table>
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                <div class="dataTables_info" id="DataTables_Table_0_info">Showing 0 to 0 of 0 entries</div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <div class="dataTables_paginate paging_full_numbers" id="DataTables_Table_0_paginate"><a tabindex="0" class="first paginate_button paginate_button_disabled" id="DataTables_Table_0_first">First</a><a tabindex="0" class="previous paginate_button paginate_button_disabled" id="DataTables_Table_0_previous">Previous</a><span></span><a tabindex="0" class="next paginate_button paginate_button_disabled" id="DataTables_Table_0_next">Next</a><a tabindex="0" class="last paginate_button paginate_button_disabled" id="DataTables_Table_0_last">Last</a></div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </section>
@@ -116,8 +107,6 @@
                         </asp:PlaceHolder>
                     </div>
                     <asp:PlaceHolder runat="server" ID="PanelSingleData">
-
-
                         <div class="row">
                             <div class="col-sm-3 text-center">
                                 <asp:Image ID="imgAssetImage" runat="server" class="img-responsive" Style="padding: 10px;" ImageUrl="~/ServerImages/Assets/" Height="200" Width="200" />

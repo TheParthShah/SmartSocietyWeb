@@ -1,10 +1,5 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 public partial class AddEvent : System.Web.UI.Page
 {
@@ -18,7 +13,10 @@ public partial class AddEvent : System.Web.UI.Page
             {
                 EditBindData();
             }
-            BindData();
+            else
+            {
+                BindData();
+            }
         }
     }
 
@@ -33,15 +31,16 @@ public partial class AddEvent : System.Web.UI.Page
 
     private void EditBindData()
     {
-        var EventData = JObject.Parse(ServiceObjectGen.ViewAllEvents("0","0",0,Convert.ToInt32(Request.QueryString["VendorID"])).ToString());
-        txtEventName.Text = EventData["EventName"].ToString();
-        ddEventType.SelectedValue = EventData["EventType"].ToString();
-        TxtVenue.Text = EventData["Venue"].ToString();
-        txtStartTime.Text = Convert.ToDateTime(EventData["StartTime"]).ToShortDateString();
-        txtEndTime.Text = Convert.ToDateTime(EventData["EndTime"]).ToShortDateString();
-        txtSubject.Text = EventData["Subject"].ToString();
-        txtdescription.Text =  EventData["Description"].ToString();
-        ddpriority.SelectedValue = EventData["Priority"].ToString();
+        var json = ServiceObjectGen.ViewAllEvents("0", "0", 0, Convert.ToInt32(Request.QueryString["VendorID"])).ToString();
+        var EventData = JArray.Parse(json);
+        txtEventName.Text = EventData[0]["EventName"].ToString();
+        ddEventType.SelectedValue = EventData[0]["EventTypeName"].ToString();
+        TxtVenue.Text = EventData[0]["Venue"].ToString();
+        txtStartTime.Text = Convert.ToDateTime(EventData[0]["StartTime"]).ToString("yyyy-MM-dd");
+        txtEndTime.Text = Convert.ToDateTime(EventData[0]["EndTime"]).ToString("yyyy-MM-dd");
+        txtSubject.Text = EventData[0]["Subject"].ToString();
+        txtdescription.Text =  EventData[0]["Description"].ToString();
+        ddpriority.SelectedValue = EventData[0]["Priority"].ToString();
 
     }
 
@@ -52,7 +51,16 @@ public partial class AddEvent : System.Web.UI.Page
 
     protected void btnSave_Click(object sender, EventArgs e)
     {
-        ServiceObjectAdmin.AddEvent(txtEventName.Text, Convert.ToInt32( ddEventType.SelectedValue), TxtVenue.Text, txtStartTime.Text, txtEndTime.Text, txtSubject.Text, txtdescription.Text, Convert.ToInt32( ddpriority.SelectedValue), 1);
-        Response.Redirect("Events.aspx");
+        if(Request.QueryString["EventID"] == null)
+        {
+            ServiceObjectAdmin.AddEvent(txtEventName.Text, Convert.ToInt32(ddEventType.SelectedValue), TxtVenue.Text, txtStartTime.Text, txtEndTime.Text, txtSubject.Text, txtdescription.Text, Convert.ToInt32(ddpriority.SelectedValue), 1);
+            Response.Redirect("Events.aspx");
+        }
+        else
+        {
+            ServiceObjectAdmin.EditEvent(Convert.ToInt32(Request.QueryString["EventID"]), txtEventName.Text, Convert.ToInt32(ddEventType.SelectedValue), TxtVenue.Text, txtStartTime.Text, txtEndTime.Text, txtSubject.Text, txtdescription.Text, Convert.ToInt32(ddpriority.SelectedValue), 1, true);
+            Response.Redirect("Events.aspx");
+        }
+        
     }
 }

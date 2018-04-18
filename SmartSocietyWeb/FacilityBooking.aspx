@@ -118,38 +118,11 @@
 
                                     </tbody>
                                 </table>
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="dataTables_info" id="DataTables_Table_0_info">Showing 0 to 0 of 0 entries</div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="dataTables_paginate paging_full_numbers" id="DataTables_Table_0_paginate"><a tabindex="0" class="first paginate_button paginate_button_disabled" id="DataTables_Table_0_first">First</a><a tabindex="0" class="previous paginate_button paginate_button_disabled" id="DataTables_Table_0_previous">Previous</a><span></span><a tabindex="0" class="next paginate_button paginate_button_disabled" id="DataTables_Table_0_next">Next</a><a tabindex="0" class="last paginate_button paginate_button_disabled" id="DataTables_Table_0_last">Last</a></div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </section>
                     <section class="panel panel-default">
                         <header class="panel-heading">Facility Booking(Approved) <i class="fa fa-info-sign text-muted" data-toggle="tooltip" data-placement="bottom" data-title="ajax to load the data." data-original-title="" title=""></i></header>
-                        <div class="row text-sm wrapper">
-                            <div class="col-sm-9 row m-b-xs">
-                                <div class="col-sm-3">
-                                    <asp:TextBox runat="server" CssClass="form-control" ID="TextBox1" TextMode="Date"> </asp:TextBox>
-                                </div>
-                                <div class="col-sm-8">
-                                    <asp:Button runat="server" ID="Button1" CssClass="btn btn-sm col-sm-3 btn-default" Text="Apply" OnClick="btnApply_Click"></asp:Button>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="input-group">
-                                    <asp:TextBox runat="server" ID="TextBox2" CssClass="input-sm form-control" placeholder="Search"></asp:TextBox>
-
-                                    <span class="input-group-btn">
-                                        <asp:Button runat="server" ID="Button2" CssClass="btn btn-sm btn-default" Text="Go!" OnClick="btnSearch_Click"></asp:Button>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
                         <div class="table-responsive">
                             <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
                                 <table class="table table-striped m-b-none dataTable" data-ride="datatables" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info">
@@ -183,38 +156,11 @@
 
                                     </tbody>
                                 </table>
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="dataTables_info" id="DataTables_Table_0_info">Showing 0 to 0 of 0 entries</div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="dataTables_paginate paging_full_numbers" id="DataTables_Table_0_paginate"><a tabindex="0" class="first paginate_button paginate_button_disabled" id="DataTables_Table_0_first">First</a><a tabindex="0" class="previous paginate_button paginate_button_disabled" id="DataTables_Table_0_previous">Previous</a><span></span><a tabindex="0" class="next paginate_button paginate_button_disabled" id="DataTables_Table_0_next">Next</a><a tabindex="0" class="last paginate_button paginate_button_disabled" id="DataTables_Table_0_last">Last</a></div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </section>
                     <section class="panel panel-default">
                         <header class="panel-heading">Facility Booking(Disapproved) <i class="fa fa-info-sign text-muted" data-toggle="tooltip" data-placement="bottom" data-title="ajax to load the data." data-original-title="" title=""></i></header>
-                        <div class="row text-sm wrapper">
-                            <div class="col-sm-9 row m-b-xs">
-                                <div class="col-sm-3">
-                                    <asp:TextBox runat="server" CssClass="form-control" ID="TextBox3" TextMode="Date"> </asp:TextBox>
-                                </div>
-                                <div class="col-sm-8">
-                                    <asp:Button runat="server" ID="Button3" CssClass="btn btn-sm col-sm-3 btn-default" Text="Apply" OnClick="btnApply_Click"></asp:Button>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="input-group">
-                                    <asp:TextBox runat="server" ID="TextBox4" CssClass="input-sm form-control" placeholder="Search"></asp:TextBox>
-
-                                    <span class="input-group-btn">
-                                        <asp:Button runat="server" ID="Button4" CssClass="btn btn-sm btn-default" Text="Go!" OnClick="btnSearch_Click"></asp:Button>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
                         <div class="table-responsive">
                             <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
                                 <table class="table table-striped m-b-none dataTable" data-ride="datatables" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info">
@@ -248,14 +194,6 @@
 
                                     </tbody>
                                 </table>
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="dataTables_info" id="DataTables_Table_0_info">Showing 0 to 0 of 0 entries</div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="dataTables_paginate paging_full_numbers" id="DataTables_Table_0_paginate"><a tabindex="0" class="first paginate_button paginate_button_disabled" id="DataTables_Table_0_first">First</a><a tabindex="0" class="previous paginate_button paginate_button_disabled" id="DataTables_Table_0_previous">Previous</a><span></span><a tabindex="0" class="next paginate_button paginate_button_disabled" id="DataTables_Table_0_next">Next</a><a tabindex="0" class="last paginate_button paginate_button_disabled" id="DataTables_Table_0_last">Last</a></div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </section>

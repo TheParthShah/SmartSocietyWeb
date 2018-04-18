@@ -29,8 +29,8 @@
             }
     </style>
     <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
-        <li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
-        <li class="active"><i class="fa fa-building"></i>Flat Details</li>
+        <li><a href="Default.aspx"><i class="fa fa-home"></i> Home</a></li>
+        <li class="active"><i class="fa fa-building"></i> Complaints</li>
     </ul>
 
 
@@ -55,17 +55,6 @@
                                 <div class="col-sm-4">
                                 </div>
                                 <div class="col-sm-4">
-                                    <%--<div id="DataTables_Table_0_length" class="dataTables_length">
-                                        <label>
-                                            Show
-                                        <select size="1" name="DataTables_Table_0_length" aria-controls="DataTables_Table_0">
-                                            <option value="10" selected="selected">10</option>
-                                            <option value="25">25</option>
-                                            <option value="50">50</option>
-                                            <option value="100">100</option>
-                                        </select>
-                                            entries</label>
-                                    </div>--%>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="dataTables_filter" id="DataTables_Table_0_filter">

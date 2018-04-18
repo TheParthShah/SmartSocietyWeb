@@ -132,11 +132,47 @@
   <wsdl:message name="IGeneral_GetAllPolls_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllPollsResponse" />
   </wsdl:message>
-  <wsdl:message name="IGeneral_AutomaticLights_InputMessage">
-    <wsdl:part name="parameters" element="tns:AutomaticLights" />
+  <wsdl:message name="IGeneral_SetIP_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetIP" />
   </wsdl:message>
-  <wsdl:message name="IGeneral_AutomaticLights_OutputMessage">
-    <wsdl:part name="parameters" element="tns:AutomaticLightsResponse" />
+  <wsdl:message name="IGeneral_SetIP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetIPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_SetFloorLights_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetFloorLights" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_SetFloorLights_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetFloorLightsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_GetSLStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSLStatus" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_GetSLStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSLStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_SetSensor_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetSensor" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_SetSensor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetSensorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_SetStreetLight_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetStreetLight" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_SetStreetLight_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetStreetLightResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_GetTankLevel_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTankLevel" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_GetTankLevel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTankLevelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_SetNotification_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetNotification" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_SetNotification_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetNotificationResponse" />
   </wsdl:message>
   <wsdl:portType name="IGeneral">
     <wsdl:operation name="GetAllResidentsDetails">
@@ -223,9 +259,33 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/GetAllPolls" message="tns:IGeneral_GetAllPolls_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IGeneral/GetAllPollsResponse" message="tns:IGeneral_GetAllPolls_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="AutomaticLights">
-      <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/AutomaticLights" message="tns:IGeneral_AutomaticLights_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IGeneral/AutomaticLightsResponse" message="tns:IGeneral_AutomaticLights_OutputMessage" />
+    <wsdl:operation name="SetIP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/SetIP" message="tns:IGeneral_SetIP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneral/SetIPResponse" message="tns:IGeneral_SetIP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetFloorLights">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/SetFloorLights" message="tns:IGeneral_SetFloorLights_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneral/SetFloorLightsResponse" message="tns:IGeneral_SetFloorLights_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSLStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/GetSLStatus" message="tns:IGeneral_GetSLStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneral/GetSLStatusResponse" message="tns:IGeneral_GetSLStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSensor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/SetSensor" message="tns:IGeneral_SetSensor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneral/SetSensorResponse" message="tns:IGeneral_SetSensor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetStreetLight">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/SetStreetLight" message="tns:IGeneral_SetStreetLight_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneral/SetStreetLightResponse" message="tns:IGeneral_SetStreetLight_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTankLevel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/GetTankLevel" message="tns:IGeneral_GetTankLevel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneral/GetTankLevelResponse" message="tns:IGeneral_GetTankLevel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetNotification">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/SetNotification" message="tns:IGeneral_SetNotification_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneral/SetNotificationResponse" message="tns:IGeneral_SetNotification_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="soap" type="tns:IGeneral">
@@ -419,8 +479,62 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="AutomaticLights">
-      <soap:operation soapAction="http://tempuri.org/IGeneral/AutomaticLights" style="document" />
+    <wsdl:operation name="SetIP">
+      <soap:operation soapAction="http://tempuri.org/IGeneral/SetIP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetFloorLights">
+      <soap:operation soapAction="http://tempuri.org/IGeneral/SetFloorLights" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSLStatus">
+      <soap:operation soapAction="http://tempuri.org/IGeneral/GetSLStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSensor">
+      <soap:operation soapAction="http://tempuri.org/IGeneral/SetSensor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetStreetLight">
+      <soap:operation soapAction="http://tempuri.org/IGeneral/SetStreetLight" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTankLevel">
+      <soap:operation soapAction="http://tempuri.org/IGeneral/GetTankLevel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetNotification">
+      <soap:operation soapAction="http://tempuri.org/IGeneral/SetNotification" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

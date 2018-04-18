@@ -41,8 +41,8 @@
         }
     </style>
     <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
-        <li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
-        <li class="active"><i class="fa fa-building"></i>Flat Details</li>
+        <li><a href="Default.aspx"><i class="fa fa-home"></i>Home</a></li>
+        <li class="active"><i class="fa fa-building"></i> Events Details</li>
     </ul>
 
 
@@ -60,7 +60,7 @@
             <div class="panel-body">
                 <asp:PlaceHolder ID="panelGridView" runat="server">
                     <section class="panel panel-default">
-                        <header class="panel-heading">DataTables <i class="fa fa-info-sign text-muted" data-toggle="tooltip" data-placement="bottom" data-title="ajax to load the data." data-original-title="" title=""></i></header>
+                        <header class="panel-heading">Events <i class="fa fa-info-sign text-muted" data-toggle="tooltip" data-placement="bottom" data-title="ajax to load the data." data-original-title="" title=""></i></header>
                         <div class="row text-sm wrapper">
                                     <div class="col-sm-9 row m-b-xs">
                                         <div class="col-sm-4">

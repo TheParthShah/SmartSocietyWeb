@@ -1,9 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 public partial class Complains : System.Web.UI.Page
@@ -20,7 +17,7 @@ public partial class Complains : System.Web.UI.Page
 
     private void BindData()
     {
-        ComplaintData = JArray.Parse(ServiceobjAdmin.GetAllComplaints(0,false).ToString());
+        ComplaintData = JArray.Parse(ServiceobjAdmin.GetAllComplaints(0,true).ToString());
         rptComplaints.DataSource = (ComplaintData);
         rptComplaints.DataBind();
         PanelSingleData.Visible = false;

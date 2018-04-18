@@ -2,8 +2,9 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
-        <li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
-        <li class="active"><i class="fa fa-building"></i>Flat Details</li>
+        <li><a href="Default.aspx"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="Events.aspx"><i class="fa fa-home"></i> Events</a></li>
+        <li class="active"><i class="fa fa-building"></i> Add Event</li>
     </ul>
 
 
@@ -17,7 +18,7 @@
         </header>
 
         <div class="panel-body">
-            <form class="form-horizontal" method="get" runat="server">
+            <form class="form-horizontal" runat="server">
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Event Name</label>
                     <div class="col-sm-10">
