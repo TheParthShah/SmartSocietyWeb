@@ -22,6 +22,7 @@
     <MetadataSource Address="http://smartsociety.riteshtailor.in/Admin.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
+    <MetadataFile FileName="Admin2.xsd" MetadataType="Schema" ID="f1197e09-255b-4a26-bb4e-6f86732fa9d6" SourceId="1" SourceUrl="http://smartsociety.riteshtailor.in/Admin.svc?xsd=xsd2" />
     <MetadataFile FileName="Admin.disco" MetadataType="Disco" ID="29aef20f-4307-4113-b0bc-594b580221eb" SourceId="1" SourceUrl="http://smartsociety.riteshtailor.in/Admin.svc?disco" />
     <MetadataFile FileName="Admin.xsd" MetadataType="Schema" ID="aa0f1fc1-933c-47f0-9bff-a26f91243093" SourceId="1" SourceUrl="http://smartsociety.riteshtailor.in/Admin.svc?xsd=xsd1" />
     <MetadataFile FileName="Admin.wsdl" MetadataType="Wsdl" ID="64e9714b-281a-4f64-8f00-6bd6eac0baed" SourceId="1" SourceUrl="http://smartsociety.riteshtailor.in/Admin.svc?wsdl" />

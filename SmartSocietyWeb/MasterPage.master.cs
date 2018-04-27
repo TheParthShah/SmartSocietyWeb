@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 public partial class MasterPage : System.Web.UI.MasterPage
 {
@@ -12,11 +7,11 @@ public partial class MasterPage : System.Web.UI.MasterPage
 
         string pageUrl = System.IO.Path.GetFileName(Request.Url.AbsolutePath);
         //Response.Write(pageUrl);
-        //if(Session["ResidentID"]==null || Session["ResidentID"].ToString() == "")
-        //{
-        //    Response.Redirect("Login.aspx");
-        //}
-        
+        if (Session["ResidentID"] == null || Session["ResidentID"].ToString() == "")
+        {
+            Response.Redirect("Login.aspx");
+        }
+        lblName.Text = Session["ResidentName"].ToString();
     }
 
     protected void lnkLogout_Click(object sender, EventArgs e)

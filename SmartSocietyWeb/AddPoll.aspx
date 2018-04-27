@@ -2,9 +2,9 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
-        <li><a href="Default.aspx"><i class="fa fa-home"></i> Home</a></li>
-        <li><a href="Polls.aspx"><i class="fa fa-home"></i> Polls</a></li>
-        <li class="active"><i class="fa fa-building"></i> Add Poll</li>
+        <li><a href="Default.aspx"><i class="fa fa-home"></i>Home</a></li>
+        <li><a href="Polls.aspx"><i class="fa fa-home"></i>Polls</a></li>
+        <li class="active"><i class="fa fa-building"></i>Add Poll</li>
     </ul>
 
 
@@ -18,39 +18,23 @@
         </header>
 
         <div class="panel-body">
-            <form class="form-horizontal" method="get" runat="server">
+            <form class="form-horizontal" runat="server">
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Poll Title</label>
                     <div class="col-sm-10">
-                        <asp:TextBox runat="server" ID="txtPolltitle" class="form-control" placeholder="Inventory Name"> </asp:TextBox>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Poll Type</label>
-                    <div class="col-sm-10">
-                        <asp:DropDownList ID="ddAssetType" runat="server" class="form-control">
-                            <asp:ListItem Value="1" Text="Meeting"></asp:ListItem>
-                            <asp:ListItem Value="2" Text="General"></asp:ListItem>
-                            <asp:ListItem Value="3" Text="etc"></asp:ListItem>
-                        </asp:DropDownList>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">End Date</label>
-                    <div class="col-sm-10">
-                        <asp:TextBox runat="server" ID="txtEndTime" TextMode="DateTime" class="form-control" placeholder="End Date"></asp:TextBox>
+                        <asp:TextBox runat="server" ID="txtPolltitle" class="form-control" placeholder="Inventory Name" required="required"> </asp:TextBox>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">option 1</label>
                     <div class="col-sm-10">
-                        <asp:TextBox runat="server" ID="txtOption1" class="form-control" placeholder="Option 1"></asp:TextBox>
+                        <asp:TextBox runat="server" ID="txtOption1" class="form-control" placeholder="Option 1" required="required"></asp:TextBox>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">option 2</label>
                     <div class="col-sm-10">
-                        <asp:TextBox runat="server" ID="txtOption2" class="form-control" placeholder="Option 2"></asp:TextBox>
+                        <asp:TextBox runat="server" ID="txtOption2" class="form-control" placeholder="Option 2" required="required"></asp:TextBox>
                     </div>
                 </div>
                 <div class="form-group">
@@ -65,14 +49,14 @@
                         <asp:TextBox runat="server" ID="txtOption4" class="form-control" placeholder="Option 4"></asp:TextBox>
                     </div>
                 </div>
-                
+
 
 
                 <div class="line line-dashed line-lg pull-in"></div>
                 <div class="form-group">
                     <div class="col-sm-4 col-sm-offset-2">
                         <button type="submit" class="btn btn-default">Cancel</button>
-                        <asp:Button runat="server" ID="btnSave" class="btn btn-primary" Text="Save Changes"></asp:Button>
+                        <asp:Button runat="server" ID="btnSave" class="btn btn-primary" Text="Save Changes" OnClick="btnSave_Click"></asp:Button>
                     </div>
                 </div>
             </form>

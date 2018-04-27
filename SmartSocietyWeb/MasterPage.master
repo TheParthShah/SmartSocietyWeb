@@ -4,70 +4,25 @@
 <html lang="en" class="app">
 <head>
     <meta charset="utf-8" />
-    <title>Notebook | Web Application</title>
+    <title>Smart Society | Avishkar Apartments</title>
     <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <link rel="stylesheet" href="css/app.v2.css" type="text/css" />
     <link rel="stylesheet" href="css/font.css" type="text/css" cache="false" />
     <link rel="stylesheet" href="js/calendar/bootstrap_calendar.css" type="text/css" cache="false" />
-    <%--<link href="css/gallery-grid.css" rel="stylesheet" />--%>
-    <%--<link rel="stylesheet" href="css/fontawesome.min.css" type="text/css" cache="false">--%>
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" cache="false" />
 
-    <!--[if lt IE 9]>
-    <script src="js/ie/html5shiv.js" cache="false"></script>
-    <script src="js/ie/respond.min.js" cache="false"></script>
-    <script src="js/ie/excanvas.js" cache="false"></script> <![endif]-->
     <style>
         .vbox > section.w-f {
             bottom: 30px;
         }
-        /*.aside-md{
-            width: 350px;
-        }
-        .aside-md#nav{
-            width: 300px;
-        }
-        .navbar-brand{
-            line-height: 75px;
-            font-size: 30px;
-        }
-        .nav-primary li{
-            line-height:2.5;
-        }
-        .nav-primary li > a > i{
-            line-height:68px;
-            width:68px;
-            font-size:18px;
-        }
-        .nav-primary li > a > i > b{
-            left:-66px;
-        }
-        .nav-primary ul.nav > li > a{
-            font-size:18px;
-        }
-        .nav-xs{
-            width:80px !important;
-        }
-        .nav-xs .nav-primary > ul > li > a span{
-            width:80px;
-        }
-
-        .navbar-nav > li{
-            height:55px;
-        }
-        ul.sizing{
-            height:75px;
-            width:300px;
-            margin:10px 0px;
-        }*/
+        
         .navbar-brand {
             font-size: 17px;
         }
     </style>
 </head>
 <body>
-    <%--<form id="form1" runat="server">--%>
     <section class="vbox">
         <header class="bg-dark dk header navbar navbar-fixed-top-xs">
             <div class="navbar-header aside-md">
@@ -78,26 +33,24 @@
                             data-toggle="dropdown" data-target=".nav-user"><i
                                 class="fa fa-cog"></i></a>
             </div>
-            <%-- <form runat="server">--%>
             <ul class="nav navbar-nav navbar-right hidden-xs nav-user">
-                
-                
-                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">John.Smith <b
-                    class="caret"></b></a>
+
+
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <asp:Label runat="server" ID="lblName"></asp:Label>
+                    <b class="caret"></b></a>
                     <ul class="dropdown-menu animated fadeInRight">
                         <span class="arrow top"></span>
 
                         <li><a href="ChangePassword.aspx">Change password </a></li>
 
                         <li class="divider"></li>
-                        <%--<li><a href="modal.lockme.html" data-toggle="ajaxModal">Logout</a></li>--%>
-
+                        
                         <li>
                             <a id="lnkLogout" href="Logout.aspx">Logout</a></li>
                     </ul>
                 </li>
             </ul>
-            <%--</form>--%>
         </header>
         <section>
             <section class="hbox stretch">
@@ -157,7 +110,7 @@
 
                                         <li id="assets">
                                             <a href="#">
-                                                <i class="fa fa-flask icon">
+                                                <i class="fa fa-list icon">
                                                     <b class="bg-info"></b>
                                                 </i>
                                                 <span class="pull-right">
@@ -184,7 +137,7 @@
 
                                         <li id="vendorStaff">
                                             <a href="#">
-                                                <i class="fa fa-flask icon">
+                                                <i class="fa fa-user-plus icon">
                                                     <b class="bg-success"></b>
                                                 </i>
                                                 <span class="pull-right">
@@ -211,14 +164,14 @@
 
                                         <li>
                                             <a href="#">
-                                                <i class="fa fa-flask icon">
+                                                <i class="fa fa-calendar icon">
                                                     <b class="bg-success"></b>
                                                 </i>
                                                 <span class="pull-right">
                                                     <i class="fa fa-angle-down text"></i>
                                                     <i class="fa fa-angle-up text-active"></i>
                                                 </span>
-                                                <span>Events and Album</span>
+                                                <span>Events</span>
                                             </a>
                                             <ul class="nav lt">
                                                 <li>
@@ -227,18 +180,12 @@
                                                         <span>Events</span>
                                                     </a>
                                                 </li>
-                                                <li>
-                                                    <a href="Album.aspx">
-                                                        <i class="fa fa-angle-right"></i>
-                                                        <span>Album</span>
-                                                    </a>
-                                                </li>
                                             </ul>
                                         </li>
 
                                         <li id="Visitors">
                                             <a href="Visitors.aspx">
-                                                <i class="fa fa-dashboard icon">
+                                                <i class="fa fa-users icon">
                                                     <b class="bg-danger"></b>
                                                 </i>
                                                 <span>Visitors</span>
@@ -246,7 +193,7 @@
                                         </li>
                                         <li>
                                             <a href="#">
-                                                <i class="fa fa-flask icon">
+                                                <i class="fa fa-file-text icon">
                                                     <b class="bg-success"></b>
                                                 </i>
                                                 <span class="pull-right">
@@ -276,7 +223,7 @@
 
                                         <li id="polls">
                                             <a href="Polls.aspx">
-                                                <i class="fa fa-dashboard icon">
+                                                <i class="fa fa-bar-chart icon">
                                                     <b class="bg-danger"></b>
                                                 </i>
                                                 <span>Polls</span>
@@ -284,22 +231,22 @@
                                         </li>
                                         <li id="complains">
                                             <a href="Complains.aspx">
-                                                <i class="fa fa-dashboard icon">
+                                                <i class="fa fa-exclamation-triangle icon">
                                                     <b class="bg-danger"></b>
                                                 </i>
                                                 <span>Complains</span>
                                             </a>
                                         </li>
-                                         <li id="documents">
+                                        <li id="documents">
                                             <a href="Documents.aspx">
-                                                <i class="fa fa-building icon">
+                                                <i class="fa fa-files-o icon">
                                                     <b class="bg-warning"></b>
                                                 </i>
                                                 <span class="pull-right"></span>
                                                 <span>Documents</span>
                                             </a>
                                         </li>
-                                       <%-- <li id="payments">
+                                        <%-- <li id="payments">
                                             <a href="Payments.aspx">
                                                 <i class="fa fa-building icon">
                                                     <b class="bg-warning"></b>
@@ -318,7 +265,6 @@
                                                 <span>Accounting</span>
                                             </a>
                                         </li>--%>
-
                                     </ul>
                                 </nav>
                                 <!-- / nav -->
@@ -344,7 +290,6 @@
             </section>
         </section>
     </section>
-    <%--</form>--%>
     <script src="js/app.v2.js"></script>
     <%--<script>
         function removeActiveClass() {

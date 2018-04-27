@@ -4,6 +4,7 @@ using System;
 public partial class SocietyProfile : System.Web.UI.Page
 {
     SSAPIAdmin.AdminClient ServiceObjectAdmin = new SSAPIAdmin.AdminClient();
+    SSAPIGen.GeneralClient ServiceObjectGen = new SSAPIGen.GeneralClient();
     JObject SocietyData;
     public static int flag = 0;
     protected void Page_Load(object sender, EventArgs e)
@@ -22,7 +23,7 @@ public partial class SocietyProfile : System.Web.UI.Page
     {
         try
         {
-            SocietyData = JObject.Parse(ServiceObjectAdmin.GetSocietyInformation().ToString());
+            SocietyData = JObject.Parse(ServiceObjectGen.GetSocietyInformation().ToString());
             litSocietyTitle.Text = SocietyData["Name"].ToString();
             litSocietyName.Text = SocietyData["Name"].ToString();
             litSocietyType.Text = SocietyData["SocietyType"].ToString();
@@ -46,7 +47,7 @@ public partial class SocietyProfile : System.Web.UI.Page
     {
         EditSocietyProfile.Visible = true;
         SocietyProfileInfo.Visible = false;
-        SocietyData = JObject.Parse(ServiceObjectAdmin.GetSocietyInformation().ToString());
+        SocietyData = JObject.Parse(ServiceObjectGen.GetSocietyInformation().ToString());
 
         txtSocietyName.Text = SocietyData["Name"].ToString();
         ddSocietyType.SelectedValue = SocietyData["SocietyType"].ToString();

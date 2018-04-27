@@ -37,15 +37,16 @@
             }
     </style>
     <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
-        <li><a href="Default.aspx"><i class="fa fa-home"></i> Home</a></li>
-        <li class="active"><i class="fa fa-building"></i> Polls</li>
+        <li><a href="Default.aspx"><i class="fa fa-home"></i>Home</a></li>
+        <li class="active"><i class="fa fa-building"></i>Polls</li>
     </ul>
-    <div class="row text-sm wrapper">
-        <form runat="server">
+    <form runat="server">
+        <div class="row text-sm wrapper">
+
             <div class="col-sm-6 m-b-xs">
                 <a class="button" href="AddPoll.aspx">Add New Poll</a>
             </div>
-            <div class="col-sm-3 m-b-xs">
+            <%--<div class="col-sm-3 m-b-xs">
 
                 <asp:TextBox runat="server" CssClass="input-sm form-control" ID="txtEndDate" TextMode="Date"> </asp:TextBox>
             </div>
@@ -56,262 +57,89 @@
                         <button class="btn btn-sm btn-default" type="button">Go!</button>
                     </span>
                 </div>
-            </div>
-        </form>
-    </div>
-    <section class="panel panel-default">
-
-        <div class="panel-body">
-
-            <div class="col-sm-6" style="display: flex; justify-content: center; margin-top: 30px; min-height: 460px;">
-                <div class="user-poll-section" style="width: 80%">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <strong>Question : </strong>Which is the best responsive framework to start web designing ...
-                           <button class="btn btn-sm btn-info pop-up" data-toggle="popover" data-html="true" data-placement="top"
-                               data-content="<div class='scrollable' style='height:40px'>Vivamus sagittis lacus vel augue laoreet rutrum faucibus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus.</div>"
-                               title="" data-original-title="<button type=&quot;button&quot; class=&quot;close pull-right&quot; data-dismiss=&quot;popover&quot;>×</button>Popover on top">
-                               More
-                           </button>
-
-                        </div>
-                        <div class="panel-body">
-
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <p>End Date</p>
-                                    <p>Poll Type</p>
-                                </div>
-                                <div class="col-sm-6">
-                                    <p>Created on</p>
-                                    <p>Total votes</p>
-
-                                </div>
-                            </div>
-
-
-                            <hr>
-                            Bootstrap (60%) :
-                               <div class="progress progress-striped active">
-                                   <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                       <span class="sr-only">60% Complete (success)</span>
-                                   </div>
-                               </div>
-                            Foundation (30%) :
-                               <div class="progress progress-striped active">
-                                   <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
-                                       <span class="sr-only">30% Complete (success)</span>
-                                   </div>
-                               </div>
-                            Foundation (30%) :
-                               <div class="progress progress-striped active">
-                                   <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
-                                       <span class="sr-only">30% Complete (success)</span>
-                                   </div>
-                               </div>
-                            Kube (10%) :
-                               <div class="progress progress-striped active">
-                                   <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%">
-                                       <span class="sr-only">10% Complete (success)</span>
-                                   </div>
-                               </div>
-
-                        </div>
-                        <div class="panel-footer text-center">
-                            <a href="#" class="btn btn-success btn-sm"><i class="fa fa-pencil"></i> Update Poll</a>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- POLL DIV END-->
-            </div>
-
-             <div class="col-sm-6" style="display: flex; justify-content: center; margin-top: 30px; min-height: 500px;">
-                <div class="user-poll-section" style="width: 80%">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <strong>Question : </strong>Which is the best responsive framework to start web designing ...
-                           <button class="btn btn-sm btn-info pop-up" data-toggle="popover" data-html="true" data-placement="top"
-                               data-content="<div class='scrollable' style='height:40px'>Vivamus sagittis lacus vel augue laoreet rutrum faucibus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus.</div>"
-                               title="" data-original-title="<button type=&quot;button&quot; class=&quot;close pull-right&quot; data-dismiss=&quot;popover&quot;>×</button>Popover on top">
-                               More
-                           </button>
-
-                        </div>
-                        <div class="panel-body">
-
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <p>End Date</p>
-                                    <p>Poll Type</p>
-                                </div>
-                                <div class="col-sm-6">
-                                    <p>Created on</p>
-                                    <p>Total votes</p>
-
-                                </div>
-                            </div>
-
-
-                            <hr>
-                            Bootstrap (60%) :
-                               <div class="progress progress-striped active">
-                                   <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                       <span class="sr-only">60% Complete (success)</span>
-                                   </div>
-                               </div>
-                           
-                            Foundation (30%) :
-                               <div class="progress progress-striped active">
-                                   <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
-                                       <span class="sr-only">30% Complete (success)</span>
-                                   </div>
-                               </div>
-                            Kube (10%) :
-                               <div class="progress progress-striped active">
-                                   <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%">
-                                       <span class="sr-only">10% Complete (success)</span>
-                                   </div>
-                               </div>
-
-                        </div>
-                        <div class="panel-footer text-center">
-                            <a href="#" class="btn btn-success btn-sm"><i class="fa fa-pencil"></i> Update Poll</a>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- POLL DIV END-->
-            </div>
-
-             <div class="col-sm-6" style="display: flex; justify-content: center; margin-top: 30px; min-height: 500px;">
-                <div class="user-poll-section" style="width: 80%">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <strong>Question : </strong>Which is the best responsive framework to start web designing ...
-                           <button class="btn btn-sm btn-info pop-up" data-toggle="popover" data-html="true" data-placement="top"
-                               data-content="<div class='scrollable' style='height:40px'>Vivamus sagittis lacus vel augue laoreet rutrum faucibus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus.</div>"
-                               title="" data-original-title="<button type=&quot;button&quot; class=&quot;close pull-right&quot; data-dismiss=&quot;popover&quot;>×</button>Popover on top">
-                               More
-                           </button>
-
-                        </div>
-                        <div class="panel-body">
-
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <p>End Date</p>
-                                    <p>Poll Type</p>
-                                </div>
-                                <div class="col-sm-6">
-                                    <p>Created on</p>
-                                    <p>Total votes</p>
-
-                                </div>
-                            </div>
-
-
-                            <hr>
-                            Bootstrap (60%) :
-                               <div class="progress progress-striped active">
-                                   <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                       <span class="sr-only">60% Complete (success)</span>
-                                   </div>
-                               </div>
-                            Foundation (30%) :
-                               <div class="progress progress-striped active">
-                                   <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
-                                       <span class="sr-only">30% Complete (success)</span>
-                                   </div>
-                               </div>
-                            Foundation (30%) :
-                               <div class="progress progress-striped active">
-                                   <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
-                                       <span class="sr-only">30% Complete (success)</span>
-                                   </div>
-                               </div>
-                            Kube (10%) :
-                               <div class="progress progress-striped active">
-                                   <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%">
-                                       <span class="sr-only">10% Complete (success)</span>
-                                   </div>
-                               </div>
-
-                        </div>
-                        <div class="panel-footer text-center">
-                            <a href="#" class="btn btn-success btn-sm"><i class="fa fa-pencil"></i> Update Poll</a>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- POLL DIV END-->
-            </div>
-
-             <div class="col-sm-6" style="display: flex; justify-content: center; margin-top: 30px; min-height: 500px;">
-                <div class="user-poll-section" style="width: 80%">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <strong>Question : </strong>Which is the best responsive framework to start web designing ...
-                           <button class="btn btn-sm btn-info pop-up" data-toggle="popover" data-html="true" data-placement="top"
-                               data-content="<div class='scrollable' style='height:40px'>Vivamus sagittis lacus vel augue laoreet rutrum faucibus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus.</div>"
-                               title="" data-original-title="<button type=&quot;button&quot; class=&quot;close pull-right&quot; data-dismiss=&quot;popover&quot;>×</button>Popover on top">
-                               More
-                           </button>
-
-                        </div>
-                        <div class="panel-body">
-
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <p>End Date</p>
-                                    <p>Poll Type</p>
-                                </div>
-                                <div class="col-sm-6">
-                                    <p>Created on</p>
-                                    <p>Total votes</p>
-
-                                </div>
-                            </div>
-
-
-                            <hr>
-                            Bootstrap (60%) :
-                               <div class="progress progress-striped active">
-                                   <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                       <span class="sr-only">60% Complete (success)</span>
-                                   </div>
-                               </div>
-                            Foundation (30%) :
-                               <div class="progress progress-striped active">
-                                   <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
-                                       <span class="sr-only">30% Complete (success)</span>
-                                   </div>
-                               </div>
-                            Foundation (30%) :
-                               <div class="progress progress-striped active">
-                                   <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
-                                       <span class="sr-only">30% Complete (success)</span>
-                                   </div>
-                               </div>
-                            Kube (10%) :
-                               <div class="progress progress-striped active">
-                                   <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%">
-                                       <span class="sr-only">10% Complete (success)</span>
-                                   </div>
-                               </div>
-
-                        </div>
-                        <div class="panel-footer text-center">
-                            <a href="#" class="btn btn-success btn-sm"><i class="fa fa-pencil"></i> Update Poll</a>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- POLL DIV END-->
-            </div>
-
-
+            </div>--%>
         </div>
-    </section>
+
+        <section class="panel panel-default">
+
+            <div class="panel-body">
+                <asp:Repeater runat="server" ID="rptPolls">
+                    <ItemTemplate>
+                        <div class="col-sm-6" style="display: flex; justify-content: center; margin-top: 30px; min-height: 460px;">
+                            <div class="user-poll-section" style="width: 80%">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <asp:HiddenField runat="server" ID="hdnPollID" Value='<%# Eval("PollID") %>' />
+                                        <strong>Question : </strong><%# Eval("PollTitle") %>
+                                    </div>
+                                    <div class="panel-body">
+
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <p><%# Eval("EndTime") %></p>
+                                                <p><%# (Eval("PollType").ToString() == "0") ? "Public" : "PanelMembers" %></p>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <p><%#Eval("CreatedOn") %></p>
+                                                <p>Total votes</p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <asp:Repeater runat="server" ID="rptOptions">
+                                            <ItemTemplate>
+                                                <%# Eval("OptionName") %>
+                                                <asp:HiddenField runat="server" ID="hdnOptionWidth" Value='<%# ((Convert.ToInt32(Eval("VoteCount"))*100)/16)+"%" %>' />
+                                                <div class="progress progress-striped active">
+                                                    <div class="progress-bar progress-bar-success" runat="server" id="divProgBar" role="progressbar" aria-valuenow='<%# Eval("VoteCount") %>' aria-valuemin="0" aria-valuemax="16" style='width: 60%;'>
+                                                        <%--<%# ((Convert.ToInt32(Eval("VoteCount"))*100)/16)+"%" %>--%>
+                                                        <span class="sr-only"><%# Eval("VoteCount") %></span>
+                                                        <%# Eval("VoteCount") %>
+                                                    </div>
+                                                </div>
+                                            </ItemTemplate>
+                                            <AlternatingItemTemplate>
+                                                <%# Eval("OptionName") %>
+                                                <asp:HiddenField runat="server" ID="hdnOptionWidth" Value='<%# ((Convert.ToInt32(Eval("VoteCount"))*100)/16)+"%" %>' />
+                                                <div class="progress progress-striped active">
+                                                    <div class="progress-bar progress-bar-info" runat="server" id="divProgBar" role="progressbar" aria-valuenow='<%# Eval("VoteCount") %>' aria-valuemin="0" aria-valuemax="16" style='width: 60%;'>
+                                                        <%--<%# ((Convert.ToInt32(Eval("VoteCount"))*100)/16)+"%" %>--%>
+                                                        <span class="sr-only"><%# Eval("VoteCount") %></span>
+                                                        <%# Eval("VoteCount") %>
+                                                    </div>
+                                                </div>
+                                            </AlternatingItemTemplate>
+                                        </asp:Repeater>
+                                        <%--                                    Foundation (30%) :
+                               <div class="progress progress-striped active">
+                                   <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
+                                       <span class="sr-only">30% Complete (success)</span>
+                                   </div>
+                               </div>
+                                    Foundation (30%) :
+                               <div class="progress progress-striped active">
+                                   <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
+                                       <span class="sr-only">30% Complete (success)</span>
+                                   </div>
+                               </div>
+                                    Kube (10%) :
+                               <div class="progress progress-striped active">
+                                   <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%">
+                                       <span class="sr-only">10% Complete (success)</span>
+                                   </div>
+                               </div>--%>
+                                    </div>
+                                   <%-- <div class="panel-footer text-center">
+
+                                        <a href="#" class="btn btn-success btn-sm"><i class="fa fa-pencil"></i>Update Poll</a>
+                                    </div>--%>
+                                </div>
+                            </div>
+                        </div>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </div>
+        </section>
+
+    </form>
 </asp:Content>
 

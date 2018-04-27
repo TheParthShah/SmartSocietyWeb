@@ -1,14 +1,10 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 public partial class Login : System.Web.UI.Page
 {
     SSAPIAdmin.AdminClient ServiceObjectAdmin = new SSAPIAdmin.AdminClient();
+    SSAPIGen.GeneralClient ServiceObjectGen = new SSAPIGen.GeneralClient();
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -27,7 +23,9 @@ public partial class Login : System.Web.UI.Page
         else
         {
             JObject data = JObject.Parse(result);
+            JObject ResObj=JObject.Parse(ServiceObjectGen.GetAllResidentsDetails(0, (int)data["ResidentID"]).ToString());
             Session["ResidentID"] = (int)data["ResidentID"];
+            Session["ResidentName"] = ResObj["ResidentName"];
             Response.Redirect("Default.aspx");
         }
         

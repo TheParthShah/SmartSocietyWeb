@@ -6,6 +6,12 @@
       <xsd:import schemaLocation="http://smartsociety.riteshtailor.in/General.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IGeneral_GetSocietyInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSocietyInformation" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_GetSocietyInformation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSocietyInformationResponse" />
+  </wsdl:message>
   <wsdl:message name="IGeneral_GetAllResidentsDetails_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllResidentsDetails" />
   </wsdl:message>
@@ -132,6 +138,30 @@
   <wsdl:message name="IGeneral_GetAllPolls_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllPollsResponse" />
   </wsdl:message>
+  <wsdl:message name="IGeneral_GetPollResults_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPollResults" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_GetPollResults_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPollResultsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_GetAllDocuments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDocuments" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_GetAllDocuments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDocumentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_AddDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDocument" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_AddDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_GetAllAutoStates_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllAutoStates" />
+  </wsdl:message>
+  <wsdl:message name="IGeneral_GetAllAutoStates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllAutoStatesResponse" />
+  </wsdl:message>
   <wsdl:message name="IGeneral_SetIP_InputMessage">
     <wsdl:part name="parameters" element="tns:SetIP" />
   </wsdl:message>
@@ -175,6 +205,10 @@
     <wsdl:part name="parameters" element="tns:SetNotificationResponse" />
   </wsdl:message>
   <wsdl:portType name="IGeneral">
+    <wsdl:operation name="GetSocietyInformation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/GetSocietyInformation" message="tns:IGeneral_GetSocietyInformation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneral/GetSocietyInformationResponse" message="tns:IGeneral_GetSocietyInformation_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetAllResidentsDetails">
       <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/GetAllResidentsDetails" message="tns:IGeneral_GetAllResidentsDetails_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IGeneral/GetAllResidentsDetailsResponse" message="tns:IGeneral_GetAllResidentsDetails_OutputMessage" />
@@ -259,6 +293,22 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/GetAllPolls" message="tns:IGeneral_GetAllPolls_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IGeneral/GetAllPollsResponse" message="tns:IGeneral_GetAllPolls_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetPollResults">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/GetPollResults" message="tns:IGeneral_GetPollResults_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneral/GetPollResultsResponse" message="tns:IGeneral_GetPollResults_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDocuments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/GetAllDocuments" message="tns:IGeneral_GetAllDocuments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneral/GetAllDocumentsResponse" message="tns:IGeneral_GetAllDocuments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDocument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/AddDocument" message="tns:IGeneral_AddDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneral/AddDocumentResponse" message="tns:IGeneral_AddDocument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAutoStates">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/GetAllAutoStates" message="tns:IGeneral_GetAllAutoStates_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneral/GetAllAutoStatesResponse" message="tns:IGeneral_GetAllAutoStates_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="SetIP">
       <wsdl:input wsaw:Action="http://tempuri.org/IGeneral/SetIP" message="tns:IGeneral_SetIP_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IGeneral/SetIPResponse" message="tns:IGeneral_SetIP_OutputMessage" />
@@ -290,6 +340,15 @@
   </wsdl:portType>
   <wsdl:binding name="soap" type="tns:IGeneral">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetSocietyInformation">
+      <soap:operation soapAction="http://tempuri.org/IGeneral/GetSocietyInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetAllResidentsDetails">
       <soap:operation soapAction="http://tempuri.org/IGeneral/GetAllResidentsDetails" style="document" />
       <wsdl:input>
@@ -472,6 +531,42 @@
     </wsdl:operation>
     <wsdl:operation name="GetAllPolls">
       <soap:operation soapAction="http://tempuri.org/IGeneral/GetAllPolls" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPollResults">
+      <soap:operation soapAction="http://tempuri.org/IGeneral/GetPollResults" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDocuments">
+      <soap:operation soapAction="http://tempuri.org/IGeneral/GetAllDocuments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDocument">
+      <soap:operation soapAction="http://tempuri.org/IGeneral/AddDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAutoStates">
+      <soap:operation soapAction="http://tempuri.org/IGeneral/GetAllAutoStates" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

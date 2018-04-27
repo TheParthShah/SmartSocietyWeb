@@ -18,7 +18,7 @@
         </header>
 
         <div class="panel-body">
-            <form class="form-horizontal" method="get" runat="server">
+            <form class="form-horizontal" runat="server">
                 <asp:HiddenField runat="server" ID="hdnImageFile" Value=""/>
                 <asp:HiddenField runat="server" ID="hdnDocFile" Value=""/>
                 <div class="form-group">
